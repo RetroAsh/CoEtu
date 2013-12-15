@@ -40,6 +40,11 @@ input[type=button] {
     transition: border 0.7s;
 }
 
+.err {
+    color: #b32b2b; 
+    font-style:italic;
+}
+
 /* NAV */
 
 div#nav {
@@ -134,7 +139,7 @@ div#pop>div {
     background-color: white;
     border-radius: 5px 5px 5px 5px;
     border: 1px solid #ccc;
-    box-shadow:  0 1px 4px #ddd;
+    box-shadow:  0 0px 6px #ddd;
 }
 
 div#pop h3 {
@@ -505,6 +510,23 @@ div.voyage span.conduc {
     font-size: .9em;
 }
 
+/* FORMULAIRE VOYAGE */
+
+form#creationvoyage {
+    display: block;
+    padding: 10px;
+}
+
+form#creationvoyage input[type=text]{
+    border-radius: 4px 4px 4px 4px;
+    border: 0;
+    background-color: rgb(220,220,220);
+    width: 97%;
+    height: 25px;
+    font-size: .9em;
+    padding-left: 5px;
+}
+
 /* MESSAGERIE */
 
 div#messagerie {
@@ -788,18 +810,6 @@ form#colorpick input#couleur {
     font-size: 1.1em;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0px 0px 5px gray;
-}
-
-form#colorpick input#subCol {
-    color: rgb(75, 75, 75);
-    margin-top: 10px;
-    font-size: .8em;
-    width: 80px;
-    border: 0;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0px 0px 5px rgb(220,220,220);
-    background-color: rgb(220,220,220);
-    background-image: none;
 }
 
 form#colorpick {

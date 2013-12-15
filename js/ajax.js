@@ -101,8 +101,10 @@ function getNewVoyageForm(){
         // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
         if(xhr.readyState == 4 && xhr.status == 200){
             pop_content(xhr.responseText);
+            pop_set_y(420);
             pop_show();
             stop_loading();
+            document.getElementById("v_dep").focus();
         }
     }
     loading();
@@ -118,6 +120,7 @@ function getNotification(){
         // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
         if(xhr.readyState == 4 && xhr.status == 200){
             pop_content(xhr.responseText);
+            pop_close_func(notif);
             pop_show();
             stop_loading();
         }
@@ -352,7 +355,7 @@ function ajoutVoyage()
         }
     }
     loading();
-    xhr.open("POST","../ajax/ajoutVoyage.php",true);
+    xhr.open("POST","../ajax/sendFormVoyage.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 	
 	v_dep = document.getElementById("v_dep").value;
