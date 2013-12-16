@@ -14,7 +14,7 @@
 	if(isset($_POST['sauvegarder'])){
 		if(selectIdVille($_POST['ville'])!=false && selectIdCampus($_POST['lieu'])!=false){
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdCampus($_POST['lieu']),$_POST['mois'],$_POST['annee']);
-			}
+		}
 	}
 ?>
 
