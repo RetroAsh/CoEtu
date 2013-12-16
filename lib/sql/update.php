@@ -59,13 +59,13 @@ function updateCouleur($id,$couleur){
 function updateMsgRead($de,$a){
 	try{
 		$connec = getPDO();
-		$requete2 = "UPDATE etudiant ES, etudiant EG, message M
+		$updateMessage = $connec->prepare("UPDATE etudiant ES, etudiant EG, message M
 					SET M.msg_vu = TRUE
 					WHERE ES.id_etu = M.etu_send
 					AND EG.id_etu = M.etu_get
 					AND ES.id_etu = :de
 					AND EG.id_etu = :a
-					AND M.msg_vu = FALSE;";
+					AND M.msg_vu = FALSE;");
 		$updateMessage->bindParam('de', $de, PDO::PARAM_INT);
 		$updateMessage->bindParam('a', $a, PDO::PARAM_INT);
 		return $updateMessage->execute();
