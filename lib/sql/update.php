@@ -21,6 +21,8 @@ function updatePerso($id_etu,$idville,$idcampus,$mois,$annee){
                 return $q = -2; //erreur lors de la modification des coordonnees
             }
         */
+		
+	return false;
 }
 
 function updateStatutRequete($etu1, $etu2, $statut){
@@ -39,6 +41,7 @@ function updateStatutRequete($etu1, $etu2, $statut){
 	catch(Exception $e){
 		echo("Une erreur est survenue lors de la mise à jour du lien de contact : ".$e->getMessage());
 	}
+	return false;
 }
 
 function updateCouleur($id,$couleur){
@@ -54,6 +57,7 @@ function updateCouleur($id,$couleur){
 	catch(Exception $e){
 		echo("Une erreur est survenue lors de la mise à jour de la couleur : ".$e->getMessage());
 	}
+	return false;
 }
 
 function updateMsgRead($de,$a){
@@ -73,4 +77,5 @@ function updateMsgRead($de,$a){
 	catch(Exception $e){
 		echo("Une erreur est survenue lors de la mise à jour de l'état du message : ".$e->getMessage());
 	}
+	return false;
 }
