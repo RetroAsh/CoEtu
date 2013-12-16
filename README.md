@@ -1,6 +1,6 @@
 #CoEtu
 
-(Demo)[http://jmercadier.fr/t/coetu]
+[Demo](http://jmercadier.fr/t/coetu)
 
 ##Objectif
 
