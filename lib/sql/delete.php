@@ -30,12 +30,19 @@ function deleteContact($i){
 
 function deleteRequete($etu1, $etu2)
 {
-    $connec = getPDO();
+	try{
+		$connec = getPDO();
 
-    $requete = "DELETE FROM `".BASE."`.`carnet`
-                WHERE `carnet`.`id_etu` = $etu1
-                AND `carnet`.`id_etu_etudiant` = $etu2
-                AND `carnet`.`statut_car` = '0';";
-
-    $connec->query($requete);
+		$deleteCarnet = $connec->prepare("DELETE FROM carnet
+					WHERE id_etu = :etu1
+					AND id_etu_etudiant = :etu2
+					AND statut_car = 0;");
+		$deleteCarnet->bindParam('etu1', $etu1, PDO::PARAM_INT);
+		$deleteCarnet->bindParam('etu2', $etu2, PDO::PARAM_INT);	
+		return $deleteCarnet->execute();	
+	}
+	catch( Exception $e ){
+		echo("Une erreur est survenue lors de la suppression de la demande de contact : ".$e->getMessage());
+	}
+	return false;
 }
