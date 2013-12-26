@@ -659,8 +659,7 @@ div#carnet div {
 
 div#carnet>div:first-of-type{
     float: right;
-    width:62%;
-    padding-left:7%;
+    width:69%;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -695,20 +694,34 @@ div#carnet>div:last-of-type a.selected {
     font-weight:bold;
 }
 
-div#carnet>div:first-of-type span.label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+div#carnet>div:first-of-type span.welcome {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
     font-family: "omnes-pro", sans-serif;
     font-size: 1em;
     font-weight: 300;
+    padding:0;
+    margin: 0;
+    border:0;
+}
+
+div#carnet>div:first-of-type span.label {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 100px;
+    margin-right: 10px;
+    font-size: .9em;
+    color: gray;
     padding: 0;
     border: 0;
 }
 
 div#carnet>div:first-of-type span.carac {
     display:block;
-    margin-bottom:10px;
+    margin-bottom: 13px;
+    margin-left: 100px;
 }
 
 div#carnet>div:first-of-type h2 {
@@ -718,6 +731,7 @@ div#carnet>div:first-of-type h2 {
     padding:0;
     margin: 30px 0px 30px 0px;
     border:0;
+    text-align: center;
 }
 
 div#carnet>div:first-of-type div.option {
