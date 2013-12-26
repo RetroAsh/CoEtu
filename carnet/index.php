@@ -38,7 +38,7 @@
                 <br />
                 <br />
                 <br />
-                <span class="label">Selectionner un contact pour l'afficher.</span>
+                <span class="welcome">Selectionner un contact pour l'afficher.</span>
             </div>
             <div id="liste">
 

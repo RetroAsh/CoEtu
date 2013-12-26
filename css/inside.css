@@ -40,6 +40,11 @@ input[type=button] {
     transition: border 0.7s;
 }
 
+.err {
+    color: #b32b2b; 
+    font-style:italic;
+}
+
 /* NAV */
 
 div#nav {
@@ -134,7 +139,7 @@ div#pop>div {
     background-color: white;
     border-radius: 5px 5px 5px 5px;
     border: 1px solid #ccc;
-    box-shadow:  0 1px 4px #ddd;
+    box-shadow:  0 0px 6px #ddd;
 }
 
 div#pop h3 {
@@ -505,6 +510,23 @@ div.voyage span.conduc {
     font-size: .9em;
 }
 
+/* FORMULAIRE VOYAGE */
+
+form#creationvoyage {
+    display: block;
+    padding: 10px;
+}
+
+form#creationvoyage input[type=text]{
+    border-radius: 4px 4px 4px 4px;
+    border: 0;
+    background-color: rgb(220,220,220);
+    width: 97%;
+    height: 25px;
+    font-size: .9em;
+    padding-left: 5px;
+}
+
 /* MESSAGERIE */
 
 div#messagerie {
@@ -637,8 +659,7 @@ div#carnet div {
 
 div#carnet>div:first-of-type{
     float: right;
-    width:62%;
-    padding-left:7%;
+    width:69%;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -673,20 +694,34 @@ div#carnet>div:last-of-type a.selected {
     font-weight:bold;
 }
 
-div#carnet>div:first-of-type span.label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+div#carnet>div:first-of-type span.welcome {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
     font-family: "omnes-pro", sans-serif;
     font-size: 1em;
     font-weight: 300;
+    padding:0;
+    margin: 0;
+    border:0;
+}
+
+div#carnet>div:first-of-type span.label {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 100px;
+    margin-right: 10px;
+    font-size: .9em;
+    color: gray;
     padding: 0;
     border: 0;
 }
 
 div#carnet>div:first-of-type span.carac {
     display:block;
-    margin-bottom:10px;
+    margin-bottom: 13px;
+    margin-left: 100px;
 }
 
 div#carnet>div:first-of-type h2 {
@@ -696,6 +731,7 @@ div#carnet>div:first-of-type h2 {
     padding:0;
     margin: 30px 0px 30px 0px;
     border:0;
+    text-align: center;
 }
 
 div#carnet>div:first-of-type div.option {
@@ -788,18 +824,6 @@ form#colorpick input#couleur {
     font-size: 1.1em;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0px 0px 5px gray;
-}
-
-form#colorpick input#subCol {
-    color: rgb(75, 75, 75);
-    margin-top: 10px;
-    font-size: .8em;
-    width: 80px;
-    border: 0;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0px 0px 5px rgb(220,220,220);
-    background-color: rgb(220,220,220);
-    background-image: none;
 }
 
 form#colorpick {

@@ -14,20 +14,20 @@
 	if(isset($_POST['sauvegarder'])){
 		if(selectIdVille($_POST['ville'])!=false && selectIdCampus($_POST['lieu'])!=false){
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdCampus($_POST['lieu']),$_POST['mois'],$_POST['annee']);
-			}
+		}
 	}
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Votre Profil</title>
+		<title>Vos infos</title>
 		<?php head() ?>
         <script type="text/javascript" src="../js/jscolor/jscolor.js"></script>
 	</head>
     <body>
         <div id="titre">
-            <h1>Votre Profil</h1>
+            <h1>Vos infos</h1>
             <span>Voyager n'a jamais été aussi simple</span>
         </div>
         <div id="param">
@@ -36,7 +36,7 @@
         </div>
         <?php nav(); ?>
         <form id="colorpick" method="post">
-            <?php echo "<input name='couleur' id='couleur' class='color' value='".selectCouleur($_SESSION['user_id'])."'>"; ?><br /><input type="submit" id="subCol" value="Changer" />
+            <?php echo "<input onchange='document.getElementById(\"colorpick\").submit()' name='couleur' id='couleur' class='color' value='".selectCouleur($_SESSION['user_id'])."'>"; ?>
         </form>
     </body>
 </html>

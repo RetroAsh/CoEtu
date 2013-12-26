@@ -210,8 +210,8 @@ function selectVoyages($nom){
 				WHERE V.id_etu=E.id_etu
 				AND V.ville_depart=VD.id_ville
 				AND V.ville_arrive=VA.id_ville
-				AND (E.nom_etu like '%$nom%'
-				OR E.prenom_etu like '%$nom%')
+				AND (E.nom_etu like '$nom%'
+				OR E.prenom_etu like '$nom%')
 				ORDER BY V.date_aller
 				LIMIT 30 OFFSET 0;";
 
@@ -265,9 +265,9 @@ function selectIdPerso($nom){
 				FROM etudiant E
 				JOIN campus C ON E.id_camp = C.id_camp
 				JOIN ville V ON E.id_ville = V.id_ville
-				WHERE E.nom_etu like '%$nom%'
-				OR E.prenom_etu like '%$nom%'
-				OR V.nom_ville like '%$nom%'
+				WHERE (E.nom_etu like '$nom%'
+				OR E.prenom_etu like '$nom%'
+				OR V.nom_ville like '$nom%')
 				LIMIT 30 OFFSET 0;";
 
     $rep = $connec->query($requete);

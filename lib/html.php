@@ -18,19 +18,19 @@ function printInfoContact($id){
     $infos = selectInfoEtu($id);
     $coordonnee = selectCoordonee($id);
     $info_ville = selectInfoVille($infos[1]);
-    echo "<span class='label'>Université:</span>";
+    echo "<span class='label'>Université</span>";
     echo "<span class='carac'>".$infos[4]."</span>";
-    echo "<span class='label'>Lieu d'études:</span>";
+    echo "<span class='label'>Lieu d'études</span>";
     echo "<span class='carac'>".$infos[0]."</span>";
-    echo "<span class='label'>Habite:</span>";
+    echo "<span class='label'>Habite</span>";
     echo "<span class='carac' onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");'>".$info_ville[0]."</span>";
 
     for($i=1;$i<$coordonnee[0]*2;$i+=2){
-        echo "<span class='label'>".ucfirst($coordonnee[$i])." :</span>";
+        echo "<span class='label'>".ucfirst($coordonnee[$i])."</span>";
         echo "<span class='carac'>".test_chaine($coordonnee[$i+1])."</span>";
     }
 
-    echo "<span class='label'>Né:</span>";
+    echo "<span class='label'>Né</span>";
     echo "<span class='carac'>".mois($infos[3])." ".$infos[2]."</span>";
 }
 
