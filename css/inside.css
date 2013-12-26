@@ -552,7 +552,7 @@ div#messagerie h2 {
 
 div#messagerie div#scrollpane {
     position: absolute;
-    height: 94%;
+    height: 100%;
     width: 69%;
     overflow: auto;
     overflow-x: hidden;
