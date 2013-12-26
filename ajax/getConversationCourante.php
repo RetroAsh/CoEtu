@@ -27,7 +27,7 @@ if (isset($_POST["id"]) && selectVerifPerso($_POST["id"])==1 && (selectVerificat
 		else {
 			$ajax .= ucfirst($msg["pre_emeteur"]) . " " . ucfirst($msg["nom_emeteur"]) . "|";
 		}
-		$ajax .= $msg["time"] . "|";
+		$ajax .= smalltimestamp($msg["time"]) . "|";
 		$ajax .= $msg["msg"];
 	}
 }

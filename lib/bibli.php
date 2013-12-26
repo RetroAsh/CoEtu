@@ -28,6 +28,16 @@ function jour($index){
 	return $jour[$index];
 }
 
+function smalltimestamp($format_sql){
+    // 2013-12-26 19:06:06
+    $format_sql = explode(" ", $format_sql);
+    $date = $format_sql[0];
+    $time = $format_sql[1];
+    $date = explode("-", $date);
+    $time = explode(":", $time);
+    return $time[0].":".$time[1]." ".$date[2]."/".$date[1]."/".(intval($date[0])%100);
+}
+
 function contractNom($nom, $prenom)
 {
     return ucfirst($prenom)." ".strtoupper($nom[0]).".";

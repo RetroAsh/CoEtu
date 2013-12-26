@@ -34,3 +34,12 @@ function ajoutMsg(perso,time,msg){
 	}
 	last = perso;
 }
+
+function timestamp(){
+	var d = new Date();
+	var m = d.getMinutes();
+	if (m<10) {
+		m = "0"+m;
+	};
+	return d.getHours()+":"+m+" "+d.getDate()+"/"+(d.getMonth()+1)+"/"+(d.getFullYear()%100);
+}

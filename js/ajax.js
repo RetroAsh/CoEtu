@@ -196,7 +196,7 @@ function sendMsg(id){
     loading();
     var xhr = getXhr();
     document.getElementById('buffer').value = "";
-    ajoutMsg("Vous",0,msg);
+    ajoutMsg("Vous",timestamp(),msg);
     document.getElementById('scrollpane').scrollTop = document.getElementById('scrollpane').scrollHeight;
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
