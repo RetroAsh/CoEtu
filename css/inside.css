@@ -540,21 +540,13 @@ div#messagerie {
     border-radius: 5px 5px 5px 5px;
 }
 
-div#messagerie div.msg {
-    font-size: .95em;
-}
-
-div#messagerie div.msg:last-of-type {
-    margin-bottom: 120px;
-}
-
 div#messagerie h2 {
     font-family: "omnes-pro", sans-serif;
     font-weight: 300;
     padding:0;
     margin: 0;
+    margin-top: 10px;
     border:0;
-    border-bottom: 1px solid rgb(180, 180, 180);
     width: 97%;
 }
 
@@ -577,14 +569,29 @@ div#messagerie input#buffer {
     border-top: 1px solid rgb(180, 180, 180);
 }
 
-div#messagerie div.msg span.perso {
-    display: inline-block;
-    width: 55px;
-    text-align: right;
+div#messagerie div.msg {
+    font-size: .95em;
 }
 
-div#messagerie div.msg span.char {
-    font-size: .85em;
+div#messagerie div.msg:last-of-type {
+    margin-bottom: 120px;
+}
+
+div#messagerie div.msg span.perso {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+}
+
+div#messagerie div.msg span.dt {
+    display: block;
+    float: right;
+    font-size: .8em;
+    text-align: right;
+    color: gray;
+    font-style: italic;
+    margin-right: 10px;
+    margin-top: 4px;
 }
 
 div#messagerie div {

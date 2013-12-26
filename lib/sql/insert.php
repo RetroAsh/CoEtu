@@ -3,8 +3,8 @@
 function insertCarnet($etu1, $etu2){
 	try{
 		$connec = getPDO();
-		$insertCarnet = "INSERT INTO carnet (statut_car, id_etu, id_etu_etudiant)
-							VALUES (0, :etu1, :etu2);";
+		$insertCarnet = $connec->prepare("INSERT INTO carnet (statut_car, id_etu, id_etu_etudiant)
+							VALUES (0, :etu1, :etu2);");
 		$insertCarnet->bindParam('etu1', $etu1, PDO::PARAM_INT);
 		$insertCarnet->bindParam('etu2', $etu2, PDO::PARAM_INT);	
 		return $insertCarnet->execute();
@@ -18,8 +18,8 @@ function insertCarnet($etu1, $etu2){
 function insertMsg($de,$a,$msg){
 	try{
 		$connec = getPDO();
-		$insertMsg = "INSERT INTO message (msg, etu_send, etu_get)
-					VALUES (:msg, :de, :a);";
+		$insertMsg = $connec->prepare("INSERT INTO message (msg, etu_send, etu_get)
+					VALUES (:msg, :de, :a);");
 		$insertMsg->bindParam('msg', $msg, PDO::PARAM_STR);
 		$insertMsg->bindParam('de', $de, PDO::PARAM_INT);
 		$insertMsg->bindParam('a', $a, PDO::PARAM_INT);

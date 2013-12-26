@@ -156,7 +156,11 @@ function getNewMsg(id){
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
             if (xhr.responseText!="") {
-                document.getElementById('scrollpane').innerHTML += xhr.responseText;
+                var all = xhr.responseText.split('#\n');
+                for (var i = 0; i < all.length; i++) {
+                    var cur = all[i].split('|');
+                    ajoutMsg(cur[0],cur[1],cur[2]);
+                };
                 document.getElementById('scrollpane').scrollTop = document.getElementById('scrollpane').scrollHeight;
             }
             stop_loading();
@@ -192,7 +196,7 @@ function sendMsg(id){
     loading();
     var xhr = getXhr();
     document.getElementById('buffer').value = "";
-    document.getElementById('scrollpane').innerHTML += "<div class='msg' ><span class='perso'>vous <span class='char'>></span></span><span class='dire'> " + msg + "</span></div>";
+    ajoutMsg("Vous",0,msg);
     document.getElementById('scrollpane').scrollTop = document.getElementById('scrollpane').scrollHeight;
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
@@ -221,10 +225,16 @@ function openConversation(id){
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
             if (xhr.responseText!="") {
-                document.getElementById('conversation').innerHTML = xhr.responseText;
-                if (document.getElementById('scrollpane')) {
-                    document.getElementById('scrollpane').scrollTop = document.getElementById('scrollpane').scrollHeight;
-                }
+                var all = xhr.responseText.split('#\n');
+                document.getElementById('scrollpane').innerHTML = "<h2>" + all[0] + "</h2>";
+                for (var i = 1; i<all.length; i++) {
+                    var courant = all[i].split('|');
+                    ajoutMsg(courant[0],courant[1],courant[2]);
+                    if (i==all.length-1) {
+                        last = courant[0];
+                    };
+                };
+                document.getElementById('scrollpane').scrollTop = document.getElementById('scrollpane').scrollHeight;
             }
             stop_loading();
             document.getElementById('buffer').focus();

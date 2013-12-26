@@ -1,4 +1,5 @@
 var nbreq = 0;
+var last = "";
 
 setInterval(function(){notif()},7000);
 
@@ -22,4 +23,14 @@ function stop_loading(){
 		nbreq = 0;
 		document.getElementById("loading").style.display = "none";
 	}
+}
+
+function ajoutMsg(perso,time,msg){
+	if (perso!=last) {
+		document.getElementById('scrollpane').innerHTML += "<div class='msg' ><span class='dt'>" + time + "</span><span class='perso'>" + perso + "</span><span class='dire'> " + msg + "</span></div>";
+	}
+	else {
+		document.getElementById('scrollpane').innerHTML += "<div class='msg' ><span class='dire'> " + msg + "</span></div>";
+	}
+	last = perso;
 }
