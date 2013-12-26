@@ -1,7 +1,6 @@
 var directionsDisplay;
 var map;
 
-
 function afficheCarte(lat, lng) {
     pop_content('<div id=\'map\'></div>');
     var h = google.maps.event.addDomListener(window, 'load', creaMap(lat,lng));
@@ -50,6 +49,7 @@ function calcRoute(start,end) {
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
+            document.getElementById("infotemps").innerHTML = response.routes[0].legs[0].duration.text;
         }
     });
 }

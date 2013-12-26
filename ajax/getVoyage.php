@@ -23,7 +23,7 @@
 	<span class="label">Arrivé :</span><br />
 	<span class="info"><?php echo $voy['arrive']; ?></span><br />
 	<span class="label">Temps :</span><br />
-	<span class="info">3h 15min</span><br />
+	<span class="info" id="infotemps"></span><br />
 	<span class="label">Aller :</span><br />
 	<span class="info"><?php echo $voy['aller']; ?></span><br />
 	<span class="label">Retour :</span><br />
