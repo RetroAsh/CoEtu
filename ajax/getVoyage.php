@@ -14,7 +14,7 @@
 
 ?>
 
-<div id="map" style="background-color:rgb(223,220,215);text-align:center;color:white;">
+<div id="map">
 	MAP
 </div>
 <div id="mapinfo">

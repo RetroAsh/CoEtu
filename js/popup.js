@@ -55,6 +55,7 @@ function pop_reset(){
 	pop_open_func = function(){};
 	pop_close_func = function(){};
 	document.getElementById('pop_cont').innerHTML="";
+    pop_title("");
 	pop_set_x(400);
 	pop_set_y(400);
 }

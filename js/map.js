@@ -1,9 +1,18 @@
+var directionsDisplay;
+var map;
+
+
 function afficheCarte(lat, lng) {
     pop_content('<div id=\'map\'></div>');
-    google.maps.event.addDomListenerOnce(document.getElementById("map"), 'load', creaMap(lat,lng));
-    pop_set_x(600);
-    pop_set_y(400);
+    var h = google.maps.event.addDomListener(window, 'load', creaMap(lat,lng));
+    pop_set_x(473);
+    pop_set_y(473);
+    pop_close_func(removelistener(h));
     pop_show();
+}
+
+function removelistener(h){
+    google.maps.event.removeListener(h);
 }
 
 function creaMap(lat,lng){
@@ -13,41 +22,34 @@ function creaMap(lat,lng){
         zoom: 12
     };
 
-    var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+    var carte = new google.maps.Map(document.getElementById("map"),mapOptions);
 }
 
-function afficheItineraire(){
-    pop_content('<div id=\'map\'></div>');
-    google.maps.event.addDomListenerOnce(document.getElementById("map"), 'load', itineraire(1,2));
-    pop_set_x(600);
-    pop_set_y(400);
-    pop_show();
+function afficheItineraire(start,end){
+    google.maps.event.addDomListener(window, 'load', itineraire());
+    calcRoute(start,end);
 }
 
+function itineraire(){
 
-function itineraire(id_depart,id_arrive){
-
+    directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
-        zoom: 12
-    };
+        zoom:7
+    }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    directionsDisplay.setMap(map);
+}
 
-    var map = new google.maps.Map(document.getElementById("map"),mapOptions);
-
-    var myLatLng = new google.maps.LatLng(48.583148,7.747882);
-    var myLatLng2 = new google.maps.LatLng(47.218371,-1.553621);
-    var directionsService = new google.maps.DirectionsService();
-    var directionsDisplay = new google.maps.DirectionsRenderer({ 'map': map });
+function calcRoute(start,end) {
     var request = {
-        origin     : myLatLng,
-        destination: myLatLng2,
-        travelMode : google.maps.DirectionsTravelMode.DRIVING,
-        unitSystem: google.maps.DirectionsUnitSystem.METRIC
+        origin:start,
+        destination:end,
+        travelMode: google.maps.TravelMode.DRIVING
     };
+    var directionsService = new google.maps.DirectionsService();
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
-            directionsDisplay.suppressMarkers = true;
-            alert(response.routes[0].legs[0].duration.text);
         }
     });
 }

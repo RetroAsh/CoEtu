@@ -52,6 +52,7 @@ function voyage(id,nom){
             pop_set_x(700);
             pop_set_y(500);
             pop_content(xhr.responseText);
+            infoItineraire(id);
             pop_show();
             stop_loading();
         }
@@ -60,6 +61,21 @@ function voyage(id,nom){
     xhr.open("POST","../ajax/getVoyage.php",true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     xhr.send("id=" + id);    
+}
+
+function infoItineraire(id){
+    var xhr2 = getXhr();
+    xhr2.onreadystatechange = function () {
+        if (xhr2.readyState == 4 && xhr2.status == 200) {
+            var tabInfo = xhr2.responseText.split(",");
+            var coordV1 = new google.maps.LatLng(tabInfo[0], tabInfo[1]);
+            var coordV2 = new google.maps.LatLng(tabInfo[2], tabInfo[3]);
+            afficheItineraire(coordV1, coordV2);
+        }
+    };
+    xhr2.open("POST","../ajax/getCoordItineraire.php",true);
+    xhr2.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr2.send("id_voyage=" + id);
 }
 
 function recherche(){
