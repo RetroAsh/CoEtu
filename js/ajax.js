@@ -110,6 +110,47 @@ function peronneInfo(id,nom){
     xhr.send("id=" + id);
 }
 
+function getVoyages(){
+    var xhr = getXhr();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var box = document.getElementById("voyages");
+            var own = "";
+            var contact ="";
+            var all = xhr.responseText.split("#\n");
+            if (xhr.responseText=="") {
+                all = new Array();
+            };
+            for (var i = 0; i < all.length; i++) {
+                var single = all[i].split(";");
+                if (single[5]=="") {
+                    own += voyageH(single[0],single[1],single[2],single[3],single[4],single[5]) + "\n";
+                }
+                else {
+                    contact += voyageH(single[0],single[1],single[2],single[3],single[4],single[5]) + "\n";
+                }
+            };
+            if (own!="") {
+                box.innerHTML = "<input class='newvoy' onclick='getNewVoyageForm()' value='Nouveau' type='button' title='Créer un nouveau voyage.' /><h4>Mes voyages</h4>";
+                box.innerHTML += own;
+            }
+            else {
+                box.innerHTML = "<span class='welcome'>Cliquer sur \"Nouveau\" pour proposer un voyage.</span>";
+                box.innerHTML += "<input class='newvoy_wel' onclick='getNewVoyageForm()' value='Nouveau' type='button' title='Créer un nouveau voyage.' />";
+            }
+            if (contact!="") {
+                box.innerHTML += "<h4>Mes contacts</h4>";
+                box.innerHTML += contact; 
+            };
+            stop_loading();
+        }
+    }
+    loading();
+    xhr.open("POST","../ajax/getVoyages.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send();
+}
+
 function getNewVoyageForm(){
     pop_title("Nouveau voyage");
     var xhr = getXhr();
@@ -227,6 +268,7 @@ function openConversation(id){
             if (xhr.responseText!="") {
                 var all = xhr.responseText.split('#\n');
                 document.getElementById('scrollpane').innerHTML = "<h2>" + all[0] + "</h2>";
+                last = "";
                 for (var i = 1; i<all.length; i++) {
                     var courant = all[i].split('|');
                     ajoutMsg(courant[0],courant[1],courant[2]);
@@ -378,6 +420,7 @@ function ajoutVoyage()
 				document.getElementById("err").innerHTML = leselect;
 			}
 			stop_loading();
+            getVoyages();
         }
     }
     loading();

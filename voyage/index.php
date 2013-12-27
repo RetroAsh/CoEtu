@@ -14,27 +14,18 @@
 	<head>
 		<title><?php echo selectNomPerso($_SESSION["user_id"]) ?> - Voyages</title>
 		<?php head() ?>
+        <script type="text/javascript">
+            window.onload=function() {
+                getVoyages();
+            }
+        </script>
 	</head>
     <body>
         <div id="titre">
             <h1>Voyages</h1>
             <span>Voyager n'a jamais été aussi simple</span>
         </div>
-        <div id="voyages">
-            <input class="newvoy" onclick="getNewVoyageForm()" value="Nouveau" type="button" title="Créer un nouveau voyage." />
-            <h4>Mes voyages</h4>
-            <?php
-                foreach (selectAllVoyages($_SESSION["user_id"]) as $voy) {
-                    printVoyage($voy["id"],$voy["depart"],$voy["arrive"],$voy["aller"],$voy["retour"]);
-                }
-            ?>
-            <h4>Mes contacts</h4>
-            <?php
-                foreach (selectAllContactVoyages($_SESSION["user_id"]) as $voy) {
-                    printVoyage($voy["id"],$voy["depart"],$voy["arrive"],$voy["aller"],$voy["retour"],$voy["pre"] . " " . $voy["nom"]);
-                }
-            ?>
-        </div>
+        <div id="voyages"></div>
         <?php nav(); ?>
         <?php boxuser(selectNomPerso($_SESSION["user_id"]),$_SESSION["user_id"]); ?>
     </body>

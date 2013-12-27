@@ -476,6 +476,23 @@ div#voyages input.newvoy {
     float: right;
 }
 
+div#voyages span.welcome {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: "omnes-pro", sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+div#voyages input.newvoy_wel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+}
+
 div.voyage {
     background-color: rgb(51, 51, 51);
     color: white;
