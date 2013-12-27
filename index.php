@@ -10,9 +10,10 @@
 	require_once 'lib/bibli.php';
 	require_once 'lib/securiter.php';
 
+
 	if(isset($_POST["em"]) && isset($_POST["mp"])){
 		if(!selectVerificationConnexion($_POST["em"], $_POST["mp"])){
-			$err = "erreur login";
+			$err = "Email ou mot de passe incorrect.";
 		}
         else{
 			$_SESSION["user_id"] = selectIdEtudiant($_POST["em"]);
@@ -24,6 +25,7 @@
 		header("Location: home/");
 	}
 
+	$nb_user = selectNbUtilisateur();
 
 	$pre=NULL;
 	$nom=NULL;
@@ -174,8 +176,14 @@
 			<div class="bigbox">
 				<div class="desc">
 					<h2>Créer un compte</h2>
-					<p> Rejoignez notre réseau de co-voiturage en quelques secondes, c'est simple, rapide et efficace</p>
-					<input type="submit" name="inscription" value="Valider" />
+					<ol>
+						<li>Un reseau fait par les étudiants pour les étudiants</li>
+						<li>A l'autre bout de la region en moins de 2h</li>
+						<li><?php echo $nb_user; ?> utilisateurs</li>
+						<li>Sécurisé, crypté... vous n'êtes pas espionné</li>
+						<li>Pas de pub</li>
+					</ol>
+					<input id="val" type="submit" name="inscription" value="Valider" />
 				</div>
 				<table>
 					<tr>

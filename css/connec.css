@@ -194,7 +194,7 @@ div.bigbox input[type=button] {
     width:250px;
     height:70px;
     border-radius: 4px 4px 4px 4px;
-    background-color: rgb(0, 120, 231);
+    background-color: rgb(0, 90, 201);
     background-image: none;
     transition: border 1s;
 }
@@ -211,6 +211,25 @@ div.bigbox input[type=password] {
     width:250px;
     height:35px;
 }
+
+div.bigbox ol li:first-of-type {
+    margin-top: 80px;
+}
+
+div.bigbox ol li:last-of-type {
+    margin-bottom: 20%;
+}
+
+div.bigbox ol li {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+
+div.bigbox .desc {
+    height: 100%;
+}
+
 
 body .ui-autocomplete {
   list-style: none;

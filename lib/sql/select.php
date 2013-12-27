@@ -33,6 +33,14 @@ function selectOpenConversations($id){
     return $etu;
 }
 
+function selectNbUtilisateur(){
+    $connec = getPDO();
+    $requete = "SELECT count(*) FROM etudiant;";
+    $q = $connec->query($requete);
+    $q = $q->fetch();
+    return $q[0];
+}
+
 function selectConversation($perso1,$perso2){
     $connec = getPDO();
     $requete = "SELECT ES.prenom_etu,ES.nom_etu,EG.prenom_etu,EG.nom_etu,M.id_msg,M.msg,M.msg_time, ES.id_etu
