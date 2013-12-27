@@ -2,8 +2,8 @@
 var last = "";
 
 function voyageH (id,depart,arrive,aller,retour,conduc) {
-	var ret = "<div class='voyage' onclick=\"voyage(" + id + ",'" + depart + " --> " + arrive + "')\" >";
-	ret += "<img src='../img/car.png' /><h5>" + depart + " --> " + arrive + "</h5><span class='date'>" + aller;
+	var ret = "<div class='voyage' onclick=\"voyage(" + id + ",'" + depart + " &rarr; " + arrive + "')\" >";
+	ret += "<img src='../img/car.png' /><h5>" + depart + " &rarr; " + arrive + "</h5><span class='date'>" + aller;
 	if (retour!=0) {
 		ret += " / " + retour;
 	};
