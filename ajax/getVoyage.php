@@ -34,8 +34,8 @@
 		if ($voy['conduc']==$_SESSION["user_id"]) {}
 		elseif ($liee) {
 			?>
-			<input type='button' value="voir" onclick="window.location = '../carnet/#<?php echo $voy['conduc']; ?>';" title="Afficher dans le carnet d'adresse." />
-			<input type='button' value="message" onclick="window.location = '../messages/#<?php echo $voy['conduc']; ?>';" title="Envoyer un message." />
+			<input type='button' value="voir" onclick="window.location = '../carnet/#<?php echo $voy['conduc']; ?>';pop_close();" title="Afficher dans le carnet d'adresse." />
+			<input type='button' value="message" onclick="window.location = '../messages/#<?php echo $voy['conduc']; ?>';pop_close();" title="Envoyer un message." />
 			<?php
 		}
 		else {

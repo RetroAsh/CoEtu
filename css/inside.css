@@ -11,6 +11,7 @@ body {
 
 a {
     color: rgb(75, 75, 75);
+    cursor: pointer;
     transition: color 0.7s;
 }
 
@@ -768,6 +769,20 @@ div#carnet>div:first-of-type div.option {
 div#carnet>div:first-of-type div.option a {
     font-size: 0.8em;  
     text-decoration: none;
+}
+
+div#carnet>div:first-of-type div.voyage_carnet {
+    position: absolute;
+    bottom: 100px;
+    text-align: center;
+    width: 69%;
+}
+
+div#carnet>div:first-of-type div.voyage_carnet a {
+    text-decoration: none;
+    font-size: .9em;
+    color: gray;
+    font-style: italic;
 }
 
 /* PROFILE */
