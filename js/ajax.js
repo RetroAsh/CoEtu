@@ -131,7 +131,7 @@ function getVoyages(){
                 }
             };
             if (own!="") {
-                box.innerHTML = "<input class='newvoy' onclick='getNewVoyageForm()' value='Nouveau' type='button' title='Créer un nouveau voyage.' /><h4>Mes voyages</h4>";
+                box.innerHTML = "<input class='newvoy' onclick='getNewVoyageForm()' value='Nouveau' type='button' title='Créer un nouveau voyage.' /> <input class='newvoy' onclick='getVoyages()' value='Rafraîchir' type='button' title='Rafraîchir la liste des voyages.' /><h4>Mes voyages</h4>";
                 box.innerHTML += own;
             }
             else {
