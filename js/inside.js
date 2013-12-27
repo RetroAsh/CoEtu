@@ -1,4 +1,5 @@
 var nbreq = 0;
+var title = "";
 
 setInterval(function(){notif()},7000);
 

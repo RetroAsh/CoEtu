@@ -7,14 +7,25 @@
     require_once '../login.inc';
     require_once '../lib/html.php';
     require_once '../lib/sql.php';
+
+    $title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
+    $real = selectNbNotification($_SESSION['user_id']);
+    if ($real>0) {
+        $real = "(" . $real . ") " . $title;
+    }
+    else {
+        $real = $title;
+    }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo selectNomPerso($_SESSION["user_id"]) ?> - Voyages</title>
+		<title><?php echo $real ?></title>
 		<?php head() ?>
         <script type="text/javascript">
+            var title = "<?php echo $title ?>";
             window.onload=function() {
                 getVoyages();
             }

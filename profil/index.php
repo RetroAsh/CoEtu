@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Vos infos</title>
+		<title><?php echo "(" . selectNbNotification($_SESSION['user_id']) . ") " . selectNomPerso($_SESSION["user_id"]) ?> - vos infos</title>
 		<?php head() ?>
         <script type="text/javascript" src="../js/jscolor/jscolor.js"></script>
 	</head>

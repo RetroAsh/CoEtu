@@ -31,9 +31,11 @@ function notif(){
         if(xhr.readyState == 4 && xhr.status == 200){
             if (parseInt(xhr.responseText)>0) {
                 document.getElementById("notif_img").src = "../img/bell.gif";
+                document.title = "("+xhr.responseText+") " + title;
             }
             else {
                 document.getElementById("notif_img").src = "../img/bell.png";
+                document.title = title;
             }
             stop_loading();
         }
