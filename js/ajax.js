@@ -221,6 +221,7 @@ function getConversation(selected){
         if(xhr.readyState == 4 && xhr.status == 200){
             document.getElementById('liste').innerHTML = xhr.responseText;
             stop_loading();
+            notif();
         }
     }
     xhr.open("POST","../ajax/getOpenConversations.php",true);
