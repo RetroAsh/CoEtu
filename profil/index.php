@@ -16,14 +16,27 @@
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdCampus($_POST['lieu']),$_POST['mois'],$_POST['annee']);
 		}
 	}
+
+    $title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
+    $real = selectNbNotification($_SESSION['user_id']);
+    if ($real>0) {
+        $real = "(" . $real . ") " . $title;
+    }
+    else {
+        $real = $title;
+    }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo "(" . selectNbNotification($_SESSION['user_id']) . ") " . selectNomPerso($_SESSION["user_id"]) ?> - vos infos</title>
+		<title><?php echo $real ?></title>
 		<?php head() ?>
         <script type="text/javascript" src="../js/jscolor/jscolor.js"></script>
+        <script type="text/javascript">
+            var title = "<?php echo $title ?>";
+        </script>
 	</head>
     <body>
         <div id="titre">

@@ -566,6 +566,7 @@ div#messagerie h2 {
     margin-top: 10px;
     border:0;
     width: 97%;
+    text-align: center;
 }
 
 div#messagerie div#scrollpane {
@@ -638,6 +639,11 @@ div#messagerie>div:last-of-type a {
     transition: border 0.7s;
 }
 
+div#messagerie>div:last-of-type a:hover,
+div#messagerie>div:last-of-type a:focus {
+    color: rgb(75, 75, 75);
+}
+
 div#messagerie>div:last-of-type a:last-of-type {
     margin:0;
     margin-bottom:50px;
@@ -652,16 +658,16 @@ div#messagerie>div:last-of-type a.selected {
 
 div#messagerie>div:last-of-type a.unread {}
 
-div#messagerie>div:first-of-type span.label {
-    display: block;
-    margin-left: 7%;
-    margin-top: 10px;
-    font-weight: bold;
+div#messagerie>div:first-of-type span.welcome {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
     font-family: "omnes-pro", sans-serif;
     font-size: 1em;
     font-weight: 300;
-    padding: 0;
-    border: 0;
+    padding:0;
+    margin: 0;
+    border:0;
 }
 
 /* CARNET */
@@ -713,7 +719,9 @@ div#carnet>div:last-of-type a:last-of-type {
 }
 
 div#carnet>div:last-of-type a:hover, 
-div#carnet>div:last-of-type a:focus {}
+div#carnet>div:last-of-type a:focus {
+    color: rgb(75, 75, 75);
+}
 
 div#carnet>div:last-of-type a.selected {
     font-weight:bold;
@@ -729,6 +737,23 @@ div#carnet>div:first-of-type span.welcome {
     padding:0;
     margin: 0;
     border:0;
+}
+
+div#carnet>div:first-of-type p.msg {
+    display: inline-block;
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: "omnes-pro", sans-serif;
+    font-size: .9em;
+    font-weight: 300;
+}
+
+div#carnet>div:first-of-type input#buttonAdd {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 div#carnet>div:first-of-type span.label {

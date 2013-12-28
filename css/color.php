@@ -49,8 +49,13 @@
 
 ?>
 
+a:focus,
+a:hover {
+    color: <?php echo $default ?>;
+}
+
 a:active {
-    color: <?php echo $default ?>; 
+    color: <?php echo $darck ?>; 
 }
 
 input[type=submit],
@@ -75,11 +80,14 @@ div#nav {
     box-shadow: 0px 0px 7px <?php echo $default ?>;
 }
 
-div#nav:hover {
+div#nav:hover,
+div#nav:focus {
     box-shadow: 0px 0px 10px <?php echo $default ?>;
 }
 
-div#nav a:hover {
+div#nav a:hover,
+div#nav a:focus
+{
     background-color: <?php echo $darck ?>;
 }
 

@@ -240,7 +240,7 @@ function sendMsg(id){
     loading();
     var xhr = getXhr();
     document.getElementById('buffer').value = "";
-    ajoutMsg("Vous",timestamp(),msg);
+    ajoutMsg("Vous",timestamp(),urlify(msg));
     document.getElementById('scrollpane').scrollTop = document.getElementById('scrollpane').scrollHeight;
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
@@ -274,7 +274,7 @@ function openConversation(id){
                 last = "";
                 for (var i = 1; i<all.length; i++) {
                     var courant = all[i].split('|');
-                    ajoutMsg(courant[0],courant[1],courant[2]);
+                    ajoutMsg(courant[0],courant[1],urlify(courant[2]));
                     if (i==all.length-1) {
                         last = courant[0];
                     };

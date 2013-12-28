@@ -269,7 +269,7 @@ INSERT INTO `etudiant` (`id_etu`, `mot_de_passe`, `nom_etu`, `prenom_etu`, `mois
 (2, 'mdp', 'Dupont', 'Germaine', 12, 1993, 35607, 1, '0078E7'),
 (3, '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', 'admin', 11, 2013, 35607, 1, '0078E7'),
 (4, 'f2d81a260dea8a100dd517984e53c56a7523d96942a834b9cdc249bd4e8c7aa9', 'Gaëtan', 'Duvaux', 8, 1993, 28724, 1, 'BD721C'),
-(5, 'a8b07119513db339737981436de1cd1c2c8bed8717e6ef668464d779b9f89c16', 'Mercadier', 'Jean', 7, 1993, 22745, 1, '003399');
+(5, 'a8b07119513db339737981436de1cd1c2c8bed8717e6ef668464d779b9f89c16', 'Mercadier', 'Jean', 7, 1993, 22745, 1, '993D5C');
 
 
 -- --------------------------------------------------------

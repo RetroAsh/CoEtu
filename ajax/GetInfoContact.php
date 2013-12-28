@@ -22,10 +22,13 @@ if (isset($_POST["id_etu"])) {
         print("</div>");
         print "<div class=\"option\">";
         print "<a href=\"../messages/#" . $_POST["id_etu"] . "\">messages </a>";
-        print "<a href=\"#\" onclick='supprContact(\"";
+        print "<a href=\"#\" onclick='if(confirm(\"Etes-vous sur de vouloir supprimer " . selectNomPerso($_POST["id_etu"]) . " de vos contacts?\")){supprContact(\"";
         print($_POST["id_etu"]);
-        print "\")'> oublier</a></div>";
+        print "\")}'> supprimer</a></div>";
     }else{
-        print("<p class=\"err\">Modifier le javascript, c'est mal, m'voyer.</p>");
+        echo "<h2>" . selectNomPerso($_POST["id_etu"]) . "</h2>";
+        printMinimalInfoContact($_POST["id_etu"]);
+        echo "<p id=\"textAdd\" class='msg'>Cette personne ne fait parti de vos contacts. Ajouter la pour voir ses informations.</p>";
+        echo "<input id=\"buttonAdd\" type='button' value='Ajouter' onclick=\"faireDemandeAmis(".$_POST["id_etu"].")\" />";
     }
 }

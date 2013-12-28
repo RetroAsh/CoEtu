@@ -15,6 +15,8 @@
     }
     elseif (selectVerificationContact($_POST["id"],$_SESSION["user_id"])) {
     	printInfoContact($_POST["id"]);
+        echo "<input type='button' value='Voir' onclick=\"window.location = '../carnet/#" . $_POST["id"] . "';pop_close();\" title=\"Afficher dans le carnet d'adresse.\" />
+            <input type='button' value='Message' onclick=\"window.location = '../messages/#" . $_POST["id"] . "';pop_close();\" title='Envoyer un message.' />";
     }
     else {
     	printMinimalInfoContact($_POST["id"]);

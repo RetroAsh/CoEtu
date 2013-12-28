@@ -53,7 +53,9 @@
                     <br />
                     <br />
                     <br />
-                    <span class="label">Selectionner une conversation pour l'afficher.</span>
+                    <br />
+                    <br />
+                    <span class="welcome">Selectionner une conversation pour l'afficher.</span>
                 </div>
                 <form onsubmit="sendMsg(current);return false;" >
                     <input placeholder="Votre message" id="buffer" type="text" autocomplete="off" />

@@ -73,11 +73,11 @@ function printVoyage($id,$depart,$arrive,$aller,$retour="",$conduc=""){
 function printMinimalInfoContact($id){
     $infos = selectInfoEtu($id);
     $info_ville = selectInfoVille($infos[1]);
-    echo "<span class='label'>Université:</span>";
+    echo "<span class='label'>Université</span>";
     echo "<span class='carac'>".$infos[4]."</span>";
-    echo "<span class='label'>Lieu d'études:</span>";
+    echo "<span class='label'>Lieu d'études</span>";
     echo "<span class='carac'>".$infos[0]."</span>";
-    echo "<span class='label'>Habite:</span>";
+    echo "<span class='label'>Habite</span>";
     echo "<span class='carac'>".$info_ville[0]."</span>";
 }
 

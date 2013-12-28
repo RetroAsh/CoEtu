@@ -31,11 +31,16 @@
 	<span class="label">Conducteur :</span><br />
 	<span class="info"><?php echo $voy['pre'] . " " . $voy['nom']; ?></span><br />
 	<?php
-		if ($voy['conduc']==$_SESSION["user_id"]) {}
+		if ($voy['conduc']==$_SESSION["user_id"]) {
+			?>
+			<input type='button' value="Modifier" onclick="" title="Modifier ce voyage." />
+			<input type='button' value="Supprimer" onclick="" title="Supprimer ce voyage." />
+			<?php	
+		}
 		elseif ($liee) {
 			?>
-			<input type='button' value="voir" onclick="window.location = '../carnet/#<?php echo $voy['conduc']; ?>';pop_close();" title="Afficher dans le carnet d'adresse." />
-			<input type='button' value="message" onclick="window.location = '../messages/#<?php echo $voy['conduc']; ?>';pop_close();" title="Envoyer un message." />
+			<input type='button' value="Voir" onclick="window.location = '../carnet/#<?php echo $voy['conduc']; ?>';pop_close();" title="Afficher dans le carnet d'adresse." />
+			<input type='button' value="Message" onclick="window.location = '../messages/#<?php echo $voy['conduc']; ?>';pop_close();" title="Envoyer un message." />
 			<?php
 		}
 		else {

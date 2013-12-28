@@ -35,6 +35,6 @@
 	<input id="rec" type="text" name="rec" type="number" min="1" value="0" />
 	<br />
 	<br />
-	<input type="button" value="créer" onclick="ajoutVoyage()" />
-	<input type="reset" value="annuler" onclick="pop_close()" />
+	<input type="button" value="Créer" onclick="ajoutVoyage()" />
+	<input type="reset" value="Annuler" onclick="pop_close()" />
 </form>
