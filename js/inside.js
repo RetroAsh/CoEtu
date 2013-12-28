@@ -3,6 +3,23 @@ var title = "";
 
 setInterval(function(){notif()},7000);
 
+var isEnter = false;
+
+document.onkeyup=function(e){ 
+	if(e.which == 13 && isEnter == true && document.getElementById("buffer")) {
+		sendMsg(current);
+	}
+	if(e.which == 13) {
+		isEnter=false; 
+	}
+}
+
+document.onkeydown=function(e){
+	if(e.which == 13) {
+		isEnter=true;
+	}
+}
+
 function trysearch(){
 	if (document.getElementById("recherche")) {
 		recherche();

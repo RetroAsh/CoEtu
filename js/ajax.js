@@ -33,6 +33,9 @@ function notif(){
                 document.getElementById("notif_img").src = "../img/bell.gif";
                 document.title = "("+xhr.responseText+") " + title;
             }
+            else if (xhr.responseText==-1) {
+                window.location.replace("..");
+            }
             else {
                 document.getElementById("notif_img").src = "../img/bell.png";
                 document.title = title;

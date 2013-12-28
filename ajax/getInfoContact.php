@@ -18,10 +18,10 @@ if (isset($_POST["id_etu"])) {
         }
         print("</div>");
         print "<div class=\"option\">";
-        print "<a href=\"../messages/#" . $_POST["id_etu"] . "\">messages </a>";
+        print "<a href=\"../messages/#" . $_POST["id_etu"] . "\">Messages </a>";
         print "<a href=\"#\" onclick='if(confirm(\"Etes-vous sur de vouloir supprimer " . selectNomPerso($_POST["id_etu"]) . " de vos contacts?\")){supprContact(\"";
         print($_POST["id_etu"]);
-        print "\")}'> supprimer</a></div>";
+        print "\")}'> Supprimer</a></div>";
     }else{
         echo "<h2>" . selectNomPerso($_POST["id_etu"]) . "</h2>";
         printMinimalInfoContact($_POST["id_etu"]);

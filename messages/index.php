@@ -54,8 +54,8 @@
                     <br />
                     <span class="welcome">Selectionner une conversation pour l'afficher.</span>
                 </div>
-                <form onsubmit="sendMsg(current);return false;" >
-                    <input placeholder="Votre message" id="buffer" type="text" autocomplete="off" />
+                <form id="form_tchat" onsubmit="sendMsg(current);return false;" >
+                    <textarea placeholder="Votre message" id="buffer" type="text" autocomplete="off" ></textarea>
                 </form>
             </div>
             <div id="liste">

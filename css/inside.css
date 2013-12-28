@@ -577,15 +577,18 @@ div#messagerie div#scrollpane {
     overflow-x: hidden;
 }
 
-div#messagerie input#buffer {
+div#messagerie #buffer {
     display: block;
     position: absolute;
-    width: 65%;
+    width: 68.5%;
+    height: 4em;
     padding: 4px;
     bottom: 0;
-    left: 31%;
+    left: 30%;
     border: 0;
     border-top: 1px solid rgb(180, 180, 180);
+    border-left: 1px solid rgb(180, 180, 180);
+    border-radius: 0px 0px 5px 0px;
 }
 
 div#messagerie div.msg {
