@@ -1,14 +1,21 @@
 <?php
 
-	date_default_timezone_set("Europe/Paris");
-	session_start();
+    date_default_timezone_set("Europe/Paris");
 
+    foreach ($_REQUEST as $key => $value) {
+        $_REQUEST[$key] = str_replace('\\','&#92;',$value);
+        $_REQUEST[$key] = str_replace('\'', '&apos;', $value);
+        $_REQUEST[$key] = str_replace('\"', '&quot;', $value);
+        $_REQUEST[$key] = str_replace('<', '&lt;', $value);
+        $_REQUEST[$key] = str_replace('>', '&#62;', $value);
+    }
+
+    session_start();
 	$err = "";
 
 	require 'login.inc';
 	require_once 'lib/sql.php';
 	require_once 'lib/bibli.php';
-	require_once 'lib/securiter.php';
 
 
 	if(isset($_POST["em"]) && isset($_POST["mp"])){
@@ -21,7 +28,7 @@
 		}
 	}
 
-	if (isLogged()){
+	if (isset($_SESSION["user_id"])){
 		header("Location: home/");
 	}
 
@@ -138,7 +145,7 @@
 	</head>
 	<body>
 		<div class="connec">
-			<?php if (!isLogged()) { ?>
+			<?php if (!isset($_SESSION["user_id"])) { ?>
 			<form name="connec" method="post">
 				<table>
 					<tr>

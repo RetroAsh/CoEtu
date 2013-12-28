@@ -1,13 +1,10 @@
 
 <?php
-	session_start();
-	require '../login.inc';
-	require_once '../lib/securiter.php';
+
+	require_once '../lib/securite.php';
+
 	require_once '../lib/html.php';
 	require_once '../lib/sql.php';
-	if(!isLogged()){
-		header("Location: ..");
-	}
 
 	$title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
 	$real = selectNbNotification($_SESSION['user_id']);

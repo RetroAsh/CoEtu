@@ -1,9 +1,6 @@
 <?php
-    session_start();
-    require_once '../lib/securiter.php';
-    if(!isLogged()){
-        header("Location: ..");
-    }
+
+    require_once '../lib/securite.php';
 
     require_once '../login.inc';
     require_once '../lib/sql.php';
