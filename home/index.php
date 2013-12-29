@@ -6,7 +6,7 @@
 	require_once '../lib/html.php';
 	require_once '../lib/sql.php';
 
-	$title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
+	$title = selectNomPerso($_SESSION["user_id"]) . " - Home";
 	$real = selectNbNotification($_SESSION['user_id']);
     if ($real>0) {
         $real = "(" . $real . ") " . $title;

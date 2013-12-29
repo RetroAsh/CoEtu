@@ -6,9 +6,6 @@ setInterval(function(){notif()},7000);
 var isEnter = false;
 
 document.onkeyup=function(e){ 
-	if(e.which == 13 && isEnter == true && document.getElementById("buffer")) {
-		sendMsg(current);
-	}
 	if(e.which == 13) {
 		isEnter=false; 
 	}
@@ -17,6 +14,9 @@ document.onkeyup=function(e){
 document.onkeydown=function(e){
 	if(e.which == 13) {
 		isEnter=true;
+	}
+	if(e.which == 13 && isEnter == true && document.getElementById("buffer") && document.getElementById("enter_tchat").checked) {
+		sendMsg(current);
 	}
 }
 
@@ -52,6 +52,5 @@ function timestamp(){
 }
 
 function urlify(text) {
-    var urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>')
+    return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>').replace(/\n/g, "<br />");
 }

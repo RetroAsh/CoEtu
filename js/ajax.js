@@ -233,13 +233,10 @@ function getConversation(selected){
 }
 
 function sendMsg(id){
-    if (id==-1) {
+    if (id==-1 || document.getElementById('buffer').value=="" || document.getElementById('buffer').value==" " || document.getElementById('buffer').value=="\n") {
         return;
     }
     var msg = document.getElementById('buffer').value.replace(/</g,' &lt; ').replace(/>/g,' &gt; ').replace(/&/g,'&amp;');
-    if (msg=="" || msg==" ") {
-        return;
-    }
     loading();
     var xhr = getXhr();
     document.getElementById('buffer').value = "";

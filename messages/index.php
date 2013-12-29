@@ -7,7 +7,7 @@
     require_once '../lib/sql.php';
     require_once '../lib/bibli.php';
 
-    $title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
+    $title = selectNomPerso($_SESSION["user_id"]) . " - Messages";
     $real = selectNbNotification($_SESSION['user_id']);
     if ($real>0) {
         $real = "(" . $real . ") " . $title;
@@ -55,7 +55,10 @@
                     <span class="welcome">Selectionner une conversation pour l'afficher.</span>
                 </div>
                 <form id="form_tchat" onsubmit="sendMsg(current);return false;" >
-                    <textarea placeholder="Votre message" id="buffer" type="text" autocomplete="off" ></textarea>
+                    <textarea placeholder=" Votre message" id="buffer" type="text" autocomplete="off" ></textarea>
+                    <label for="enter_tchat" >appuyer sur entrée pour envoyer</label>
+                    <input id="enter_tchat" type='checkbox' />
+                    <input value='Envoyer' type='submit' />
                 </form>
             </div>
             <div id="liste">

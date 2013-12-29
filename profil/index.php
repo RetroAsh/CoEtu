@@ -15,7 +15,7 @@
 		}
 	}
 
-    $title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
+    $title = selectNomPerso($_SESSION["user_id"]) . " - Vos infos";
     $real = selectNbNotification($_SESSION['user_id']);
     if ($real>0) {
         $real = "(" . $real . ") " . $title;

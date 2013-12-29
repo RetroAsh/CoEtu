@@ -46,6 +46,10 @@
 
 ?>
 
+* {
+    outline-color: <?php echo $light ?>; 
+}
+
 a:focus,
 a:hover {
     color: <?php echo $default ?>;
