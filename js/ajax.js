@@ -233,7 +233,7 @@ function getConversation(selected){
 }
 
 function sendMsg(id){
-    if (id==-1 || document.getElementById('buffer').value=="" || document.getElementById('buffer').value==" " || document.getElementById('buffer').value=="\n") {
+    if (id==-1 || /^\s*$/.test(document.getElementById('buffer').value)) {
         return;
     }
     var msg = document.getElementById('buffer').value.replace(/</g,' &lt; ').replace(/>/g,' &gt; ').replace(/&/g,'&amp;');
