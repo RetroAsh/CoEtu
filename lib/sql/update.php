@@ -79,3 +79,29 @@ function updateMsgRead($de,$a){
 	}
 	return false;
 }
+
+function updateVoyage($id,$usr,$depart, $arrive, $aller, $retour, $recurence){
+	try{
+		$connec = getPDO();
+		$updateMessage = $connec->prepare("UPDATE Voyage V
+					SET V.date_aller = :aller,
+					V.date_retour = :retour,
+					V.ville_depart = :depart,
+					V.ville_arrive = :arrive,
+					V.recursivite = :recurence
+					WHERE V.id_voy = :id
+					AND V.id_etu = :usr");
+		$updateMessage->bindParam('aller', $aller, PDO::PARAM_STR);
+		$updateMessage->bindParam('retour', $retour, PDO::PARAM_STR);
+		$updateMessage->bindParam('depart', $depart, PDO::PARAM_INT);
+		$updateMessage->bindParam('arrive', $arrive, PDO::PARAM_INT);
+		$updateMessage->bindParam('recurence', $recurence, PDO::PARAM_INT);
+		$updateMessage->bindParam('id', $id, PDO::PARAM_INT);
+		$updateMessage->bindParam('usr', $usr, PDO::PARAM_INT);
+		return $updateMessage->execute();
+	}
+	catch(Exception $e){
+		echo("Une erreur est survenue lors de la mise à jour du voyage : ".$e->getMessage());
+	}
+	return false;
+}

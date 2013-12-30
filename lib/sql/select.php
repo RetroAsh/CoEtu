@@ -115,7 +115,7 @@ function selectNewMsg($de,$a){
 
 function selectInfoVoyage($id){
     $connec = getPDO();
-    $requete = "SELECT V.id_voy, D.nom_ville, D.lng_ville, D.lat_ville, A.nom_ville, A.lng_ville, A.lat_ville, V.date_aller, V.date_retour, E.prenom_etu, E.nom_etu, E.id_etu
+    $requete = "SELECT V.id_voy, D.nom_ville, D.lng_ville, D.lat_ville, A.nom_ville, A.lng_ville, A.lat_ville, V.date_aller, V.date_retour, V.recursivite, E.prenom_etu, E.nom_etu, E.id_etu
 				FROM ville D, ville A, voyage V, etudiant E
 				WHERE V.ville_depart=D.id_ville
 				AND V.ville_arrive=A.id_ville
@@ -136,6 +136,7 @@ function selectInfoVoyage($id){
         $voy["pre"] = $tab["prenom_etu"];
         $voy["nom"] = $tab["nom_etu"];
         $voy["conduc"] = $tab["id_etu"];
+        $voy["recursivite"] = $tab["recursivite"];
     }
     return $voy;
 }

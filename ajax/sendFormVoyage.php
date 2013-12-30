@@ -29,17 +29,17 @@
     }else{
 		$d1 = new DateTime(dateNormalToCrade($_POST["d_dep"]));
 	}
-	if ($_POST["d_arr"]!="0/0/0") {
+	if ($_POST["d_arr"]!="00/00/00") {
 		if(!verifDate($_POST["d_arr"])){
 			$verif = false;
-			$err = $err."Date d'arrivé invalide. " . $_POST["d_dep"]. " " . $_POST["d_arr"] . "<br/>";
+			$err = $err."Date d'arrivé invalide.<br/>";
 		}else{
 			$d2 = new DateTime(dateNormalToCrade($_POST["d_arr"]));
 		}
 	}else{
 		$d2 = "0000-00-00";
 	}
-	if($_POST["d_arr"]!="0/0/0" && $d1>$d2){
+	if($_POST["d_arr"]!="00/00/00" && $d1>$d2){
 		$verif = false;
 		$err = $err."La date de départ ne peut etre supérieur à la date d'arrivé.<br />";
 	}
@@ -50,15 +50,20 @@
     
     if($verif)
     {
-    	if ($_POST["d_arr"]=="0/0/0") {
+    	if ($_POST["d_arr"]=="00/00/00") {
     		$d2 = "0000-00-00";
     	} else {
     		$d2 = $d2->format("Y-m-d");
     	}
-		ajoutVoyage($v_dep, $v_arr, $d1->format("Y-m-d"), $d2, $_POST["rec"]);
+    	if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {
+    		updateVoyage($_POST["mod_id"],$_SESSION["user_id"],$v_dep, $v_arr, $d1->format("Y-m-d"), $d2, $_POST["rec"]);
+    	} 
+    	else {
+    		ajoutVoyage($v_dep, $v_arr, $d1->format("Y-m-d"), $d2, $_POST["rec"]);
+    	}
 		print("true");
     }else{
 		print($err);
-}
+	}
 
 ?>

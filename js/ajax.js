@@ -192,6 +192,26 @@ function getNewVoyageForm(){
     xhr.send();
 }
 
+function getModVoyageForm(id){
+    var xhr = getXhr();
+    xhr.onreadystatechange = function(){
+        // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
+        if(xhr.readyState == 4 && xhr.status == 200){
+            pop_reset();
+            pop_title("Modifier voyage");
+            pop_content(xhr.responseText);
+            pop_set_y(470);
+            pop_show();
+            stop_loading();
+            document.getElementById("v_dep").focus();
+        }
+    }
+    loading();
+    xhr.open("POST","../ajax/getVoyageForm.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send("mod_id="+id);
+}
+
 function getNotification(){
     pop_title("Notifications");
     var xhr = getXhr();
@@ -429,12 +449,9 @@ function deleteRequest(i)
 }
 
 
-function ajoutVoyage()
-{
+function ajoutVoyage(){
     var xhr = getXhr();
-    // On défini ce qu'on va faire quand on aura la réponse
     xhr.onreadystatechange = function(){
-        // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
         if(xhr.readyState == 4 && xhr.status == 200){
 			var leselect = xhr.responseText;
 			if(leselect == "true"){
@@ -452,10 +469,39 @@ function ajoutVoyage()
 	
 	v_dep = document.getElementById("v_dep").value;
 	v_arr = document.getElementById("v_arr").value;
-	d_dep = document.getElementById("d_dep_j").value + "/" + document.getElementById("d_dep_m").value + "/" + document.getElementById("d_dep_a").value;
-	d_arr = document.getElementById("d_arr_j").value + "/" + document.getElementById("d_arr_m").value + "/" + document.getElementById("d_arr_a").value;
+	d_dep = addZero(document.getElementById("d_dep_j").value) + "/" + addZero(document.getElementById("d_dep_m").value) + "/" + addZero(document.getElementById("d_dep_a").value);
+	d_arr = addZero(document.getElementById("d_arr_j").value) + "/" + addZero(document.getElementById("d_arr_m").value) + "/" + addZero(document.getElementById("d_arr_a").value);
 	rec = document.getElementById("rec").value;
 	
     xhr.send("v_dep="+v_dep+"&v_arr="+v_arr+"&d_dep="+d_dep+"&d_arr="+d_arr+"&rec="+rec);
 }
 
+function modVoyage(){
+
+    mod_id = document.getElementById("mod_id").value;
+    v_dep = document.getElementById("v_dep").value;
+    v_arr = document.getElementById("v_arr").value;
+
+    var xhr = getXhr();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var leselect = xhr.responseText;
+            if(leselect == "true"){
+                voyage(mod_id,v_dep + ' → ' + v_arr);
+            }else{
+                document.getElementById("err").innerHTML = leselect;
+            }
+            stop_loading();
+            getVoyages();
+        }
+    }
+    loading();
+    xhr.open("POST","../ajax/sendFormVoyage.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+    d_dep = addZero(document.getElementById("d_dep_j").value) + "/" + addZero(document.getElementById("d_dep_m").value) + "/" + addZero(document.getElementById("d_dep_a").value);
+    d_arr = addZero(document.getElementById("d_arr_j").value) + "/" + addZero(document.getElementById("d_arr_m").value) + "/" + addZero(document.getElementById("d_arr_a").value);
+    rec = document.getElementById("rec").value;
+    
+    xhr.send("mod_id="+mod_id+"&v_dep="+v_dep+"&v_arr="+v_arr+"&d_dep="+d_dep+"&d_arr="+d_arr+"&rec="+rec);
+}

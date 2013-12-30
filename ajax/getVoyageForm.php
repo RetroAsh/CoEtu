@@ -2,20 +2,43 @@
 
     require_once '../lib/securite.php';
 
+    require_once '../login.inc';
     require_once '../lib/bibli.php';
+    require_once '../lib/sql.php';
+
+    $voy = array('depart'=>"",'arrive'=>"",'recursivite'=>0);
+    $aller = array(0=>0,1=>0,2=>0);
+    $retour = array(0=>0,1=>0,2=>0);
+
+    if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {
+    	$voy = selectInfoVoyage($_POST["mod_id"]);
+    	$aller = explode('-', $voy['aller']);
+    	$retour = explode('-', $voy['retour']);
+    }
+    else {
+    	$_POST["mod_id"] = 0;
+    }
+
+
+    if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {
+    	echo "<form id='creationvoyage' method='post' onsubmit='modVoyage();return false;'>";
+    }
+    else {
+    	echo "<form id='creationvoyage' method='post' onsubmit='ajoutVoyage();return false;'>";
+    }
 
 ?>
 
-<form id="creationvoyage" method="post" onsubmit="ajoutVoyage();return false;">
+	<input type="hidden" id="mod_id" name="mod_id" value="<?php echo $_POST["mod_id"] ?>" />
 	<p id="err" class="err"></p>
 	<label for="v_dep">Ville de départ :</label>
 	<br />
-	<input id="v_dep" type="text" name="dep" />
+	<input id="v_dep" type="text" name="dep" value="<?php echo $voy['depart']; ?>" />
 	<br />
 	<br />
 	<label for="v_arr">Ville d'arrivé :</label>
 	<br />
-	<input id="v_arr" type="text" name="arr" />
+	<input id="v_arr" type="text" name="arr" value="<?php echo $voy['arrive']; ?>" />
 	<br />
 	<br />
 	<label for="d_dep_j">Date de départ :</label>
@@ -23,26 +46,36 @@
 	<select id="d_dep_j" name="d_dep_j" >
 		<?php
 		for ($i=1; $i<=31; $i++) { 
-			echo "<option>" . $i . "</option>";
+			if($aller[2]==$i){
+				echo "<option selected='selected'>" . $i . "</option>";
+			}
+			else{
+				echo "<option>" . $i . "</option>";
+			}
 		}
 		?>
 	</select>
 	<select id="d_dep_m" name="d_dep_j" >
 		<?php
 		for ($i=1; $i<=12; $i++) { 
-			echo "<option value='" . $i . "' >" . mois($i) . "</option>";
+			if($aller[1]==$i){
+				echo "<option selected='selected' value='" . $i . "' >" . mois($i) . "</option>";
+			}
+			else{
+				echo "<option value='" . $i . "' >" . mois($i) . "</option>";
+			}
 		}
 		?>
 	</select>
 	<select id="d_dep_a" name="d_dep_a" >
 		<?php
 		for ($i=date("Y"); $i<date("Y")+2; $i++) {
-			// if($annee==$i){
-			// 	echo "<option selected='selected'>" . $i . "</option>";
-			// }
-			// else{
+			if($aller[0]==$i){
+				echo "<option selected='selected'>" . $i . "</option>";
+			}
+			else{
 				echo "<option>" . $i . "</option>";
-			// }
+			}
 		}
 		?>
 	</select>
@@ -54,7 +87,12 @@
 		<option value="0">-</option>
 		<?php
 		for ($i=1; $i<=31; $i++) { 
-			echo "<option>" . $i . "</option>";
+			if($retour[2]==$i){
+				echo "<option selected='selected'>" . $i . "</option>";
+			}
+			else{
+				echo "<option>" . $i . "</option>";
+			}
 		}
 		?>
 	</select>
@@ -62,7 +100,12 @@
 		<option value="0">-</option>
 		<?php
 		for ($i=1; $i<=12; $i++) { 
-			echo "<option value='" . $i . "' >" . mois($i) . "</option>";
+			if($retour[1]==$i){
+				echo "<option selected='selected' value='" . $i . "' >" . mois($i) . "</option>";
+			}
+			else{
+				echo "<option value='" . $i . "' >" . mois($i) . "</option>";
+			}
 		}
 		?>
 	</select>
@@ -70,28 +113,36 @@
 		<option value="0">-</option>
 		<?php
 		for ($i=date("Y"); $i<date("Y")+2; $i++) {
-			// if($annee==$i){
-			// 	echo "<option selected='selected'>" . $i . "</option>";
-			// }
-			// else{
+			if($retour[0]==$i){
+				echo "<option selected='selected'>" . $i . "</option>";
+			}
+			else{
 				echo "<option>" . $i . "</option>";
-			// }
+			}
 		}
 		?>
 	</select>
 	<br />
-	<span class="note">Note: laissez la date de retour vide si il n'y a pas de retour proposé.</span>
+	<span class="note">Note: laissez la date de retour vide si vous ne souhaitez pas proposer de retour.</span>
 	<br />
 	<br />
 	<label for="rec">Récurence :</label>
 	<br />
-	Tout les
-	<input id="rec" type="text" name="rec" type="number" min="1" value="0" />
+	Tous les
+	<input id="rec" type="text" name="rec" type="number" min="1" value="<?php echo $voy['recursivite']; ?>" />
 	jours.
 	<br />
 	<span class="note">Note: laissez la recurence à zero si vous ne proposez pas ce voyage de manière recurente.</span>
 	<br />
 	<br />
-	<input type="submit" value="Créer" />
-	<input type="reset" value="Annuler" onclick="pop_close()" />
+	<?php
+		if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {
+			echo "<input type='submit' value='Modifier' />";
+			echo "<input type='reset' value='Annuler' onclick='voyage(" . $_POST["mod_id"] . ",\"" . $voy['depart'] . " &rarr; " . $voy['depart'] . "\")' />";
+		}
+		else {
+			echo "<input type='submit' value='Créer' />";
+			echo "<input type='reset' value='Annuler' onclick='pop_close()' />";
+		}
+	?>
 </form>

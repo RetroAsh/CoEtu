@@ -14,22 +14,27 @@
 	<img src="../img/loading.gif" alt="loading" />
 </div>
 <div id="mapinfo">
-	<span class="label">Départ :</span><br />
+	<span class="label">Départ (A) :</span><br />
 	<span class="info"><?php echo $voy['depart']; ?></span><br />
-	<span class="label">Arrivé :</span><br />
+	<span class="label">Arrivé (B) :</span><br />
 	<span class="info"><?php echo $voy['arrive']; ?></span><br />
 	<span class="label">Temps :</span><br />
 	<span class="info" id="infotemps"></span><br />
 	<span class="label">Aller :</span><br />
 	<span class="info"><?php echo $voy['aller']; ?></span><br />
-	<span class="label">Retour :</span><br />
-	<span class="info"><?php echo $voy['retour']; ?></span><br />
+	<?php if($voy['retour']!="0000-00-00"){ ?>
+		<span class="label">Retour :</span><br />
+		<span class="info"><?php echo $voy['retour']; ?></span><br />
+	<?php } if($voy['recursivite']>0){ ?>
+		<span class="label">Récurrence :</span><br />
+		<span class="info">Tous les <?php echo $voy['recursivite']; ?> jours</span><br />
+	<?php } ?>
 	<span class="label">Conducteur :</span><br />
 	<span class="info"><?php echo $voy['pre'] . " " . $voy['nom']; ?></span><br />
 	<?php
 		if ($voy['conduc']==$_SESSION["user_id"]) {
 			?>
-			<input type='button' value="Modifier" onclick="" title="Modifier ce voyage." />
+			<input type='button' value="Modifier" onclick="getModVoyageForm(<?php echo $_POST["id"] ?>)" title="Modifier ce voyage." />
 			<input type='button' value="Supprimer" onclick="if(confirm('Etes-vous sur de supprimer le voyage <?php echo $voy['depart'] ?> <?php echo $voy['arrive']; ?>?')){pop_close();supprVoyage(<?php echo $_POST["id"]; ?>);}" title="Supprimer ce voyage." />
 			<?php	
 		}

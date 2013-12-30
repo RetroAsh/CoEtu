@@ -37,3 +37,11 @@ function timestamp(){
 function urlify(text) {
     return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>').replace(/\n/g, "<br />");
 }
+
+function addZero(nb) {
+	nb = parseInt(nb);
+	if (nb%10==nb) {
+		return "0" + nb;
+	}
+	return nb;
+}
