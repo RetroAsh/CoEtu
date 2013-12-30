@@ -33,7 +33,7 @@
             window.onload=function() {
                 getConversation(current);
                 openConversation(current);
-                setInterval(function(){getNewMsg(current)},1000);
+                setInterval(function(){getNewMsg(current)},1500);
                 setInterval(function(){getConversation(current)},5000);
                 document.getElementById("buffer").focus();
 

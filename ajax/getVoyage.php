@@ -11,9 +11,7 @@
 
 ?>
 
-<div id="map">
-	<img src="../img/loading.gif" alt="loading" />
-</div>
+<div id="map"></div>
 <div id="mapinfo">
 	<span class="label">Départ (A) :</span><br />
 	<span class="info"><?php echo $voy['depart']; ?></span><br />

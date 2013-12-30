@@ -46,15 +46,15 @@ function printPerson($id,$pre,$nom,$univ,$ville){
     <?php
 }
 
-function printVoyage($id,$depart,$arrive,$aller,$retour="",$conduc=""){
+function printVoyage($id,$depart,$arrive,$aller,$retour="0000-00-00",$conduc=""){
     ?>
-    <div class="voyage" onclick="voyage(<?php echo $id . ",'" . $depart . " ⟷ " . $arrive . "'";?>)"  >
+    <div class="voyage" onclick="voyage(<?php echo $id . ",'" . $depart . " &rarr; " . $arrive . "'";?>)"  >
         <img src="../img/car.png" />
-        <h5><?php echo $depart ?> ⟷ <?php echo $arrive ?></h5>
-        <span class="date"><?php echo $aller;
-        if (!empty($retour)) {
+        <h5><?php echo $depart ?> &rarr; <?php echo $arrive ?></h5>
+        <span class="date"><?php echo timestamp($aller);
+        if ($retour != "0000-00-00") {
             echo " / ";
-            echo $retour;
+            echo timestamp($retour);
         }
         ?></span>
         <?php
