@@ -180,7 +180,7 @@ function getNewVoyageForm(){
         // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
         if(xhr.readyState == 4 && xhr.status == 200){
             pop_content(xhr.responseText);
-            pop_set_y(420);
+            pop_set_y(470);
             pop_show();
             stop_loading();
             document.getElementById("v_dep").focus();
@@ -452,8 +452,8 @@ function ajoutVoyage()
 	
 	v_dep = document.getElementById("v_dep").value;
 	v_arr = document.getElementById("v_arr").value;
-	d_dep = document.getElementById("d_dep").value;
-	d_arr = document.getElementById("d_arr").value;
+	d_dep = document.getElementById("d_dep_j").value + "/" + document.getElementById("d_dep_m").value + "/" + document.getElementById("d_dep_a").value;
+	d_arr = document.getElementById("d_arr_j").value + "/" + document.getElementById("d_arr_m").value + "/" + document.getElementById("d_arr_a").value;
 	rec = document.getElementById("rec").value;
 	
     xhr.send("v_dep="+v_dep+"&v_arr="+v_arr+"&d_dep="+d_dep+"&d_arr="+d_arr+"&rec="+rec);

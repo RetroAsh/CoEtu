@@ -540,6 +540,13 @@ div.voyage span.conduc {
 form#creationvoyage {
     display: block;
     padding: 10px;
+    font-style: italic;
+    font-size: .9em;
+}
+
+form#creationvoyage label {
+    font-style: normal;
+    font-size: 1.1em;
 }
 
 form#creationvoyage input[type=text]{
@@ -550,7 +557,40 @@ form#creationvoyage input[type=text]{
     height: 25px;
     font-size: .9em;
     padding-left: 5px;
+    color: rgb(75, 75, 75);
 }
+
+form#creationvoyage select {
+    width: 32%;
+    border-radius: 4px 4px 4px 4px;
+    border: 0;
+    background-color: rgb(220,220,220);
+    height: 25px;
+    font-size: .9em;
+    padding-left: 5px;
+    -webkit-appearance: none;
+}
+
+form#creationvoyage span.note {
+    display: inline-block;
+    width: 100%;
+    font-family: "omnes-pro", sans-serif;
+    font-size: .9em;
+    padding:0;
+    margin: 0;
+    border:0;
+    font-style: normal;
+}
+
+form#creationvoyage input#rec {
+    text-align: right;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 65%;
+    font-size: 1.1em;
+}
+
 
 /* MESSAGERIE */
 

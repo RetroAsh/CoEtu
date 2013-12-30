@@ -25,28 +25,37 @@
     }
     if(!verifDate($_POST["d_dep"])){
 		$verif = false;
-		$err = $err."Date de départ invalide.<br/>";
+		$err = $err."Date de départ invalide. <br/>";
     }else{
 		$d1 = new DateTime(dateNormalToCrade($_POST["d_dep"]));
 	}
-    if(!verifDate($_POST["d_arr"])){
-		$verif = false;
-		$err = $err."Date d'arrivé invalide.<br/>";
-    }else{
-		$d2 = new DateTime(dateNormalToCrade($_POST["d_arr"]));
+	if ($_POST["d_arr"]!="0/0/0") {
+		if(!verifDate($_POST["d_arr"])){
+			$verif = false;
+			$err = $err."Date d'arrivé invalide. " . $_POST["d_dep"]. " " . $_POST["d_arr"] . "<br/>";
+		}else{
+			$d2 = new DateTime(dateNormalToCrade($_POST["d_arr"]));
+		}
+	}else{
+		$d2 = "0000-00-00";
 	}
-	if($d1 > $d2){
+	if($_POST["d_arr"]!="0/0/0" && $d1>$d2){
 		$verif = false;
 		$err = $err."La date de départ ne peut etre supérieur à la date d'arrivé.<br />";
 	}
     if(!ctype_digit($_POST["rec"]) && $_POST["rec"] < 1){
 		$verif = false;
-		$err = $err."récurence doit être un nombre entier suppérieur à 1.<br/>";
+		$err = $err."récurence doit être un nombre entier suppérieur à 0.<br/>";
     }
     
     if($verif)
     {
-		ajoutVoyage($v_dep, $v_arr, $d1->format("Y-m-d"), $d2->format("Y-m-d"), $_POST["rec"]);
+    	if ($_POST["d_arr"]=="0/0/0") {
+    		$d2 = "0000-00-00";
+    	} else {
+    		$d2 = $d2->format("Y-m-d");
+    	}
+		ajoutVoyage($v_dep, $v_arr, $d1->format("Y-m-d"), $d2, $_POST["rec"]);
 		print("true");
     }else{
 		print($err);

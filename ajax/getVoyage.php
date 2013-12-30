@@ -11,7 +11,7 @@
 ?>
 
 <div id="map">
-	MAP
+	<img src="../img/loading.gif" alt="loading" />
 </div>
 <div id="mapinfo">
 	<span class="label">Départ :</span><br />
