@@ -487,6 +487,7 @@ function modVoyage(){
         if(xhr.readyState == 4 && xhr.status == 200){
             var leselect = xhr.responseText;
             if(leselect == "true"){
+                pop_reset();
                 voyage(mod_id,v_dep + ' → ' + v_arr);
             }else{
                 document.getElementById("err").innerHTML = leselect;
