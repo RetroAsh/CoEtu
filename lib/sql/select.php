@@ -565,3 +565,28 @@ function selectCoordonee($id){
 function selectNbNotification($id){
     return selectNbMsgNonLu($id)+selectNbRequete($id);
 }
+
+function selectVoyageDepasseRecurssif(){
+    $connec = getPDO();
+
+    $requete = "SELECT id_voy, date_aller, date_retour, recursivite 
+                FROM voyage 
+                WHERE date_aller<CURDATE()
+                AND (date_retour='0000-00-00' 
+                    OR (date_retour<CURDATE() 
+                    AND date_retour<>'0000-00-00'))
+                AND recursivite<>0";
+
+    $tab = $connec->query($requete);
+
+    $tableau = Array();
+    $tableau[] = $tab->rowCount();
+    while( $info = $tab->fetch()){
+        $tableau["id"] = $info["id_voy"];
+        $tableau["aller"] = $info["date_aller"];
+        $tableau["retour"] = $info["date_retour"];
+        $tableau["recursivite"] = $info["recursivite"];
+    }
+
+    return $tableau;
+}

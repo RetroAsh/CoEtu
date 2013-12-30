@@ -101,7 +101,51 @@ function updateVoyage($id,$usr,$depart, $arrive, $aller, $retour, $recurence){
 		return $updateMessage->execute();
 	}
 	catch(Exception $e){
-		echo("Une erreur est survenue lors de la mise à jour du voyage : ".$e->getMessage());
+		echo("Une erreur est survenue lors de la mise à jour du voyage " . $id . " : ".$e->getMessage());
+	}
+	return false;
+}
+
+function updateVoyageDate($id,$aller,$retour){
+	try{
+		$connec = getPDO();
+		$updateMessage = $connec->prepare("UPDATE voyage V
+					SET V.date_aller = :aller,
+					V.date_retour = :retour,
+					WHERE V.id_voy = :id");
+		$updateMessage->bindParam('aller', $aller, PDO::PARAM_STR);
+		$updateMessage->bindParam('retour', $retour, PDO::PARAM_STR);
+		$updateMessage->bindParam('id', $id, PDO::PARAM_INT);
+		return $updateMessage->execute();
+	}
+	catch(Exception $e){
+		echo("Une erreur est survenue lors de la mise à jour des dates du voyage " . $id . " : ".$e->getMessage());
+	}
+	return false;
+}
+
+
+function updateVoyageDateAuto(){
+	try{
+		$connec = getPDO();
+		$updateVoyage = $connec->prepare("UPDATE voyage V
+			SET V.date_aller = date_add(V.date_aller,INTERVAL V.recursivite DAY),
+				V.date_retour = 
+					CASE WHEN V.date_retour='0000-00-00' 
+					THEN '0000-00-00' 
+					ELSE date_add(V.date_retour,INTERVAL V.recursivite DAY) END
+			WHERE V.date_aller<CURDATE()
+			AND (V.date_retour='0000-00-00' 
+				OR (V.date_retour<CURDATE() 
+				AND V.date_retour<>'0000-00-00'))
+			AND V.recursivite<>0");
+		
+		do {
+			$updateVoyage->execute();
+		} while ($updateVoyage->rowCount());
+	}
+	catch(Exception $e){
+		echo("Une erreur est survenue lors de la mise à jour des dates du voyage : ".$e->getMessage());
 	}
 	return false;
 }

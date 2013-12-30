@@ -7,7 +7,7 @@
     require_once '../lib/sql.php';
 
     $voy = array('depart'=>"",'arrive'=>"",'recursivite'=>0);
-    $aller = array(0=>0,1=>0,2=>0);
+    $aller = array(0=>date("Y"),1=>date("m"),2=>date("d")+1);
     $retour = array(0=>0,1=>0,2=>0);
 
     if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {

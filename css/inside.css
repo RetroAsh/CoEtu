@@ -560,7 +560,7 @@ form#creationvoyage input[type=text]{
     background-color: rgb(220,220,220);
     width: 97%;
     height: 25px;
-    font-size: .9em;
+    font-size: 1em;
     padding-left: 5px;
     color: rgb(75, 75, 75);
 }
@@ -571,7 +571,7 @@ form#creationvoyage select {
     border: 0;
     background-color: rgb(220,220,220);
     height: 25px;
-    font-size: .9em;
+    font-size: 1em;
     padding-left: 5px;
     -webkit-appearance: none;
 }

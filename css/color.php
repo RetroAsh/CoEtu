@@ -63,7 +63,7 @@ input[type=submit],
 input[type=reset],
 input[type=button] {
     background-color: <?php echo $default ?>;
-    box-shadow: 0px 0px 5px <?php echo $default ?>;
+    box-shadow: 0px 0px 3px <?php echo $default ?>;
     border: 1px solid <?php echo $default ?>;
 }
 

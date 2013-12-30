@@ -60,3 +60,20 @@ function deleteRequete($etu1, $etu2) {
 	}
 	return false;
 }
+
+function deleteVoyagePasse(){
+	try{
+		$connec = getPDO();
+		$deleteVoyage = $connec->prepare("DELETE FROM voyage 
+				WHERE date_aller<CURDATE()
+				AND (date_retour='0000-00-00' 
+					OR (date_retour<CURDATE() 
+					AND date_retour<>'0000-00-00'))
+				AND recursivite=0");	
+		return $deleteVoyage->execute();	
+	}
+	catch( Exception $e ){
+		echo("Une erreur est survenue lors de la suppression des vieux voyages : ".$e->getMessage());
+	}
+	return false;		
+}

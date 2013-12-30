@@ -21,4 +21,9 @@ function getPDO()
 	return $connec;
 }
 
+function traitementVoyages(){
+	deleteVoyagePasse();
+	updateVoyageDateAuto();
+}
+
 ?>

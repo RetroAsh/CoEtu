@@ -14,6 +14,7 @@
     
     $d1 = null;
     $d2 = null;
+    $now = new DateTime();
     
     if(!$v_dep){
 		$verif = false;
@@ -22,6 +23,10 @@
     if(!$v_arr){
 		$verif = false;
 		$err = $err."Ville d'arrivé inconnu.<br/>";
+    }
+    if ($v_dep==$v_arr) {
+        $verif = false;
+        $err = $err."Les villes de départ et d'arrivé sont les même.<br/>";
     }
     if(!verifDate($_POST["d_dep"])){
 		$verif = false;
@@ -39,6 +44,10 @@
 	}else{
 		$d2 = "0000-00-00";
 	}
+    if ($d1<$now) {
+        $verif = false;
+        $err = $err."La date de départ est passé.<br />";
+    }
 	if($_POST["d_arr"]!="00/00/00" && $d1>$d2){
 		$verif = false;
 		$err = $err."La date de départ ne peut etre supérieur à la date d'arrivé.<br />";
