@@ -83,7 +83,7 @@ function updateMsgRead($de,$a){
 function updateVoyage($id,$usr,$depart, $arrive, $aller, $retour, $recurence){
 	try{
 		$connec = getPDO();
-		$updateMessage = $connec->prepare("UPDATE Voyage V
+		$updateMessage = $connec->prepare("UPDATE voyage V
 					SET V.date_aller = :aller,
 					V.date_retour = :retour,
 					V.ville_depart = :depart,
