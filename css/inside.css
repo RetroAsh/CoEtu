@@ -650,6 +650,10 @@ div#messagerie div.msg span.dt {
     margin-top: 3px;
 }
 
+div#messagerie div.msg span.dire {
+    text-align: justify;
+}
+
 div#messagerie div {
     margin:0;
 }

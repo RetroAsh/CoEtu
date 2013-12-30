@@ -68,6 +68,23 @@ function voyage(id,nom){
     xhr.send("id=" + id);    
 }
 
+function supprVoyage(id){
+    var xhr = getXhr();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            if (xhr.responseText!="") {
+                alert(xhr.responseText);
+            };
+            stop_loading();
+            getVoyages();
+        }
+    }
+    loading();
+    xhr.open("POST","../ajax/sendSupprVoyage.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send("id="+id);
+}
+
 function infoItineraire(id){
     var xhr2 = getXhr();
     xhr2.onreadystatechange = function () {
@@ -342,6 +359,9 @@ function supprContact(i){
     xhr.onreadystatechange = function(){
         // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
         if(xhr.readyState == 4 && xhr.status == 200){
+            if (xhr.responseText!=1) {
+                alert(xhr.responseText);
+            };
             document.getElementById('contact').innerHTML = "";
             // BUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
             getContacts();

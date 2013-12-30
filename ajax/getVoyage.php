@@ -30,7 +30,7 @@
 		if ($voy['conduc']==$_SESSION["user_id"]) {
 			?>
 			<input type='button' value="Modifier" onclick="" title="Modifier ce voyage." />
-			<input type='button' value="Supprimer" onclick="" title="Supprimer ce voyage." />
+			<input type='button' value="Supprimer" onclick="if(confirm('Etes-vous sur de supprimer le voyage <?php echo $voy['depart'] ?> <?php echo $voy['arrive']; ?>?')){pop_close();supprVoyage(<?php echo $_POST["id"]; ?>);}" title="Supprimer ce voyage." />
 			<?php	
 		}
 		elseif ($liee) {

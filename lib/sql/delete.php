@@ -28,8 +28,22 @@ function deleteContact($i){
 	return false;
 }
 
-function deleteRequete($etu1, $etu2)
-{
+function deleteVoyage($id){
+	try{
+		$connec = getPDO();
+		$deleteCarnet = $connec->prepare("DELETE FROM voyage 
+										WHERE id_voy = " . $id);
+		$deleteCarnet->bindParam('etu1', $etu1, PDO::PARAM_INT);
+		$deleteCarnet->bindParam('etu2', $etu2, PDO::PARAM_INT);	
+		return $deleteCarnet->execute();	
+	}
+	catch( Exception $e ){
+		echo("Une erreur est survenue lors de la suppression de la demande de contact : ".$e->getMessage());
+	}
+	return false;	
+}
+
+function deleteRequete($etu1, $etu2) {
 	try{
 		$connec = getPDO();
 
