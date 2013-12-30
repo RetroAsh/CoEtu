@@ -5,21 +5,17 @@
 
 
 
-var isEsc = false;
+var touche = 0;
 var openfunc = function(){};
 var closefunc = function(){};
 
 document.onkeyup=function(e){ 
-	if(e.which == 27) {
-		isEsc=false; 
-	}
+	touche=0; 
 }
 
 document.onkeydown=function(e){
-	if(e.which == 27) {
-		isEsc=true;
-	}
-	if(e.which == 27 && isEsc == true) {
+	touche=e.which;
+	if(e.which == 27 && touche == 27) {
 		pop_close();
 	}
 }

@@ -25,6 +25,7 @@
         <?php head() ?>
         <script type="text/javascript">
             var title = "<?php echo $title ?>";
+            var isEnter = false;
             var current = window.location.hash.substring(1);
             if (current=="") {
                 current = -1;
@@ -35,6 +36,24 @@
                 setInterval(function(){getNewMsg(current)},1000);
                 setInterval(function(){getConversation(current)},5000);
                 document.getElementById("buffer").focus();
+
+                document.getElementById("buffer").onkeyup=function(e){ 
+                    if(e.which == 13 && isEnter == true && document.getElementById("enter_tchat").checked) {
+                        document.getElementById("buffer").value="";
+                    }
+                    if(e.which == 13) {
+                        isEnter=false; 
+                    }
+                }
+
+                document.getElementById("buffer").onkeydown=function(e){
+                    if(e.which == 13) {
+                        isEnter=true;
+                    }
+                    if(e.which == 13 && isEnter == true && document.getElementById("buffer") && document.getElementById("enter_tchat").checked) {
+                        sendMsg(current);
+                    }
+                }
             }
         </script>
 	</head>

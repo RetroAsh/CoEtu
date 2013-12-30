@@ -3,26 +3,6 @@ var title = "";
 
 setInterval(function(){notif()},7000);
 
-var isEnter = false;
-
-document.onkeyup=function(e){ 
-	if(e.which == 13 && isEnter == true && document.getElementById("buffer") && document.getElementById("enter_tchat").checked) {
-		document.getElementById("buffer").value="";
-	}
-	if(e.which == 13) {
-		isEnter=false; 
-	}
-}
-
-document.onkeydown=function(e){
-	if(e.which == 13) {
-		isEnter=true;
-	}
-	if(e.which == 13 && isEnter == true && document.getElementById("buffer") && document.getElementById("enter_tchat").checked) {
-		sendMsg(current);
-	}
-}
-
 function trysearch(){
 	if (document.getElementById("recherche")) {
 		recherche();
