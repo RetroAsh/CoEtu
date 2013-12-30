@@ -3,6 +3,7 @@
 	require_once '../lib/securite.php';
 
     require_once '../lib/sql.php';
+    require_once '../lib/bibli.php';
     require_once '../login.inc';
 
     $voy = selectInfoVoyage($_POST["id"]);
@@ -21,10 +22,10 @@
 	<span class="label">Temps :</span><br />
 	<span class="info" id="infotemps"></span><br />
 	<span class="label">Aller :</span><br />
-	<span class="info"><?php echo $voy['aller']; ?></span><br />
+	<span class="info"><?php echo timestamp($voy['aller']); ?></span><br />
 	<?php if($voy['retour']!="0000-00-00"){ ?>
 		<span class="label">Retour :</span><br />
-		<span class="info"><?php echo $voy['retour']; ?></span><br />
+		<span class="info"><?php echo timestamp($voy['retour']); ?></span><br />
 	<?php } if($voy['recursivite']>0){ ?>
 		<span class="label">Récurrence :</span><br />
 		<span class="info">Tous les <?php echo $voy['recursivite']; ?> jours</span><br />

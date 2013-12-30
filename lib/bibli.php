@@ -15,7 +15,7 @@ function mois($index){
 	if ($index>12 || $index<=0) {
 		return $index;
 	}
-	$mois = array("Janv.","Févr.","Mars","Avr.","Mai","Juin","Juil.","Août","Sept.","Oct.","Nov.","Déc.");
+	$mois = array("janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.");
 	return $mois[$index-1];
 }
 
@@ -24,7 +24,7 @@ function jour($index){
 	if ($index>7 || $index<=0) {
 		return $index;
 	}
-	$jour = array("dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi");
+	$jour = array("dim.","lun.","mar.","mer.","jeu.","ven.","sam.");
 	return $jour[$index];
 }
 
@@ -36,6 +36,12 @@ function smalltimestamp($format_sql){
     $date = explode("-", $date);
     $time = explode(":", $time);
     return $time[0].":".$time[1]." ".$date[2]."/".$date[1]."/".(intval($date[0])%100);
+}
+
+function timestamp($format_sql){
+    $tmp = str_replace("/", "-", $format_sql);
+    $sp = explode("-",$format_sql);
+    return jour(date("w", strtotime($tmp))) . " " . $sp[2] . " " . mois($sp[1]) . " " . $sp[0];
 }
 
 function contractNom($nom, $prenom)
@@ -171,8 +177,7 @@ function verifDate($date)
 	return verifDateFormatNormal($date) || verifDateFormatCrade($date);
 }
 
-function dateNormalToCrade($date)
-{
+function dateNormalToCrade($date) {
 	$tmp = str_replace("/", "-", $date);
 	return date("Y-m-d", strtotime($tmp));
 }

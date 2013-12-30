@@ -4,6 +4,7 @@
 
     require_once '../login.inc';
     require_once '../lib/html.php';
+    require_once '../lib/bibli.php';
     require_once '../lib/sql.php';
 
     $ajax = "";
@@ -15,8 +16,13 @@
     	$ajax .= $voy["id"] . ";";
     	$ajax .= $voy["depart"] . ";";
     	$ajax .= $voy["arrive"] . ";";
-    	$ajax .= $voy["aller"] . ";";
-    	$ajax .= $voy["retour"] . ";";
+    	$ajax .= timestamp($voy["aller"]) . ";";
+        if ($voy["retour"]!="0000-00-00") {
+            $ajax .= timestamp($voy["retour"]) . ";";
+        }
+        else {
+    	   $ajax .= ";";
+        }
     	$ajax .= "";
     }
 
@@ -27,8 +33,13 @@
     	$ajax .= $voy["id"] . ";";
     	$ajax .= $voy["depart"] . ";";
     	$ajax .= $voy["arrive"] . ";";
-    	$ajax .= $voy["aller"] . ";";
-    	$ajax .= $voy["retour"] . ";";
+    	$ajax .= timestamp($voy["aller"]) . ";";
+    	if ($voy["retour"]!="0000-00-00") {
+            $ajax .= timestamp($voy["retour"]) . ";";
+        }
+        else {
+           $ajax .= ";";
+        }
     	$ajax .= $voy["pre"] . " " . $voy["nom"];
     }
 
