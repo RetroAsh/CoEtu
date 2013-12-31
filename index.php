@@ -118,16 +118,10 @@
 				$ville = $idVille;
 			}
             if($err == ""){
-                $c = insertInscription($_POST['pass'], $nom, $pre, $mois, $annee, $ville, $camp, $mail);
-                if ($c == -1 || $c == -2) {
-                    $err = $err . "Problème lors de l'inscription";
-                } else if ($c == -3) {
-                    $err = $err . "Etudiant déjà existant";
-                } else {
-                    selectVerificationConnexion($mail, $_POST["pass"]);
-                    $_SESSION["user_id"] = selectIdEtudiant($mail);
-                    header("Location: home/");
-                }
+            	insertInscription($_POST['pass'], $nom, $pre, $mois, $annee, $ville, $camp, $mail);
+            	selectVerificationConnexion($mail, $_POST["pass"]);
+            	$_SESSION["user_id"] = selectIdEtudiant($mail);
+            	header("Location: home/");
             }
 			
 		}
