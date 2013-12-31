@@ -3,11 +3,6 @@
     require_once '../lib/securite.php';
 
     require_once "../login.inc";
-
-    if(!isLogged()){
-        header("Location: ..");
-    }
-
     require_once '../lib/sql.php';
 
     $statut = selectStatut($_SESSION["user_id"], $_POST["id_contact"]);
