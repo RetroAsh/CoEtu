@@ -57,6 +57,9 @@
 		if(!isset($_POST['email']) or $_POST['email']==""){
 			$err=$err."Veuillez fournir l'e-mail.<br/>";
 		}
+		elseif (selectVerifEmail($_POST['email'])) {
+			$err=$err."L'email est déja utilisé.<br/>";
+		}
 		else{
 			$email=$_POST['email'];
 		}

@@ -13,6 +13,20 @@ function selectVerifPerso($id){
     return $q[0];
 }
 
+function selectVerifEmail($email){
+    $connec = getPDO();
+    $requete = "SELECT COUNT( * ) AS nb
+                FROM  coordonnee 
+                WHERE  libelle_coordonnee =  'email'
+                AND  information = :email";
+
+    $q = $connec->prepare($requete);
+    $q->bindParam('email', $email, PDO::PARAM_STR);
+    $q->execute();
+    $q = $q->fetch();
+    return $q[0];
+}
+
 function selectOpenConversations($id){
     $connec = getPDO();
     $requete = "SELECT DISTINCT EG.id_etu, EG.prenom_etu, EG.nom_etu
