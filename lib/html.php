@@ -10,7 +10,7 @@ function head(){
 
 function boxuser($nom, $id){
     $nom = explode(" ",$nom);
-	echo "<div id='perso'><h2>". contractNom($nom[0],$nom[1]) . "</h2>";
+	echo "<div id='perso'><h2>" . contractNom($nom[1],$nom[0]) . "</h2>";
     printInfoContact($id);
 	echo "<div class='option'><a href='../profil/index.php' title='Parametres'><img src='../img/param.png' alt='Parametres' /></a><a href='../lib/deco.php' title='Déconnexion'><img src='../img/out.png' alt='Déconnexion' /></a></div></div>\n";
 }

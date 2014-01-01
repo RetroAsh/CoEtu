@@ -20,29 +20,38 @@
 
 	function darck(){
 		global $r,$g,$b;
-		$r -= 30;
-		$g -= 30;
-		$b -= 30;
-		if ($r<0) { $r = 0; }
-		if ($g<0) { $g = 0; }
-		if ($b<0) { $b = 0; }
-		return "rgb(" . $r . "," . $g . "," . $b . ")";
+		$ro = $r-30;
+		$go = $g-30;
+		$bo = $b-30;
+		if ($ro<0) { $ro = 0; }
+		if ($go<0) { $go = 0; }
+		if ($bo<0) { $bo = 0; }
+		return "rgb(" . $ro . "," . $go . "," . $bo . ")";
 	}
 
     function light(){
         global $r,$g,$b;
-        $r += 60;
-        $g += 60;
-        $b += 60;
-        if ($r>255) { $r = 255; }
-        if ($g>255) { $g = 255; }
-        if ($b>255) { $b = 255; }
-        return "rgb(" . $r . "," . $g . "," . $b . ")";
+        $ro = $r+30;
+        $go = $g+30;
+        $bo = $b+30;
+        if ($ro>255) { $ro = 255; }
+        if ($go>255) { $go = 255; }
+        if ($bo>255) { $bo = 255; }
+        return "rgb(" . $ro . "," . $go . "," . $bo . ")";
+    }
+
+    function blanc(){
+        global $r,$g,$b;
+        $ro = intval($r*1200/255);
+        $go = intval($g*1200/255);
+        $bo = intval($b*1200/255);
+        return "rgb(" . $ro . "," . $go . "," . $bo . ")";
     }
 
     $default = color();
-    $darck = darck();
-    $light = light();
+    $darck   = darck();
+    $light   = light();
+    $blanc   = blanc();
 
 ?>
 
