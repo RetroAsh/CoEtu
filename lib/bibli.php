@@ -44,9 +44,13 @@ function timestamp($format_sql){
     return jour(date("w", strtotime($tmp))) . " " . $sp[2] . " " . mois($sp[1]) . " " . $sp[0];
 }
 
-function contractNom($nom, $prenom)
-{
-    return ucfirst($prenom)." ".ucfirst($nom);
+function contractNom($nom, $prenom) {
+    if((strlen($nom)+strlen($prenom))<15) {
+        return ucfirst($prenom)." ".ucfirst($nom);
+    }
+    else {
+        return ucfirst($prenom)." ".ucfirst($nom[0]).".";
+    }
 }
 
 function hex2rgb($hex){
