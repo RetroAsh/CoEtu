@@ -19,5 +19,4 @@
         print("<a href='#".$conver["id"]."' " . $select . " id='c".$conver["id"]."' onclick='openConversation(".$conver["id"].")'>".contractNom($conver["nom"],$conver["pre"])."</a>\n");
     }
 
-
 ?>

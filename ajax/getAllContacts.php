@@ -8,7 +8,7 @@
         $contact = selectAllContact();
     }
     else {
-        $contact = selectContactsSQL($_SESSION["user_id"]);
+        $contact = selectContacts($_SESSION["user_id"]);
     }
     if (!isset($_POST['id'])) {
         $_POST['id'] = '';

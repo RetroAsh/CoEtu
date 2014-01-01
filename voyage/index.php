@@ -6,8 +6,6 @@
     require_once '../lib/html.php';
     require_once '../lib/sql.php';
 
-    traitementVoyages();
-
     $title = selectNomPerso($_SESSION["user_id"]) . " - Voyages";
     $real = selectNbNotification($_SESSION['user_id']);
     if ($real>0) {

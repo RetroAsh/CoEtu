@@ -36,7 +36,7 @@ function selectOpenConversations($id){
 						AND EG.id_etu=M.etu_get)
 					OR (ES.id_etu=M.etu_get
 						AND EG.id_etu=M.etu_send))
-				ORDER BY EG.prenom_etu;";
+				ORDER BY M.msg_time;";
     $rep = $connec->query($requete);
     $etu = array();
     while ($tab = $rep->fetch()) {
@@ -45,6 +45,21 @@ function selectOpenConversations($id){
         $etu[$tab["id_etu"]]["nom"] = $tab["nom_etu"];
     }
     return $etu;
+}
+
+function selectNbOpenConversations($id){
+    $connec = getPDO();
+    $requete = "SELECT DISTINCT count(EG.id_etu)
+				FROM etudiant EG, etudiant ES, message M
+				WHERE ES.id_etu=$id
+				AND ((ES.id_etu=M.etu_send
+						AND EG.id_etu=M.etu_get)
+					OR (ES.id_etu=M.etu_get
+						AND EG.id_etu=M.etu_send))
+				ORDER BY EG.prenom_etu;";
+    $rep = $connec->query($requete);
+    $rep = $rep->fetch();
+    return $rep[0];
 }
 
 function selectNbUtilisateur(){
@@ -382,7 +397,7 @@ function selectAllContact(){
     return $rep;
 }
 
-function selectContactsSQL($id){
+function selectContacts($id){
     $connec = getPDO();
 
     $requete1 = "SELECT e.id_etu, e.nom_etu, e.prenom_etu
@@ -401,6 +416,23 @@ function selectContactsSQL($id){
     }
 
     return $rep;
+}
+
+function selectNbContacts($id){
+    $connec = getPDO();
+
+    $requete1 = "SELECT count(e.id_etu)
+				FROM etudiant e, carnet c
+				WHERE ((c.id_etu = $id
+				AND e.id_etu = c.id_etu_etudiant)
+				OR (c.id_etu_etudiant = $id
+                AND e.id_etu = c.id_etu))
+                AND c.statut_car = 1
+                ORDER BY e.prenom_etu;";
+
+    $tab = $connec->query($requete1);
+    $tab = $tab->fetch();
+    return $tab[0];
 }
 
 function selectInfoEtu($id){

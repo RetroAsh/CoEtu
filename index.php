@@ -2,12 +2,12 @@
 
     date_default_timezone_set("Europe/Paris");
 
-    foreach ($_REQUEST as $key => $value) {
-        $_REQUEST[$key] = str_replace('\\','&#92;',$value);
-        $_REQUEST[$key] = str_replace('\'', '&apos;', $value);
-        $_REQUEST[$key] = str_replace('\"', '&quot;', $value);
-        $_REQUEST[$key] = str_replace('<', '&lt;', $value);
-        $_REQUEST[$key] = str_replace('>', '&#62;', $value);
+    foreach ($_POST as $key => $value) {
+        $value = str_replace('\\','&#92;',$value);
+        $value = str_replace('\'', '&apos;', $value);
+        $value = str_replace('\"', '&quot;', $value);
+        $value = str_replace('<', '&lt;', $value);
+        $_POST[$key] = str_replace('>', '&#62;', $value);
     }
 
     session_start();
@@ -17,6 +17,7 @@
 	require_once 'lib/sql.php';
 	require_once 'lib/bibli.php';
 
+    traitementBDD();
 
 	if(isset($_POST["em"]) && isset($_POST["mp"])){
 		if(!selectVerificationConnexion($_POST["em"], $_POST["mp"])){
@@ -117,7 +118,9 @@
 			else{
 				$ville = $idVille;
 			}
-            if($err == ""){
+            if(empty($err)){
+                $nom = ucfirst(strtolower($nom));
+                $pre = ucfirst(strtolower($pre));
             	insertInscription($_POST['pass'], $nom, $pre, $mois, $annee, $ville, $camp, $mail);
             	selectVerificationConnexion($mail, $_POST["pass"]);
             	$_SESSION["user_id"] = selectIdEtudiant($mail);

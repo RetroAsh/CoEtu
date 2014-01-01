@@ -71,7 +71,14 @@
                     <br />
                     <br />
                     <br />
-                    <span class="welcome">Selectionner une conversation pour l'afficher.</span>
+                    <?php
+                    if(selectNbOpenConversations($_SESSION["user_id"])>0){
+                        echo("<span class='welcome'>Selectionner une conversation pour l'afficher.</span>");
+                    }
+                    else {
+                        echo("<span class='welcome'>Pour ouvrire une nouvelle conversation, aller dans vos <a href='../carnet' >contacts</a> selectionez une personne et cliquez sur \"Message\".</span>");
+                    }
+                    ?>
                 </div>
                 <form id="form_tchat" onsubmit="sendMsg(current);return false;" >
                     <textarea placeholder=" Votre message" id="buffer" type="text" autocomplete="off" ></textarea>
