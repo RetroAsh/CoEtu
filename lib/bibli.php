@@ -46,7 +46,7 @@ function timestamp($format_sql){
 
 function contractNom($nom, $prenom)
 {
-    return ucfirst($prenom)." ".strtoupper($nom[0]).".";
+    return ucfirst($prenom)." ".ucfirst($nom);
 }
 
 function hex2rgb($hex){
