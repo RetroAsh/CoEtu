@@ -54,7 +54,7 @@
                         echo("<span class='welcome'>Selectionner un contact pour l'afficher.</span>");
                     }
                     else {
-                        echo("<span class='welcome'>Pour ajouter une personne à vos contacts, entrez le nom de cette personne dans la <a href='../rechercher'>bar de recherche</a>.</span>");
+                        echo("<span class='welcome'>Pour ajouter une personne à vos contacts, entrez le nom de cette personne dans la <a href='../rechercher'>barre de recherche</a>.</span>");
                     }
                 ?>
             </div>

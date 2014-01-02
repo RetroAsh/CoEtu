@@ -59,7 +59,7 @@
 			$err=$err."Veuillez fournir l'e-mail.<br/>";
 		}
 		elseif (selectVerifEmail($_POST['email'])) {
-			$err=$err."L'email est déja utilisé.<br/>";
+			$err=$err."L'email est déjà utilisé.<br/>";
 		}
 		else{
 			$email=$_POST['email'];
@@ -80,7 +80,7 @@
 			$err=$err."Veuillez fournir le mot de passe.<br/>";
 		}
 		if(!isset($_POST['pass2']) or $_POST['pass2']==""){
-			$err=$err."Veuillez fournir la confimartion du mot de passe.<br/>";
+			$err=$err."Veuillez fournir la confirmation du mot de passe.<br/>";
 		}
 		if(!isset($_POST['mois']) or $_POST['mois']==""){
 			$err=$err."Veuillez fournir le mois de naissance.<br/>";
@@ -97,7 +97,7 @@
 
 		if($err==""){
             if (!email_valid($_POST['email'])) {
-                $err = $err . "Veuillez entrer un e-mail valide !<br/>";
+                $err = $err . "Veuillez entrer un e-mail valide.<br/>";
             } else {
                 $mail = $_POST['email'];
             }
@@ -184,8 +184,8 @@
 				<div class="desc">
 					<h2>Créer un compte</h2>
 					<ol>
-						<li>Un reseau fait par les étudiants pour les étudiants</li>
-						<li>A l'autre bout de la region en moins de 2h</li>
+						<li>Un réseau fait par des étudiants pour des étudiants</li>
+						<li>À l'autre bout de la région en moins de 2h</li>
 						<li><?php echo $nb_user; ?> utilisateurs</li>
 						<li>Sécurisé, crypté... vous n'êtes pas espionné</li>
 						<li>Pas de pub</li>

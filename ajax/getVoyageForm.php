@@ -132,7 +132,7 @@
 	<input id="rec" type="text" name="rec" type="number" min="1" value="<?php echo $voy['recursivite']; ?>" />
 	jours.
 	<br />
-	<span class="note">Note: laissez la recurence à zero si vous ne proposez pas ce voyage de manière recurente.</span>
+	<span class="note">Note: laissez la récurence à zéro si vous ne proposez pas ce voyage de manière récurente.</span>
 	<br />
 	<br />
 	<?php
