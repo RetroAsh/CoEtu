@@ -14,6 +14,11 @@
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdCampus($_POST['lieu']),$_POST['mois'],$_POST['annee']);
 		}
 	}
+	
+	if(isset($_POST['supprimer_compte'])){
+		deleteCompte($_SESSION['user_id']);
+		require_once '../lib/deco.php'; 
+		}
 
     $title = selectNomPerso($_SESSION["user_id"]) . " - Vos infos";
     $real = selectNbNotification($_SESSION['user_id']);

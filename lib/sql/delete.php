@@ -77,3 +77,16 @@ function deleteVoyagePasse(){
 	}
 	return false;		
 }
+
+function deleteCompte($idetu){
+	try{
+		$connec = getPDO();
+		$deleteCompte = $connec->prepare("DELETE FROM etudiant  
+				WHERE id_etu=$idetu");	
+		return $deleteCompte->execute();	
+	}
+	catch( Exception $e ){
+		echo("Une erreur est survenue lors de la suppression du compte : ".$e->getMessage());
+	}
+	return false;	
+}

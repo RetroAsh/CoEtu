@@ -139,6 +139,7 @@ function formModInfo($id){
 	echo "</select><span id='push'></span>";
 	echo "<br /><br /><input type='submit' value='Sauvegarder' name='sauvegarder' />";
 	echo "<input type='reset' value='Annuler' />";
+	echo "<br /><br /><input type='submit' value=\"Supprimer son compte\" name='supprimer_compte' onclick=\"if (window.confirm('Etes-vous sur de vouloir supprimer votre compte ?')) {return true;} else {return false;}\" />";
 	echo "</form>\n"; 
 }
 
