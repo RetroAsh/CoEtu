@@ -35,6 +35,10 @@
             <span>Voyager n'a jamais été aussi simple</span>
         </div>
         <div id="voyages"></div>
+        <br />
+        <br />
+        <br />
+        <br />
         <?php nav(); ?>
         <?php boxuser(selectNomPerso($_SESSION["user_id"]),$_SESSION["user_id"]); ?>
     </body>

@@ -6,7 +6,8 @@ body,html {
 body {
     color: rgb(75, 75, 75);
     font-family: "proxima-nova", sans-serif;
-    overflow-x:hidden
+    overflow-x:hidden;
+    margin-bottom: 100px;
 }
 
 a {
