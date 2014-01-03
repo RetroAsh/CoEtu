@@ -162,8 +162,9 @@ function getVoyages(){
             }
             if (contact!="") {
                 box.innerHTML += "<h4>Mes contacts</h4>";
-                box.innerHTML += contact; 
+                box.innerHTML += contact;
             };
+            box.innerHTML += "<div class='tampon'></div>";
             stop_loading();
         }
     }

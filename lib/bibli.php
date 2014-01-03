@@ -7,6 +7,9 @@ function test_chaine($str){
 	if(url_valid($str)){
         return "<a target='_blank' href='".$str."'>$str</a>";
 	}
+    if(tel_valid($str)){
+        return "<a href='tel:".$str."'>". format_tel($str) . "</a>";
+    }
     return $str;
 }
 
@@ -93,6 +96,18 @@ function tel_valid($tel){
         return false;
     }
     return preg_match("/^[0-9]+$/",$tel);
+}
+
+function format_tel($tel){
+    $tel = str_replace(" ","",$tel);
+    $real = "";
+    for($i=0;$i<10;$i++){
+        $real .= $tel[$i];
+        if($i%2){
+            $real .= " ";
+        }
+    }
+    return $real;
 }
 
 function verifDateFormatNormal($date)

@@ -48,6 +48,11 @@ input[type=button] {
     font-style:italic;
 }
 
+.tampon {
+    width: 5px;
+    height: 30px;
+}
+
 /* NAV */
 
 div#nav {
@@ -880,9 +885,12 @@ div#carnet>div:first-of-type div.option {
     position:absolute;
 }
 
-div#carnet>div:first-of-type div.option a {
-    font-size: 0.8em;  
+div#carnet>div:first-of-type a {
     text-decoration: none;
+}
+
+div#carnet>div:first-of-type div.option a {
+    font-size: 0.8em;
 }
 
 div#carnet>div:first-of-type div.voyage_carnet {
