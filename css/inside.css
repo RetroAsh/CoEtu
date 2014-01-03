@@ -932,14 +932,13 @@ div#param form.modinfo label {
 div#param form.modinfo input[type=text],
 div#param form.modinfo select {
     padding: 4px;
-    border: 1px solid white;
     color: rgb(75, 75, 75);
     font-family: "proxima-nova", sans-serif;
-    font-size: 1em;
     font-size: 1.1em;
     border: 0;
     border-radius: 3px 3px 3px 3px;
     outline: none;
+    transition: background-color 0.5s;
 }
 
 div#param form.modinfo select:focus,
