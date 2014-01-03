@@ -15,6 +15,21 @@ function insertCarnet($etu1, $etu2){
 	return false;
 }
 
+function insertCordonne($etu,$info,$libel){
+    try{
+        $connec = getPDO();
+        $insert = $connec->prepare("INSERT INTO coordonnee(libelle_coordonnee, information, id_etu) VALUES (:libel,:info,:etu)");
+        $insert->bindParam('etu', $etu, PDO::PARAM_INT);
+        $insert->bindParam('info', $info, PDO::PARAM_STR);
+        $insert->bindParam('libel', $libel, PDO::PARAM_STR);
+        return $insert->execute();
+    }
+    catch( Exception $e ){
+        echo("Une erreur est survenue lors de l'insertion de l'info : ".$e->getMessage());
+    }
+    return false;
+}
+
 function insertMsg($de,$a,$msg){
 	try{
 		$connec = getPDO();

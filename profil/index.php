@@ -23,7 +23,7 @@
                     $err .= "Numero de teleohone invalide. <br />\n";
                     continue 1;
                 }
-                if($coordonnee[substr($key,1)]["libel"]=="email" && (selectVerifDispoEmail($value) || !email_valid($value)) /*&& $coordonnee[substr($key,1)]["info"]!=$value) */ ){
+                if($coordonnee[substr($key,1)]["libel"]=="email" && (selectVerifDispoEmail($value) || !email_valid($value))){
                     $err .= "Email invalide ou déja utilisé. <br />\n";
                     continue 1;
                 }
@@ -32,6 +32,24 @@
                     continue 1;
                 }
                 updateCoordonne(substr($key,1),$value);
+            }
+        }
+        if(!empty($_POST["new_info"])){
+            $ok = true;
+            if($_POST["new_label"]=="email" && (selectVerifDispoEmail($_POST["new_info"]) || !email_valid($_POST["new_info"]))){
+                $ok = false;
+                $err .= "Email ivalide ou déja utilisé.<br />\n";
+            }
+            if($_POST["new_label"]=="tel" && !tel_valid($value)){
+                $ok = false;
+                $err .= "Numero de télèphone invalide.<br />\n";
+            }
+            if(($_POST["new_label"]=="site" || $_POST["new_label"]=="facebook") && !url_valid($value)){
+                $ok = false;
+                $err .= "URL (" . $_POST["new_label"] . ") invalide.<br />\n";
+            }
+            if($ok){
+                insertCordonne($_SESSION["user_id"],$_POST["new_info"],$_POST["new_label"]);
             }
         }
 	}
@@ -77,6 +95,9 @@
         </form>
         <form id="form_del_compte" >
             <input type='hidden' value="Supprimer ce compte" name='supprimer_compte'  />
+            <a onclick="document.getElementById('new').style.display='inline'" >Ajouter une info</a>
+            <br />
+            <br />
             <a onclick="if(confirm('Etes-vous sur de vouloir supprimer définitevement votre compte?\nIl sera impossible de le récuperer.')){document.getElementById('form_del_compte').submit()};" >Supprimer ce compte</a>
         </form>
     </body>

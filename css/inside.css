@@ -925,32 +925,48 @@ div#param form.modinfo {
     width: 100%;
 }
 
-div#param form.modinfo label {}
+div#param form.modinfo label {
+    color: gray;
+}
 
-div#param form.modinfo input[type=text],select {
-    padding: 3px;
+div#param form.modinfo input[type=text],
+div#param form.modinfo select {
+    padding: 4px;
     border: 1px solid white;
     color: rgb(75, 75, 75);
     font-family: "proxima-nova", sans-serif;
     font-size: 1em;
-    border: 0;
-    width: 75%;
     font-size: 1.1em;
-    border: 1px solid white;
+    border: 0;
     border-radius: 3px 3px 3px 3px;
+    outline: none;
 }
 
-div#param form.modinfo span#push {
+div#param form.modinfo select:focus,
+div#param form.modinfo input[type=text]:focus {
+    background-color: rgb(220,220,220);
+}
+
+div#param form.modinfo input[type=text],
+div#param form.modinfo .select_contener {
+    width: 75%;
+}
+
+div#param form.modinfo .select_contener {
     display: inline-block;
-    width: 36%;
+    text-align: left;
+    padding: 4px;
 }
 
 div#param form.modinfo select {
-    width: 20%;
-    background-color: rgb(220,220,220);
+    background-color: white;
     border: 1px solid white;
     border-radius: 3px 3px 3px 3px;
     -webkit-appearance:none ;
+}
+
+div#param form.modinfo .new {
+    background-color: rgb(220,220,220);
 }
 
 div#param form.modinfo input:focus {}
@@ -981,6 +997,6 @@ form#form_del_compte {
     position: absolute;
     left: 70%;
     top: 250px;
-    font-size: .75em;
+    font-size: .8em;
     text-align: left;
 }

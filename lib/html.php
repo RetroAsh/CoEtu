@@ -25,7 +25,7 @@ function printInfoContact($id){
     echo "<span class='carac'>".$infos[0]."</span>";
     echo "<span class='label'>Habite</span>";
     echo "<span class='carac' onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");'>".$info_ville[0]."</span>";
-    foreach ($coordonnee as $key => $value) {
+    foreach ($coordonnee as $value) {
         echo "<span class='label'>".ucfirst($value["libel"])."</span>";
         echo "<span class='carac'>".test_chaine($value["info"])."</span>";
     }
@@ -106,16 +106,16 @@ function formModInfo($id){
     $coordonnee = selectCoordonee($id);
     $info_ville = selectInfoVille($infos[1]);
     echo "<form method='post' class='modinfo' id='modinfo' >";
-    echo "<label for='lieu'>Lieu d'études: </label>";
+    echo "<label for='lieu'>lieu d'études : </label>";
     echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='lieu' name='lieu' value='".$infos[0]."'><br /><br />";
-    echo "<label for='ville'>Habite: </label>";
+    echo "<label for='ville'>habite : </label>";
     echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='ville' name='ville' value='".$info_ville[0]."' /><br /><br />";
     foreach ($coordonnee as $key => $value) {
-        echo "<label for='i" . $key . "'>".ucfirst($value["libel"]).": </label>";
+        echo "<label for='i" . $key . "'>".$value["libel"]." : </label>";
         echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='i" . $key . "' name='i" . $key . "' value='".$value["info"]."'/><br /><br />";
     }
-    echo "<label for='ne'>Né: </label>";
-    echo "<select onchange='document.getElementById(\"modinfo\").submit()' name='mois' class='mois'>";
+    echo "<label for='ne'>né : </label>";
+    echo "<div class='select_contener'><select onchange='document.getElementById(\"modinfo\").submit()' name='mois' class='mois' >";
     for ($i=1; $i<=12;$i++) { 
     	echo "<option ";
     	if ($i==$infos[3]) {
@@ -133,9 +133,9 @@ function formModInfo($id){
     		echo "<option>" . $i . "</option>";
     	}
     }
-	echo "</select><span id='push'></span>";
-	//echo "<br /><br /><input type='submit' value='Sauvegarder' name='sauvegarder' />";
-	//echo "<input type='reset' value='Annuler' />";
+	echo "</select></div><br /><br />";
+    echo "<span style='display: none;' id='new'><select class='new' id='new_label' name='new_label' ><option>email</option><option>tel</option><option>site</option><option>facebook</option></select>: ";
+    echo "<input class='new' id='new_info' name='new_info' type='text' onchange='document.getElementById(\"modinfo\").submit()' /></span>";
 	echo "</form>\n";
 }
 
