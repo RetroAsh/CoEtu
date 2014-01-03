@@ -13,7 +13,7 @@ function selectVerifPerso($id){
     return $q[0];
 }
 
-function selectVerifEmail($email){
+function selectVerifDispoEmail($email){
     $connec = getPDO();
     $requete = "SELECT COUNT( * ) AS nb
                 FROM  coordonnee 

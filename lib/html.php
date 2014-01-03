@@ -105,17 +105,17 @@ function formModInfo($id){
 	$infos = selectInfoEtu($id);
     $coordonnee = selectCoordonee($id);
     $info_ville = selectInfoVille($infos[1]);
-    echo "<form method='post' class='modinfo' >";
+    echo "<form method='post' class='modinfo' id='modinfo' >";
     echo "<label for='lieu'>Lieu d'études: </label>";
-    echo "<input id='lieu' name='lieu' value='".$infos[0]."'><br /><br />";
+    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='lieu' name='lieu' value='".$infos[0]."'><br /><br />";
     echo "<label for='ville'>Habite: </label>";
-    echo "<input id='ville' name='ville' value='".$info_ville[0]."' /><br /><br />";
+    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='ville' name='ville' value='".$info_ville[0]."' /><br /><br />";
     foreach ($coordonnee as $key => $value) {
         echo "<label for='i" . $key . "'>".ucfirst($value["libel"]).": </label>";
-        echo "<input id='i" . $key . "' name='i" . $key . "' value='".$value["info"]."'/><br /><br />";
+        echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='i" . $key . "' name='i" . $key . "' value='".$value["info"]."'/><br /><br />";
     }
     echo "<label for='ne'>Né: </label>";
-    echo "<select name='mois' class='mois'>";
+    echo "<select onchange='document.getElementById(\"modinfo\").submit()' name='mois' class='mois'>";
     for ($i=1; $i<=12;$i++) { 
     	echo "<option ";
     	if ($i==$infos[3]) {
@@ -124,7 +124,7 @@ function formModInfo($id){
     	echo " value='".$i."'>".mois($i)."</option>";
     }
     echo "</select>";
-    echo "<select name='annee' >";
+    echo "<select onchange='document.getElementById(\"modinfo\").submit()' name='annee' >";
     for ($i=date("Y");$i>=date("Y")-100;$i--) {
     	if($infos[2]==$i){
     		echo "<option selected='selected'>" . $i . "</option>";
@@ -134,10 +134,9 @@ function formModInfo($id){
     	}
     }
 	echo "</select><span id='push'></span>";
-	echo "<br /><br /><input type='submit' value='Sauvegarder' name='sauvegarder' />";
-	echo "<input type='reset' value='Annuler' />";
-	echo "<br /><br /><input type='submit' value=\"Supprimer son compte\" name='supprimer_compte' onclick=\"if (window.confirm('Etes-vous sur de vouloir supprimer votre compte ?')) {return true;} else {return false;}\" />";
-	echo "</form>\n"; 
+	//echo "<br /><br /><input type='submit' value='Sauvegarder' name='sauvegarder' />";
+	//echo "<input type='reset' value='Annuler' />";
+	echo "</form>\n";
 }
 
 function nav(){

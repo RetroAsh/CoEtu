@@ -927,7 +927,7 @@ div#param form.modinfo {
 
 div#param form.modinfo label {}
 
-div#param form.modinfo input,select {
+div#param form.modinfo input[type=text],select {
     padding: 3px;
     border: 1px solid white;
     color: rgb(75, 75, 75);
@@ -955,25 +955,6 @@ div#param form.modinfo select {
 
 div#param form.modinfo input:focus {}
 
-div#param form.modinfo input[type=submit],
-div#param form.modinfo input[type=reset] {
-    margin: 10px;
-    width: 120px;
-    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
-    color: rgb(255, 255, 255);
-    font-size: 80%;
-    padding: 0.5em 1.5em;
-    border: 0px none transparent;
-    text-decoration: none;
-    border-radius: 2px 2px 2px 2px;
-    transition: box-shadow 0.1s linear 0s;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    -moz-user-select: none;
-    transition: border 0.7s;
-}
-
 div#param form.modinfo input[type=submit]:hover,
 div#param form.modinfo input[type=reset]:hover {}
 
@@ -992,4 +973,14 @@ form#colorpick {
     position: absolute;
     left: 70%;
     top: 100px;
+    outline: none;
+}
+
+form#form_del_compte {
+    display: block;
+    position: absolute;
+    left: 70%;
+    top: 250px;
+    font-size: .75em;
+    text-align: left;
 }

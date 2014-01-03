@@ -12,7 +12,7 @@
         updateCouleur($_SESSION['user_id'],$_POST['couleur']);
     }
 
-	if(isset($_POST['sauvegarder'])){
+	if(isset($_POST['ville']) && isset($_POST['lieu'])){
 		if(selectIdVille($_POST['ville'])!=false && selectIdCampus($_POST['lieu'])!=false){
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdCampus($_POST['lieu']),$_POST['mois'],$_POST['annee']);
 		}
@@ -23,8 +23,8 @@
                     $err .= "Numero de teleohone invalide. <br />\n";
                     continue 1;
                 }
-                if($coordonnee[substr($key,1)]["libel"]=="email" && !email_valid($value)){
-                    $err .= "Email invalide. <br />\n";
+                if($coordonnee[substr($key,1)]["libel"]=="email" && (selectVerifDispoEmail($value) || !email_valid($value)) /*&& $coordonnee[substr($key,1)]["info"]!=$value) */ ){
+                    $err .= "Email invalide ou déja utilisé. <br />\n";
                     continue 1;
                 }
                 if($coordonnee[substr($key,1)]["libel"]=="site" && !url_valid($value)){
@@ -70,11 +70,14 @@
         <div id="param">
             <div class="err"><?php echo $err; ?></div>
             <?php formModInfo($_SESSION["user_id"]); ?>
-            <br />
         </div>
         <?php nav(); ?>
         <form id="colorpick" method="post">
             <?php echo "<input onchange='document.getElementById(\"colorpick\").submit()' name='couleur' id='couleur' class='color' value='".selectCouleur($_SESSION['user_id'])."'>"; ?>
+        </form>
+        <form id="form_del_compte" >
+            <input type='hidden' value="Supprimer ce compte" name='supprimer_compte'  />
+            <a onclick="if(confirm('Etes-vous sur de vouloir supprimer définitevement votre compte?\nIl sera impossible de le récuperer.')){document.getElementById('form_del_compte').submit()};" >Supprimer ce compte</a>
         </form>
     </body>
 </html>
