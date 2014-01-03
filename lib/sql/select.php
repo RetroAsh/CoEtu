@@ -590,18 +590,16 @@ function selectCouleur($id){
 function selectCoordonee($id){
     $connec = getPDO();
 
-    $requete = "SELECT co.libelle_coordonnee,co.information
+    $requete = "SELECT co.id_coordonnee,co.libelle_coordonnee,co.information
 				FROM coordonnee co
 				WHERE co.id_etu = '$id'";
 
     $tab = $connec->query($requete);
 
     $tableau = Array();
-    $tableau[] = $tab->rowCount();
-    while( $info = $tab->fetch())
-    {
-        $tableau[] = $info[0];
-        $tableau[] = $info[1];
+    while( $info = $tab->fetch()){
+        $tableau[$info["id_coordonnee"]]["libel"] = $info["libelle_coordonnee"];
+        $tableau[$info["id_coordonnee"]]["info"] = $info["information"];
     }
 
     return $tableau;

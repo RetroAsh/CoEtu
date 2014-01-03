@@ -76,7 +76,7 @@
                         echo("<span class='welcome'>Selectionner une conversation pour l'afficher.</span>");
                     }
                     else {
-                        echo("<span class='welcome'>Pour ouvrir une nouvelle conversation, allez dans vos <a href='../carnet' >contacts</a> sélectionnez une personne et cliquez sur \"Message\".</span>");
+                        echo("<span class='welcome'>Pour ouvrir une nouvelle conversation, allez dans vos <a href='../carnet' >contacts</a>, sélectionnez une personne et cliquez sur \"Message\".</span>");
                     }
                     ?>
                 </div>

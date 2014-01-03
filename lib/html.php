@@ -25,10 +25,9 @@ function printInfoContact($id){
     echo "<span class='carac'>".$infos[0]."</span>";
     echo "<span class='label'>Habite</span>";
     echo "<span class='carac' onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");'>".$info_ville[0]."</span>";
-
-    for($i=1;$i<$coordonnee[0]*2;$i+=2){
-        echo "<span class='label'>".ucfirst($coordonnee[$i])."</span>";
-        echo "<span class='carac'>".test_chaine($coordonnee[$i+1])."</span>";
+    foreach ($coordonnee as $key => $value) {
+        echo "<span class='label'>".ucfirst($value["libel"])."</span>";
+        echo "<span class='carac'>".test_chaine($value["info"])."</span>";
     }
 
     echo "<span class='label'>Né</span>";
@@ -107,15 +106,13 @@ function formModInfo($id){
     $coordonnee = selectCoordonee($id);
     $info_ville = selectInfoVille($infos[1]);
     echo "<form method='post' class='modinfo' >";
-    echo "<label for='univ'>Université: </label>";
-    echo "<input id='univ' disabled='disabled' name='univ' value='" . $infos[4] . "' /><br /><br />";
     echo "<label for='lieu'>Lieu d'études: </label>";
     echo "<input id='lieu' name='lieu' value='".$infos[0]."'><br /><br />";
     echo "<label for='ville'>Habite: </label>";
     echo "<input id='ville' name='ville' value='".$info_ville[0]."' /><br /><br />";
-    for($i=1;$i<$coordonnee[0]*2;$i+=2){
-        echo "<label for='i" . $i . "'>".ucfirst($coordonnee[$i]).": </label>";
-        echo "<input id='i" . $i . "' name='".$coordonnee[$i]."' value='".$coordonnee[$i+1]."'/><br /><br />";
+    foreach ($coordonnee as $key => $value) {
+        echo "<label for='i" . $key . "'>".ucfirst($value["libel"]).": </label>";
+        echo "<input id='i" . $key . "' name='i" . $key . "' value='".$value["info"]."'/><br /><br />";
     }
     echo "<label for='ne'>Né: </label>";
     echo "<select name='mois' class='mois'>";

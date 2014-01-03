@@ -14,13 +14,6 @@ function updatePerso($id_etu,$idville,$idcampus,$mois,$annee){
 	catch(Exception $e){
 		echo("Une erreur est survenue lors de la mise à jour des informations personnelles : ".$e->getMessage());
 	}
-	/*else {
-            $updateEtu = "UPDATE coordonnee SET libelle_coordonnee='$lib_coord', information='$information' WHERE id_etu='$id_etu';";
-            $q = $connec->exec($updateEtu);
-            if ($q == 0) {
-                return $q = -2; //erreur lors de la modification des coordonnees
-            }
-        */
 		
 	return false;
 }
@@ -148,4 +141,21 @@ function updateVoyageDateAuto(){
 		echo("Une erreur est survenue lors de la mise à jour des dates du voyage : ".$e->getMessage());
 	}
 	return false;
+}
+
+
+function updateCoordonne($id,$info){
+    try{
+        $connec = getPDO();
+        $update = $connec->prepare("UPDATE coordonnee
+                                    SET information=:info
+                                    WHERE id_coordonnee=:id");
+        $update->bindParam('info', $info, PDO::PARAM_STR);
+        $update->bindParam('id', $id, PDO::PARAM_INT);
+        return $update->execute();
+    }
+    catch(Exception $e){
+        echo("Une erreur est survenue lors de la mise à jour des dates du voyage " . $id . " : ".$e->getMessage());
+    }
+    return false;
 }
