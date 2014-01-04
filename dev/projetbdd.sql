@@ -35,8 +35,83 @@ TRUNCATE TABLE `campus`;
 -- Contenu de la table `campus`
 --
 
-INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES
-(1, 35607, 1, 'IUT-BM');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,4440 , 1, 'Université d''Aix-Marseille');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,33838 , 1, 'Université d''Avignon et des pays du Vaucluse');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,32933 , 2, ' Université de Picardie Jules Verne Amiens');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,23431 , 2, 'Université de technologie de Compiègne');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,9370 , 4, 'Université de Franche-Comté');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,35607 , 4, 'Université de technologie de Belfort-Montbéliard');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,12981 , 5, 'Université Bordeaux 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,12679 , 5, 'Université "Victor Segalen" Bordeaux 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,12984 , 5, 'Université Michel de Montaigne Bordeaux 3');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,12984 , 5, 'Université Montesquieu Bordeaux 4');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,26044 , 5, 'Université de Pau et des Pays de l''Adour');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,5022 , 6, 'Université de Caen');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,25435 , 7, 'Université d''Auvergne Clermont-Ferrand 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,25435 , 7, 'Université Blaise Pascal Clermont-Ferrand 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,36403 , 8, 'Université Pascal Paoli Corse');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,3897 , 9, 'Université Vincennes-Saint-Denis Paris 8 ');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,31337 , 9, 'Paris-Est Marne-la-Vallée');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,36023 , 9, 'Université deUniversité Paris-Est Créteil Val de Marne');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,35948 , 9, 'Université Paris-Nord : Paris 13');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,7233 , 10, 'Université de Bourgogne Dijon');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,29963 , 11, 'Université de Savoie : Chambéry');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,14505 , 11, 'Université Joseph Fourier Grenoble 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,14505 , 11, 'Université Pierre Mendès-France Grenoble 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,14505 , 11, 'Université Stendhal Grenoble 3');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,24859 , 12, 'Université d''Artois');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,22729 , 12, 'Université des Sciences et technologie de Lille 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,22745 , 12, 'Université du Droit et de la Santé  Lille 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,22729 , 12, 'Université Charles de Gaulle  Lille 3');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,23100 , 12, 'Université du littoral Côte d''Opale');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,22863 , 12, 'Université de Valenciennes et Hainaut-Cambrésis');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,34488 , 13, 'Université de Limoges');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,28208 , 14, 'Université Claude Bernard Lyon I');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,28153 , 14, 'Université Lumière Lyon II');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,28153 , 14, 'Université Jean Moulin Lyon III');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,16124 , 14, 'Université Jean Monnet Saint-Etienne');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,13339 , 16, 'Université Montpellier 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,13339 , 16, 'Université Montpellier 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,13339 , 16, 'Université Paul Valéry Montpellier 3');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,11336 , 16, 'Université de NîmesUnimes');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,27144 , 16, 'Universitéde Perpignan');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,20554 , 17, 'Université de Lorraine ');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,13468 , 18, 'Université d''Angers');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,29483 , 18, 'Université du Maine: le Mans');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,16756 , 18, 'Université de Nantes');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,2050 , 19, 'Université de Nice - Sophia Antipolis');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,33591 , 19, 'Université du Sud Toulon-Var');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,17162 , 21, 'Université d''Orléans');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,14124 , 21, 'Université François Rabelais');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Panthéon-Sorbonne Paris 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Panthéon-Assas Paris 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université de la Sorbonne Nouvelle Paris 3');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Paris-Sorbonne Paris 4');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Paris Descartes Paris 5');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Pierre et Marie Curie Paris 6');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Paris Diderot Paris 7');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,30438 , 22, 'Université Paris Dauphine Paris 9');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,34243 , 23, 'Université de Poitiers');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,28573 , 23, 'Université de la Rochelle');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,19044 , 25, 'Université de Reims Champagne-Ardenne');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,3598 , 25, 'Université de technologie de Troyes');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,11152 , 26, 'Université de Bretagne Occidentale');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,21435 , 26, 'Université de Bretagne Sud (Site de Lorient)');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,21474 , 26, 'BrestUniversité de Bretagne Sud (Site de Vannes)');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,13468 , 26, 'Université de Rennes 1');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,13468 , 26, 'Université de Haute Bretagne Rennes 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,31166 , 28, 'Université du Havre');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,33413 , 28, 'Université de Rouen');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,28049 , 29, 'Université de Haute Alsace');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,27304 , 29, 'Université de Strasbourg');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,11719 , 30, 'Université de Toulouse 1 Capitole');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,11719 , 30, 'Université de Toulouse-Le Mirail Toulouse 2');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,11719 , 30, 'Université Paul Sabatier 3');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,36028 , 31, 'Université de Cergy Pontoise');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,35193 , 31, 'Université d''Évry-Val d''Essonne');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,35932 , 31, 'Université de Paris 10 Ouest Nanterre la Défense');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,35801 , 31, 'Université de Paris Sud : Paris 11');
+INSERT INTO `campus` (`id_camp`, `id_ville`, `id_univ`, `libelle`) VALUES (NULL,31856 , 31, 'Université Versailles Saint Quentin en Yvelines');
 
 -- --------------------------------------------------------
 
@@ -392,8 +467,37 @@ TRUNCATE TABLE `universite`;
 -- Contenu de la table `universite`
 --
 
-INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES
-(1, 'Université de Franche-comté');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (1, 'Universités de l''académie d''Aix-Marseille');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (2, 'Universités de l''académie d''Amiens');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (3, 'Université de l''académie des Antilles-Guyane (Guadeloupe-Guyane-Martinique)');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (4, 'Universités de l''académie de Besançon');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (5, 'Universités de l''académie de Bordeaux');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (6, 'Universités de l''académie de Caen');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (7, 'Universités de l''académie de Clermont-Ferrand');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (8, 'Université de l''académie de Corse');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (9, 'Universités de l''académie de Créteil');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (10, 'Université de l''académie de Dijon');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (11, 'Universités de l''académie de Grenoble');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (12, 'Universités de l''académie de Lille');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (13, 'Université de l''académie de Limoges');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (14, 'Universités de l''académie de Lyon');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (15, 'Centre universitaire du Vice-rectorat de Mayotte');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (16, 'Universités de l''académie de Montpellier');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (17, 'Université de l''académie de Nancy-Metz');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (18, 'Universités de l''académie de Nantes');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (19, 'Universités de l''académie de Nice');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (20, 'Université du vice-rectorat de Nouvelle-Calédonie');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (21, 'Universités de l''académie d''Orléans-Tours');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (22, 'Universités de l''académie de Paris');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (23, 'Universités de l''académie de Poitiers');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (24, 'Université du vice-rectorat de la Polynésie française');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (25, 'Universités de l''académie de Reims');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (26, 'Universités de l''académie de Rennes');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (27, 'Université de l''académie de La Réunion');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (28, 'Universités de l''académie de Rouen');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (29, 'Universités de l''académie de Strasbourg');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (30, 'Universités de l''académie de Toulouse');
+INSERT INTO `universite` (`id_univ`, `nom_univ`) VALUES (31, 'Universités de l''académie de Versailles');
 
 -- --------------------------------------------------------
 
