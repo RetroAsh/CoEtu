@@ -111,7 +111,7 @@ div#perso {
 
 div#carnet>div:last-of-type a.selected,
 div#messagerie>div:last-of-type a.selected {
-    border-right: solid 3px <?php echo darck() ?>;
+    border-right: solid 3px <?php echo color() ?>;
 }
 
 div#messagerie>div:last-of-type a.unread  {
