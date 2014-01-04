@@ -81,7 +81,7 @@
                     ?>
                 </div>
                 <form id="form_tchat" onsubmit="sendMsg(current);return false;" >
-                    <textarea placeholder=" Votre message" id="buffer" type="text" autocomplete="off" ></textarea>
+                    <textarea placeholder=" Votre message" id="buffer" type="text" autocomplete="off"></textarea>
                     <label for="enter_tchat" >appuyer sur entrée pour envoyer</label>
                     <input id="enter_tchat" type='checkbox' />
                     <input value='Envoyer' type='submit' />

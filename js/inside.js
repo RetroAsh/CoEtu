@@ -34,8 +34,35 @@ function timestamp(){
 	return d.getHours()+":"+m+" "+d.getDate()+"/"+(d.getMonth()+1)+"/"+(d.getFullYear()%100);
 }
 
-function urlify(text) {
-    return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>').replace(/\n/g, "<br />");
+function urlify(text)
+{
+	text = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>').replace(/\n/g, "<br />");
+
+	var emoticons = {
+		':(' : 'triste.png',
+		':)'  : 'smile.png',
+		':D'  : 'heureux.png',
+		'o_O'  : 'blink.gif',
+		'^^'  : 'hihi.png',
+		';)'  : 'clin.png',
+		':p'  : 'langue.png',
+		':o'  : 'huh.png'
+	}, url = "../img/smiley/", patterns = [],
+	metachars = /[[\]{}()*+?.\\|^$\-,&#\s]/g;
+
+  	// build a regex pattern for each defined property
+  	for (var i in emoticons) {
+    	if (emoticons.hasOwnProperty(i)){ // escape metacharacters
+    		patterns.push('('+i.replace(metachars, "\\$&")+')');
+    	}
+	}
+
+  	// build the regular expression and replace
+  	return text.replace(new RegExp(patterns.join('|'),'g'), function (match) {
+  		return typeof emoticons[match] != 'undefined' ?
+  			'<img src="'+url+emoticons[match]+'"/>' :
+  			match;
+	});
 }
 
 function addZero(nb) {

@@ -134,4 +134,18 @@ function dateNormalToCrade($date) {
 	return date("Y-m-d", strtotime($tmp));
 }
 
+function insertSmiley($content)
+{
+    $smiliesName = array(':\\(', ':\\)', ':D', ';\\)', ':p', ':o', 'o_O', '\\^\\^');
+    $smiliesUrl  = array('triste.png', 'smile.png', 'heureux.png', 'clin.png', 'langue.png','huh.png', 'blink.gif', 'hihi.png');
+    $smiliesPath = "../img/smiley/";
+
+    for ($i = 0, $c = count($smiliesName); $i < $c; $i++) {
+        $content = preg_replace('`' . $smiliesName[$i] . '`isU', '<img src="' . $smiliesPath . $smiliesUrl[$i] . '" />', $content);
+    }
+    
+    $content = stripslashes($content);
+    return $content;
+}
+
 ?>

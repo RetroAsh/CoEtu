@@ -25,7 +25,7 @@ if (isset($_POST["id"]) && selectVerifPerso($_POST["id"])==1 && (selectVerificat
 			$ajax .= ucfirst($msg["pre_emeteur"]) . " " . ucfirst($msg["nom_emeteur"]) . "|";
 		}
 		$ajax .= smalltimestamp($msg["time"]) . "|";
-		$ajax .= $msg["msg"];
+		$ajax .= insertSmiley($msg["msg"]);
 	}
 }
 
