@@ -453,6 +453,10 @@ div.infoautreperso {
     margin: 20px;
 }
 
+div.infoautreperso a {
+    text-decoration: none;
+}
+
 div.infoautreperso p.msg {
     font-size: .8em;
     font-style: italic;
@@ -705,6 +709,11 @@ div#messagerie div.msg span.dt {
 
 div#messagerie div.msg span.dire {
     text-align: justify;
+}
+
+div#messagerie div.msg span.dire img {
+    max-height: 1em;
+    vertical-align:middle;
 }
 
 div#messagerie div {

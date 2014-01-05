@@ -19,17 +19,18 @@ function printInfoContact($id){
     $infos = selectInfoEtu($id);
     $coordonnee = selectCoordonee($id);
     $info_ville = selectInfoVille($infos[1]);
-    echo "<span class='label'>Université</span>";
-    echo "<span class='carac'>".$infos[4]."</span>";
-    echo "<span class='label'>Lieu d'études</span>";
-    echo "<span class='carac'>".$infos[0]."</span>";
-    echo "<span class='label'>Habite</span>";
-    echo "<span class='carac' onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");'>".$info_ville[0]."</span>";
+    ?> 
+        <span class='label'>Université</span>
+        <span class='carac'><?php echo $infos[4] ?></span>
+        <span class='label'>Lieu d'études</span>
+        <span class='carac'><?php echo $infos[0] ?></span>
+        <span class='label'>Habite</span>
+        <span class="carac"><a onclick="ville(<?php print($info_ville[0].",'".$info_ville[1])."'"; ?>)" ><?php print($info_ville[1]); ?></a></span> 
+    <?php
     foreach ($coordonnee as $value) {
         echo "<span class='label'>".ucfirst($value["libel"])."</span>";
         echo "<span class='carac'>".test_chaine($value["info"])."</span>";
     }
-
     echo "<span class='label'>Né</span>";
     echo "<span class='carac'>".mois($infos[3])." ".$infos[2]."</span>";
 }
@@ -78,7 +79,7 @@ function printMinimalInfoContact($id){
     echo "<span class='label'>Lieu d'études</span>";
     echo "<span class='carac'>".$infos[0]."</span>";
     echo "<span class='label'>Habite</span>";
-    echo "<span class='carac'>".$info_ville[0]."</span>";
+    echo "<span class='carac'>".$info_ville[1]."</span>";
 }
 
 function phraseNotif($demande,$msg){

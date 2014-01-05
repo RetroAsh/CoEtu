@@ -68,6 +68,21 @@ function voyage(id,nom){
     xhr.send("id=" + id);    
 }
 
+function infoItineraire(id){
+    var xhr = getXhr();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var tabInfo = xhr.responseText.split(",");
+            var coordV1 = new google.maps.LatLng(tabInfo[0], tabInfo[1]);
+            var coordV2 = new google.maps.LatLng(tabInfo[2], tabInfo[3]);
+            afficheItineraire(coordV1, coordV2);
+        }
+    };
+    xhr.open("POST","../ajax/getCoordItineraire.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send("id_voyage=" + id);
+}
+
 function supprVoyage(id){
     var xhr = getXhr();
     xhr.onreadystatechange = function(){
@@ -85,19 +100,37 @@ function supprVoyage(id){
     xhr.send("id="+id);
 }
 
-function infoItineraire(id){
-    var xhr2 = getXhr();
-    xhr2.onreadystatechange = function () {
-        if (xhr2.readyState == 4 && xhr2.status == 200) {
-            var tabInfo = xhr2.responseText.split(",");
-            var coordV1 = new google.maps.LatLng(tabInfo[0], tabInfo[1]);
-            var coordV2 = new google.maps.LatLng(tabInfo[2], tabInfo[3]);
-            afficheItineraire(coordV1, coordV2);
+function ville(id,nom){
+    pop_title(nom);
+    var xhr = getXhr();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            pop_set_x(473);
+            pop_set_y(473);
+            pop_content(xhr.responseText);
+            infoVille(id);
+            pop_show();
+            stop_loading();
+        }
+    }
+    loading();
+    xhr.open("POST","../ajax/getVille.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send();
+}
+
+function infoVille(id){
+    var xhr = getXhr();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var tabInfo = xhr.responseText.split(",");
+            var coord = new google.maps.LatLng(tabInfo[0], tabInfo[1]);
+            afficheVille(coord);
         }
     };
-    xhr2.open("POST","../ajax/getCoordItineraire.php",true);
-    xhr2.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    xhr2.send("id_voyage=" + id);
+    xhr.open("POST","../ajax/getCoordVille.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send("id=" + id);
 }
 
 function recherche(){
@@ -274,7 +307,7 @@ function sendMsg(id){
     if (id==-1 || /^\s*$/.test(document.getElementById('buffer').value)) {
         return;
     }
-    var msg = document.getElementById('buffer').value.replace(/</g,' &lt; ').replace(/>/g,' &gt; ').replace(/&/g,'&amp;');
+    var msg = document.getElementById('buffer').value.replace(/<(?:.|\n)*?>/gm, '');
     loading();
     var xhr = getXhr();
     document.getElementById('buffer').value = "";

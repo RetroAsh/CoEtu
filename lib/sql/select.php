@@ -541,7 +541,7 @@ function selectNbMsgNonLu($id){
 function selectInfoVille($id){
     $connec = getPDO();
 
-    $requete1 = "SELECT v.nom_ville, v.lat_ville, v.lng_ville
+    $requete1 = "SELECT v.id_ville, v.nom_ville, v.lat_ville, v.lng_ville
 				FROM ville v
 				WHERE v.id_ville = '$id';";
 

@@ -1,27 +1,22 @@
 var directionsDisplay;
 var map;
 
-function afficheCarte(lat, lng) {
-    pop_content('<div id=\'map\'></div>');
-    var h = google.maps.event.addDomListener(window, 'load', creaMap(lat,lng));
-    pop_set_x(473);
-    pop_set_y(473);
-    pop_close_func(removelistener(h));
-    pop_show();
+function afficheVille(coord) {
+    google.maps.event.addDomListener(window, 'load', creaMap());
+    setCenter(coord);
 }
 
-function removelistener(h){
-    google.maps.event.removeListener(h);
-}
-
-function creaMap(lat,lng){
+function creaMap(){
 
     var mapOptions = {
-        center: new google.maps.LatLng(lat, lng),
         zoom: 12
     };
 
-    var carte = new google.maps.Map(document.getElementById("map"),mapOptions);
+    map = new google.maps.Map(document.getElementById("map"),mapOptions);
+}
+
+function setCenter(coord){
+    map.setCenter(coord);
 }
 
 function afficheItineraire(start,end){
@@ -34,7 +29,7 @@ function itineraire(){
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
         zoom:7
-    }
+    };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     directionsDisplay.setMap(map);
 }
