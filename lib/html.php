@@ -120,7 +120,7 @@ function formModInfo($id){
     echo "<label for='lieu'>lieu d'études : </label>";
     echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='lieu' name='lieu' value='".$infos[0]."'><br /><br />";
     echo "<label for='ville'>habite : </label>";
-    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='ville' name='ville' value='".$info_ville[0]."' /><br /><br />";
+    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='ville' name='ville' value='".$info_ville[1]."' /><br /><br />";
     foreach ($coordonnee as $key => $value) {
         echo "<label for='i" . $key . "'>".$value["libel"]." : </label>";
         echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='i" . $key . "' name='i" . $key . "' value='".$value["info"]."'/><br /><br />";
