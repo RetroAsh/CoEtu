@@ -25,7 +25,7 @@ function printInfoContact($id){
         <span class='label'>Lieu d'études</span>
         <span class='carac'><?php echo $infos[0] ?></span>
         <span class='label'>Habite</span>
-        <span class="carac"><a onclick="ville(<?php print($info_ville[0].",'".$info_ville[1])."'"; ?>)" ><?php print($info_ville[1]); ?></a></span> 
+        <span class="carac"><a onclick="ville(<?php print($info_ville[0].",'".$info_ville[1]."'"); ?>)" ><?php print($info_ville[1]); ?></a></span> 
     <?php
     foreach ($coordonnee as $value) {
         echo "<span class='label'>".ucfirst($value["libel"])."</span>";
