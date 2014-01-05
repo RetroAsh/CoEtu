@@ -634,3 +634,64 @@ function selectVoyageDepasseRecurssif(){
 
     return $tableau;
 }
+
+/*
+ * On récupere tout les contact de chaque etudiant et on
+ * regarde les contact en commun.
+ */
+function selectNbContactCommun($id1, $id2)
+{
+    $connec = getPDO();
+
+    $query1 = "select id_etu_etudiant
+               from carnet
+               where id_etu = ".$id1."
+               and  statut_car = 1;";
+
+    $query2 = "select id_etu
+               from carnet
+               where id_etu_etudiant = ".$id1."
+               and  statut_car = 1;";
+
+    $query3 = "select id_etu_etudiant
+               from carnet
+               where id_etu = ".$id2."
+               and  statut_car = 1;";
+
+    $query4 = "select id_etu
+               from carnet
+               where id_etu_etudiant = ".$id2."
+               and  statut_car = 1;";
+
+    $listContactEtu1 = array();
+    $listContactEtu2 = array();
+
+    $res = $connec->query($query1);
+    while($elem = $res->fetch()){
+        $listContactEtu1[] = $elem[0];
+    }
+
+    $res = $connec->query($query2);
+    while($elem = $res->fetch()){
+        $listContactEtu1[] = $elem[0];
+    }
+
+    $res = $connec->query($query3);
+    while($elem = $res->fetch()){
+        $listContactEtu2[] = $elem[0];
+    }
+
+    $res = $connec->query($query4);
+    while($elem = $res->fetch()){
+        $listContactEtu2[] = $elem[0];
+    }
+
+    $rep = 0;
+    foreach ($listContactEtu1 as $key => $value){
+        if(in_array($value, $listContactEtu2)){
+            $rep += 1;
+        }
+    }
+
+    return $rep;
+}
