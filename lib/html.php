@@ -36,13 +36,23 @@ function printInfoContact($id){
 }
 
 function printPerson($id,$pre,$nom,$univ,$ville){
+    $nbc = selectNbContactCommun($id,$_SESSION["user_id"]);
+    if ($nbc==1) {
+        $nbc = "1 contact en commun.";
+    }
+    elseif ($nbc>1) {
+        $nbc = $nbc + " contacts en commun.";
+    }
+    else {
+        $nbc = "Aucun contact en commun.";
+    }
     ?>
     <div class="personne" onclick="peronneInfo(<?php echo $id; ?>,'<?php echo  $pre . " " . $nom; ?>')">
         <img src="../img/buddy.png" />
         <h5><?php echo  $pre . " " . $nom; ?></h5>
-        <span class="univ"><?php echo $univ; ?></span>
+        <span class="univ"><?php echo $univ ." (" . $ville . ")"; ?></span>
         <br />
-        <span class="ville"><?php echo $ville; ?></span>
+        <span class="ville"><?php echo $nbc;  ?></span>
     </div>
     <?php
 }
