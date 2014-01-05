@@ -24,12 +24,11 @@ function printInfoContact($id){
     echo "<span class='label'>Lieu d'études</span>";
     echo "<span class='carac'>".$infos[0]."</span>";
     echo "<span class='label'>Habite</span>";
-    echo "<span class='carac' onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");'>".$info_ville[0]."</span>";
+    echo "<span class='carac'><a onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");' >".$info_ville[0]."</a></span>";
     foreach ($coordonnee as $value) {
         echo "<span class='label'>".ucfirst($value["libel"])."</span>";
         echo "<span class='carac'>".test_chaine($value["info"])."</span>";
     }
-
     echo "<span class='label'>Né</span>";
     echo "<span class='carac'>".mois($infos[3])." ".$infos[2]."</span>";
 }
