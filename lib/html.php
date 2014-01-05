@@ -24,7 +24,9 @@ function printInfoContact($id){
     echo "<span class='label'>Lieu d'études</span>";
     echo "<span class='carac'>".$infos[0]."</span>";
     echo "<span class='label'>Habite</span>";
-    echo "<span class='carac' onclick='afficheCarte(".$info_ville[1].",".$info_ville[2].");'>".$info_ville[0]."</span>";
+    ?>
+    <span class="carac" onclick="ville(<?php print($info_ville[0].",'".$info_ville[1])."'"; ?>)"><?php print($info_ville[1]); ?></span>
+    <?php
     foreach ($coordonnee as $value) {
         echo "<span class='label'>".ucfirst($value["libel"])."</span>";
         echo "<span class='carac'>".test_chaine($value["info"])."</span>";
@@ -78,7 +80,7 @@ function printMinimalInfoContact($id){
     echo "<span class='label'>Lieu d'études</span>";
     echo "<span class='carac'>".$infos[0]."</span>";
     echo "<span class='label'>Habite</span>";
-    echo "<span class='carac'>".$info_ville[0]."</span>";
+    echo "<span class='carac'>".$info_ville[1]."</span>";
 }
 
 function phraseNotif($demande,$msg){
