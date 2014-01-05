@@ -274,7 +274,7 @@ function sendMsg(id){
     if (id==-1 || /^\s*$/.test(document.getElementById('buffer').value)) {
         return;
     }
-    var msg = document.getElementById('buffer').value.replace(/</g,' &lt; ').replace(/>/g,' &gt; ').replace(/&/g,'&amp;');
+    var msg = document.getElementById('buffer').value.replace(/<(?:.|\n)*?>/gm, '');
     loading();
     var xhr = getXhr();
     document.getElementById('buffer').value = "";

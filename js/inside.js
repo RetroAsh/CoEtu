@@ -39,14 +39,21 @@ function urlify(text)
 	text = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>').replace(/\n/g, "<br />");
 
 	var emoticons = {
-		':(' : 'triste.png',
+		':('  : 'triste.png',
 		':)'  : 'smile.png',
 		':D'  : 'heureux.png',
-		'o_O'  : 'blink.gif',
+		':d'  : 'heureux.png',
 		'^^'  : 'hihi.png',
 		';)'  : 'clin.png',
 		':p'  : 'langue.png',
-		':o'  : 'huh.png'
+		':P'  : 'langue.png',
+		':o'  : 'huh.png',
+		':O'  : 'huh.png',
+		':/'  : 'bof.png',
+		':B'  : 'bg.png',
+		':b'  : 'bg.png',
+		'<3'  : 'heart.png',
+		'&lt;3':'heart.png'
 	}, url = "../img/smiley/", patterns = [],
 	metachars = /[[\]{}()*+?.\\|^$\-,&#\s]/g;
 

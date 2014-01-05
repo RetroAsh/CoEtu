@@ -707,6 +707,10 @@ div#messagerie div.msg span.dire {
     text-align: justify;
 }
 
+div#messagerie div.msg span.dire img {
+    max-height: 1em;
+}
+
 div#messagerie div {
     margin:0;
 }
