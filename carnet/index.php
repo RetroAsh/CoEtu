@@ -58,7 +58,7 @@
                         }
                         return false;
                     case 40: // down
-                        if(select<listenom.length){
+                        if(select<listenom.length-1){
                             listenom[select].removeAttribute("class");
                             listenom[select+1].setAttribute("class","selected");
                             current = parseInt(listenom[select+1].id[1]);
