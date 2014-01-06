@@ -1009,3 +1009,33 @@ form#form_del_compte {
     font-size: .8em;
     text-align: left;
 }
+
+/* AUTO COMPLETION */
+
+body .ui-autocomplete {
+    list-style: none;
+    color: rgb(75, 75, 75);
+    background-color: white;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 1px 3px rgb(221, 221, 221) inset;
+    border: 1px solid rgb(204, 204, 204);
+    width: 230px;
+    padding: 0;
+    overflow: hidden;
+}
+
+body .ui-autocomplete .ui-menu-item .ui-corner-all {
+    display: inline-block;
+    padding: 3px;
+    padding-left: 10px;
+}
+
+body .ui-autocomplete .ui-menu-item .ui-state-focus {
+    padding: 3px;
+    padding-left: 10px;
+    display: inline-block;
+    width: 100%;
+    color: white;
+    background-color: rgb(75, 75, 75);
+}
+
