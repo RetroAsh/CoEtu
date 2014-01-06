@@ -354,6 +354,8 @@ function selectIdUniversite($nomUniv){
 
     $connec = getPDO();
 
+    $nomUniv = str_replace("&apos;", "''", $nomUniv);
+
     $requete = "SELECT id_univ FROM universite WHERE libelle = '$nomUniv' ;";
     $tab = $connec->query($requete);
 

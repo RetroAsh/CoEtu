@@ -118,7 +118,7 @@ function formModInfo($id){
     $info_ville = selectInfoVille($infos[1]);
     echo "<form method='post' class='modinfo' id='modinfo' >";
     echo "<label for='univ'>lieu d'études : </label>";
-    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='univ' name='univ' value='".$infos[0]."'><br /><br />";
+    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='univ' name='univ' value='".str_replace("'", "&apos;", $infos[0])."'><br /><br />";
     echo "<label for='ville'>habite : </label>";
     echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='ville' name='ville' value='".$info_ville[1]."' /><br /><br />";
     foreach ($coordonnee as $key => $value) {
