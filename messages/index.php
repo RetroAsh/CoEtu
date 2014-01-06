@@ -55,6 +55,40 @@
                     }
                 }
             }
+            document.onkeyup = function(e){
+                var liste = document.getElementById("liste");
+                var listenom = liste.children;
+                var select = null;
+                for(var i=0;i<listenom.length;i++){
+                    if(listenom[i].className == "selected"){
+                        select = i;
+                    }
+                }
+                e = e || event;
+                switch(e.keyCode) {
+                    case 38: // up
+                        if(select>0){
+                            listenom[select].removeAttribute("class");
+                            listenom[select-1].setAttribute("class","selected");
+                            current = parseInt(listenom[select-1].id[1]);
+                            document.location.href = document.getElementById('c'+current).href;
+                            getConversation(current);
+                            openConversation(current);
+                        }
+                        return false;
+                    case 40: // down
+                        if(select<listenom.length){
+                            listenom[select].removeAttribute("class");
+                            listenom[select+1].setAttribute("class","selected");
+                            current = parseInt(listenom[select+1].id[1]);
+                            document.location.href = document.getElementById('c'+current).href;
+                            getConversation(current);
+                            openConversation(current);
+                        }
+                        return false;
+                }
+                return false;
+            }
         </script>
 	</head>
     <body>

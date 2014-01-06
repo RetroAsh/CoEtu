@@ -63,8 +63,8 @@
                             listenom[select+1].setAttribute("class","selected");
                             current = parseInt(listenom[select+1].id[1]);
                             document.location.href = document.getElementById('c'+current).href;
-                            getContacts(parseInt(listenom[select+1].id[1]));
-                            getInfoContact(parseInt(listenom[select+1].id[1]));
+                            getContacts(current);
+                            getInfoContact(current);
                         }
                         return false;
                 }
