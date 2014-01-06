@@ -372,6 +372,8 @@ function selectIdVille($nomVille){
 
     $connec = getPDO();
 
+    $nomVille = str_replace("&apos;", "''", $nomVille);
+
     $requete = "SELECT id_ville FROM ville WHERE nom_ville = '$nomVille' ;";
     $tab = $connec->query($requete);
 
