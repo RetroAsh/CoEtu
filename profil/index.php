@@ -16,6 +16,9 @@
 		if(selectIdVille($_POST['ville'])!=false && selectIdUniversite($_POST['univ'])!=false){
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdUniversite($_POST['univ']),$_POST['mois'],$_POST['annee']);
 		}
+        else {
+            $err .= "Ville ou université invalide. <br />\n";
+        }
         $coordonnee = selectCoordonee($_SESSION['user_id']);
         foreach ($_POST as $key => $value) {
             if ($key[0]=="i" && isset($coordonnee[substr($key,1)]) && $coordonnee[substr($key,1)]["info"]!=$value) {
