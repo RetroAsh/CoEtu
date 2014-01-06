@@ -24,7 +24,7 @@ function mois($index){
 
 function jour($index){
 	$index = intval($index);
-	if ($index>7 || $index<=0) {
+	if ($index>7 || $index<0) {
 		return $index;
 	}
 	$jour = array("dim.","lun.","mar.","mer.","jeu.","ven.","sam.");
