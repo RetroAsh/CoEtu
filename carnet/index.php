@@ -46,9 +46,25 @@
                     }
                 }
                 e = e || event;
+                if(e.keyCode >= 65 && e.keyCode <= 90){
+                    var lettre = String.fromCharCode(e.keyCode || e.charCode);
+                    for(i = 0;i<listenom.length;i++){
+                        if(listenom[i].innerHTML[0]==lettre){
+                            if(select != null){
+                                listenom[select].removeAttribute("class");
+                            }
+                            listenom[i].setAttribute("class","selected");
+                            current = parseInt(listenom[i].id[1]);
+                            document.location.href = document.getElementById('c'+current).href;
+                            getContacts(current);
+                            getInfoContact(current);
+                            break;
+                        }
+                    }
+                }
                 switch(e.keyCode) {
                     case 38: // up
-                        if(select>0){
+                        if(select != null && select>0){
                             listenom[select].removeAttribute("class");
                             listenom[select-1].setAttribute("class","selected");
                             current = parseInt(listenom[select-1].id[1]);
@@ -58,7 +74,7 @@
                         }
                         return false;
                     case 40: // down
-                        if(select<listenom.length-1){
+                        if(select != null && select<listenom.length-1 && select>=0){
                             listenom[select].removeAttribute("class");
                             listenom[select+1].setAttribute("class","selected");
                             current = parseInt(listenom[select+1].id[1]);
