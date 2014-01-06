@@ -41,7 +41,7 @@ function printPerson($id,$pre,$nom,$univ,$ville){
         $nbc = "1 contact en commun.";
     }
     elseif ($nbc>1) {
-        $nbc = $nbc + " contacts en commun.";
+        $nbc = $nbc . " contacts en commun.";
     }
     else {
         $nbc = "Aucun contact en commun.";
