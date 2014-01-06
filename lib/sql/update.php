@@ -1,11 +1,11 @@
 <?php
 
-function updatePerso($id_etu,$idville,$idcampus,$mois,$annee){
+function updatePerso($id_etu,$idville,$iduniv,$mois,$annee){
 	try{
 		$connec = getPDO();
-		$updateEtu = $connec->prepare("UPDATE etudiant SET id_ville = :idville, id_camp = :idcampus, mois_ne_etu = :mois, annee_ne_etu = :annee WHERE id_etu = :id_etu;");
+		$updateEtu = $connec->prepare("UPDATE etudiant SET id_ville = :idville, id_univ = :iduniv, mois_ne_etu = :mois, annee_ne_etu = :annee WHERE id_etu = :id_etu;");
 		$updateEtu->bindParam('idville', $idville, PDO::PARAM_INT);
-		$updateEtu->bindParam('idcampus', $idcampus, PDO::PARAM_INT);
+		$updateEtu->bindParam('iduniv', $iduniv, PDO::PARAM_INT);
 		$updateEtu->bindParam('mois', $mois, PDO::PARAM_INT);
 		$updateEtu->bindParam('annee', $annee, PDO::PARAM_INT);
 		$updateEtu->bindParam('id_etu', $id_etu, PDO::PARAM_INT);

@@ -299,9 +299,9 @@ function selectAllContactVoyages($id){
 // renvoie les infos des personnes ayant comme nom $nom
 function selectIdPerso($nom){
     $connec = getPDO();
-    $requete = "SELECT E.id_etu, E.prenom_etu, E.nom_etu, C.libelle, V.nom_ville
+    $requete = "SELECT E.id_etu, E.prenom_etu, E.nom_etu, U.libelle, V.nom_ville
 				FROM etudiant E
-				JOIN campus C ON E.id_camp = C.id_camp
+				JOIN universite U ON E.id_univ = U.id_univ
 				JOIN ville V ON E.id_ville = V.id_ville
 				WHERE (E.nom_etu like '$nom%'
 				OR E.prenom_etu like '$nom%'
@@ -350,15 +350,15 @@ function selectIdEtudiant($email){
 }
 
 // retourne l'ID du campus si le libelle fourni existe ou false si il n'existe pas
-function selectIdCampus($nomCampus){
+function selectIdUniversite($nomUniv){
 
     $connec = getPDO();
 
-    $requete = "SELECT id_camp FROM campus WHERE libelle = '$nomCampus' ;";
+    $requete = "SELECT id_univ FROM universite WHERE libelle = '$nomUniv' ;";
     $tab = $connec->query($requete);
 
     if($res = $tab->fetch(PDO::FETCH_OBJ)){
-        return $res->id_camp;
+        return $res->id_univ;
     }
     else{
         return false;
@@ -438,12 +438,12 @@ function selectNbContacts($id){
 function selectInfoEtu($id){
 
     $connec = getPDO();
-    $requete = "SELECT ca.libelle,v.id_ville,e.annee_ne_etu,e.mois_ne_etu,u.nom_univ
-				FROM etudiant e,campus ca,ville v,universite u
+    $requete = "SELECT u.libelle,v.id_ville,e.annee_ne_etu,e.mois_ne_etu,a.nom_acad
+				FROM etudiant e,universite u,ville v,academie a
 				WHERE e.id_etu = '$id'
-				AND e.id_camp = ca.id_camp
+				AND e.id_univ = u.id_univ
 				AND e.id_ville = v.id_ville
-				AND ca.id_univ = u.id_univ;";
+				AND u.id_acad = a.id_acad;";
 
     $tab = $connec->query($requete);
     $info = $tab->fetch();
@@ -487,8 +487,7 @@ function selectVerificationContact($id,$contact){
     return $bool1 || $bool2;
 }
 
-function selectStatut($etu1, $etu2)
-{
+function selectStatut($etu1, $etu2){
     $connec = getPDO();
 
     $requet = $connec->query("select statut_car from carnet
@@ -552,8 +551,7 @@ function selectInfoVille($id){
     return $info;
 }
 
-function selectRequete($i)
-{
+function selectRequete($i){
     $connec = getPDO();
 
     $requete = "select id_etu
@@ -639,8 +637,7 @@ function selectVoyageDepasseRecurssif(){
  * On récupere tout les contact de chaque etudiant et on
  * regarde les contact en commun.
  */
-function selectNbContactCommun($id1, $id2)
-{
+function selectNbContactCommun($id1, $id2){
     $connec = getPDO();
 
     $query1 = "select id_etu_etudiant
@@ -713,10 +710,10 @@ function selectNomVilleLike($code){
 
 function selectNomUniversiteLike($code){
 	$connec = getPDO();
-	$requete = "SELECT c.libelle FROM campus c
-				JOIN ville v ON c.id_ville=v.id_ville
+	$requete = "SELECT u.libelle FROM universite u
+				JOIN ville v ON u.id_ville=v.id_ville
 				WHERE v.nom_ville like '%".addslashes($code)."%' 
-				OR c.libelle like '%".addslashes($code)."%' LIMIT 5;";
+				OR u.libelle like '%".addslashes($code)."%' LIMIT 5;";
 				
 	$array=array();
 	$select = $connec->query($requete);

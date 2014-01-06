@@ -38,7 +38,7 @@
 	$pre=NULL;
 	$nom=NULL;
 	$email=NULL;
-	$camp=NULL;
+	$univ=NULL;
 	$ville=NULL;
 	$mois=NULL;
 	$annee=NULL;
@@ -64,11 +64,11 @@
 		else{
 			$email=$_POST['email'];
 		}
-		if(!isset($_POST['camp']) or $_POST['camp']==""){
-			$err=$err."Veuillez fournir le campus.<br/>";
+		if(!isset($_POST['univ']) or $_POST['univ']==""){
+			$err=$err."Veuillez fournir l'université.<br/>";
 		}
 		else{
-			$camp=$_POST['camp'];
+			$univ=$_POST['univ'];
 		}
 		if(!isset($_POST['vil']) or $_POST['vil']==""){
 			$err=$err."Veuillez fournir la ville.<br/>";
@@ -104,12 +104,12 @@
 			if($_POST['pass']!=$_POST['pass2']){
 				$err=$err."Veuillez entrer un mot de passe identique dans les 2 champs.<br/>";
 			}
-			$idCampus = selectIdCampus($camp);
-			if(!$idCampus){
-				$err=$err."Veuillez entrer un nom de campus valide.<br/>";
+			$idUniv = selectIdUniversite($univ);
+			if(!$idUniv){
+				$err=$err."Veuillez entrer un nom d'université valide.<br/>";
 			}
 			else{
-				$camp = $idCampus;
+				$univ = $idUniv;
 			}
 			$idVille = selectIdVille($ville);
 			if(!$idVille){
@@ -121,7 +121,7 @@
             if(empty($err)){
                 $nom = ucfirst(strtolower($nom));
                 $pre = ucfirst(strtolower($pre));
-            	insertInscription($_POST['pass'], $nom, $pre, $mois, $annee, $ville, $camp, $mail);
+            	insertInscription($_POST['pass'], $nom, $pre, $mois, $annee, $ville, $univ, $mail);
             	selectVerificationConnexion($mail, $_POST["pass"]);
             	$_SESSION["user_id"] = selectIdEtudiant($mail);
             	header("Location: home/");
@@ -145,7 +145,7 @@
 	</head>
 	<body>
 		<div class="connec">
-			<?php if (!isset($_SESSION["user_id"])) { ?>
+			<?php if (!isset($_SESSION["user_id"])) { 				echo $univ;?>
 			<form name="connec" method="post">
 				<table>
 					<tr>
@@ -213,8 +213,8 @@
 					</tr>
 					<tr>
  						<td>
-							<label for="camp">Campus: </label>
-							<input name="camp" id="camp" type="text" placeholder="Campus" value=<?php echo("\"$camp\"");?> />
+							<label for="univ">Université: </label>
+							<input name="univ" id="univ" type="text" placeholder="Université" value=<?php echo("\"$univ\"");?> />
 						</td>
 					</tr>
 					<tr>
