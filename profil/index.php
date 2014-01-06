@@ -12,9 +12,9 @@
         updateCouleur($_SESSION['user_id'],$_POST['couleur']);
     }
 
-	if(isset($_POST['ville']) && isset($_POST['lieu'])){
-		if(selectIdVille($_POST['ville'])!=false && selectIdCampus($_POST['lieu'])!=false){
-			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdCampus($_POST['lieu']),$_POST['mois'],$_POST['annee']);
+	if(isset($_POST['ville']) && isset($_POST['univ'])){
+		if(selectIdVille($_POST['ville'])!=false && selectIdUniversite($_POST['univ'])!=false){
+			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdUniversite($_POST['univ']),$_POST['mois'],$_POST['annee']);
 		}
         $coordonnee = selectCoordonee($_SESSION['user_id']);
         foreach ($_POST as $key => $value) {
@@ -76,6 +76,9 @@
 		<title><?php echo $real ?></title>
 		<?php head() ?>
         <script type="text/javascript" src="../js/jscolor/jscolor.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="../js/profil.js"></script>
         <script type="text/javascript">
             var title = "<?php echo $title ?>";
         </script>

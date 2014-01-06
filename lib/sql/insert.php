@@ -46,7 +46,7 @@ function insertMsg($de,$a,$msg){
 	return false;
 }
 
-function insertInscription($mdp, $nom, $prenom, $mois, $annee, $ville, $campus, $mail){
+function insertInscription($mdp, $nom, $prenom, $mois, $annee, $ville, $univ, $mail){
 	try{
 		$connec = getPDO();
 
@@ -60,7 +60,7 @@ function insertInscription($mdp, $nom, $prenom, $mois, $annee, $ville, $campus, 
 					AND mois_ne_etu = :mois
 					AND annee_ne_etu = :annee
 					AND id_ville = :ville
-					AND id_camp = :campus;");
+					AND id_univ = :univ;");
 		
 		$selectEtu->bindParam('motdepasse', $motdepasse, PDO::PARAM_STR);
 		$selectEtu->bindParam('nom', $nom, PDO::PARAM_STR);
@@ -68,21 +68,21 @@ function insertInscription($mdp, $nom, $prenom, $mois, $annee, $ville, $campus, 
 		$selectEtu->bindParam('mois', $mois, PDO::PARAM_INT);
 		$selectEtu->bindParam('annee', $annee, PDO::PARAM_INT);
 		$selectEtu->bindParam('ville', $ville, PDO::PARAM_INT);
-		$selectEtu->bindParam('campus', $campus, PDO::PARAM_INT);
+		$selectEtu->bindParam('univ', $univ, PDO::PARAM_INT);
 		
 		if($selectEtu->execute()){
 			if($selectEtu->rowCount() == 0){
 				try{
 				
 					$insertEtu = $connec->prepare("INSERT INTO etudiant
-							VALUES (null, :motdepasse, :nom, :prenom, :mois, :annee, :ville, :campus, '0078E7');");
+							VALUES (null, :motdepasse, :nom, :prenom, :mois, :annee, :ville, :univ, '0078E7');");
 					$insertEtu->bindParam('motdepasse', $motdepasse, PDO::PARAM_STR);
 					$insertEtu->bindParam('nom', $nom, PDO::PARAM_STR);
 					$insertEtu->bindParam('prenom', $prenom, PDO::PARAM_STR);
 					$insertEtu->bindParam('mois', $mois, PDO::PARAM_INT);
 					$insertEtu->bindParam('annee', $annee, PDO::PARAM_INT);
 					$insertEtu->bindParam('ville', $ville, PDO::PARAM_INT);
-					$insertEtu->bindParam('campus', $campus, PDO::PARAM_INT);
+					$insertEtu->bindParam('univ', $univ, PDO::PARAM_INT);
 					
 					if($insertEtu->execute()){
 						try{

@@ -70,6 +70,7 @@
                 printVoyage($value['id_voy'],$value['nom_villeD'],$value['nom_villeA'],$value["date_aller"],$value['date_retour'],$value["prenom_etu"]." ".$value["nom_etu"]);
 			}
     	}
+        echo "<div class='tampon'></div>";
     }
 
 

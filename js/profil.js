@@ -1,6 +1,6 @@
 $(function(){
-	$('#vil').autocomplete({
-		source : './ajax/getListeVille.php',
+	$('#ville').autocomplete({
+		source : '../ajax/getListeVille.php',
 		minLength: 1,
 		messages: {
 			noResults: '',
@@ -9,7 +9,7 @@ $(function(){
 	});
 	
 	$('#univ').autocomplete({
-		source : './ajax/getListeCampus.php',
+		source : '../ajax/getListeCampus.php',
 		minLength: 1,
 		messages: {
 			noResults: '',

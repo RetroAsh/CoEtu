@@ -41,7 +41,7 @@ function printPerson($id,$pre,$nom,$univ,$ville){
         $nbc = "1 contact en commun.";
     }
     elseif ($nbc>1) {
-        $nbc = $nbc + " contacts en commun.";
+        $nbc = $nbc . " contacts en commun.";
     }
     else {
         $nbc = "Aucun contact en commun.";
@@ -117,8 +117,8 @@ function formModInfo($id){
     $coordonnee = selectCoordonee($id);
     $info_ville = selectInfoVille($infos[1]);
     echo "<form method='post' class='modinfo' id='modinfo' >";
-    echo "<label for='lieu'>lieu d'études : </label>";
-    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='lieu' name='lieu' value='".$infos[0]."'><br /><br />";
+    echo "<label for='univ'>lieu d'études : </label>";
+    echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='univ' name='univ' value='".$infos[0]."'><br /><br />";
     echo "<label for='ville'>habite : </label>";
     echo "<input onchange='document.getElementById(\"modinfo\").submit()' type='text' id='ville' name='ville' value='".$info_ville[1]."' /><br /><br />";
     foreach ($coordonnee as $key => $value) {
