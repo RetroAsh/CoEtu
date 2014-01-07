@@ -15,7 +15,7 @@
 <div id="mapinfo">
 	<span class="label">Départ (A) :</span><br />
 	<span class="info"><?php echo $voy['depart']; ?></span><br />
-	<span class="label">Arrivé (B) :</span><br />
+	<span class="label">Arrivée (B) :</span><br />
 	<span class="info"><?php echo $voy['arrive']; ?></span><br />
 	<span class="label">Temps :</span><br />
 	<span class="info" id="infotemps"></span><br />

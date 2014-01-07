@@ -25,7 +25,7 @@ if (isset($_POST["id_etu"])) {
     }else{
         echo "<h2>" . selectNomPerso($_POST["id_etu"]) . "</h2>";
         printMinimalInfoContact($_POST["id_etu"]);
-        echo "<p id=\"textAdd\" class='msg'>Cette personne ne fait parti de vos contacts. Ajouter la pour voir ses informations.</p>";
+        echo "<p id=\"textAdd\" class='msg'>Cette personne ne fait pas partie de vos contacts. Ajouter-là pour voir ses informations.</p>";
         echo "<input id=\"buttonAdd\" type='button' value='Ajouter' onclick=\"faireDemandeAmis(".$_POST["id_etu"].")\" />";
     }
 }

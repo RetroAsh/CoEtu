@@ -24,8 +24,8 @@
         foreach ($listRequete as $value) {
             echo "<tr id='r$value'>";
             echo "<td>";
-            echo "<h6>Demande de contat</h6>";
-            echo selectNomPerso($value)." veut etre votre amis";
+            echo "<h6>Demande de contact</h6>";
+            echo selectNomPerso($value)." veut être votre ami(e)";
             echo "</td>";
             echo "<td>";
             echo "<input type='button' value='accepter' onclick='acceptRequest($value)' />";
@@ -36,7 +36,7 @@
         echo "</table>";
     }
     else {
-        echo "<br /><br /><br /><p class='nonotif'>Pas de nouvelle notification.</p>";
+        echo "<br /><br /><br /><p class='nonotif'>Pas de nouvelles notifications.</p>";
     }
 
 

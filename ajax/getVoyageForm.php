@@ -123,7 +123,7 @@
 		?>
 	</select>
 	<br />
-	<span class="note">Note: laissez la date de retour vide si vous ne souhaitez pas proposer de retour.</span>
+	<span class="note">Note : laissez la date de retour vide si vous ne souhaitez pas proposer de retour.</span>
 	<br />
 	<br />
 	<label for="rec">Récurrence :</label>
@@ -132,13 +132,13 @@
 	<input id="rec" type="text" name="rec" type="number" min="1" value="<?php echo $voy['recursivite']; ?>" />
 	jours.
 	<br />
-	<span class="note">Note: laissez la récurrence à zéro si vous ne proposez pas ce voyage de manière récurrente.</span>
+	<span class="note">Note : laissez la récurrence à zéro si vous ne proposez pas ce voyage de manière récurrente.</span>
 	<br />
 	<br />
 	<?php
 		if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {
 			echo "<input type='submit' value='Modifier' />";
-			echo "<input type='button' value='Supprimer' onclick=\"if(confirm('Etes-vous sur de supprimer le voyage " . $voy['depart'] . " " . $voy['arrive'] . "?')){pop_close();supprVoyage(" . $_POST['mod_id'] . ");}\" title='Supprimer ce voyage.' />";
+			echo "<input type='button' value='Supprimer' onclick=\"if(confirm('Etes-vous sûr de vouloir supprimer le voyage " . $voy['depart'] . " - " . $voy['arrive'] . "?')){pop_close();supprVoyage(" . $_POST['mod_id'] . ");}\" title='Supprimer ce voyage.' />";
 			echo "<input type='reset' value='Annuler' onclick='voyage(" . $_POST["mod_id"] . ",\"" . $voy['depart'] . " &rarr; " . $voy['arrive'] . "\")' />";
 		}
 		else {

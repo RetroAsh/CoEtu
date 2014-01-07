@@ -17,7 +17,7 @@
     }
 
     if (!$ok) {
-    	echo "Erreure lors de la suppression.";
+    	echo "Erreur lors de la suppression.";
     }
 
 ?>
