@@ -2,7 +2,7 @@
 
 Projet de base de donnée 2013-2014.
 
-S3 [IUT-BM](http://www.iut-bm.univ-fcomte.fr/)
+S3 [IUT-BM](http://www.iut-bm.univ-fcomte.fr/) GI
 
 ## Fonctionnalité
 
