@@ -116,6 +116,4 @@ $(function(){
 			results: function() {}
 		}
 	});
-	
-	
 });
