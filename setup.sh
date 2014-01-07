@@ -60,11 +60,13 @@ esac
 echo "Installation de CoEtu"
 echo -n "Choisisser le dossier de destination : " ; read path
 
-echo -n "Entrée votre identifiant mysql       : " ; read id
+read -p "Entrée votre identifiant mysql       : " id
 
 stringsql="mysql -u $id"
 
-echo -n "Entrée votre mot de passe mysql      : " ; read mdp
+stty -echo
+read -p "Entrée votre mot de passe mysql      : " mdp ; echo
+stty echo
 
 if [ ".${mdp}" != "." ]
 then
