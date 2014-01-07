@@ -195,4 +195,14 @@ Même si nous n'avons utilisé que des langages appris en cous, nous avons énor
 
 ### Humain
 
-Pour finir le projet nous avons du nous organiser 
+Apres avoir divisé le groupe en deux pour faire la premier partie du planning initial, l'organisation c'est fait de la manière la plus simple. Le chef de projet faisait une liste de tache et les personne membre du groupe effectuer le travail demandé. Les TP nous servaient de réunion pour mettre au point le travail effectué et prendre les décision concernant les grandes ligne du projet.
+
+Encore une fois, cette organisation a pu fonctionner uniquement grâce à GitHub qui nous a permis de bien gérer les taches et donc de bien travailler pendant les vacances.
+
+### Pédagogique 
+
+Même si nous avons beaucoup appris en cours, ce projet nous a permis de bien nous mettre à l'aise avec le SQL. En effet nous avons essayer d'appliquer aux maximum ce qui nous a été dit en cous à savoir privilégier le traitement en SQL plutôt qu'en PHP.
+
+De plus nous avons appris à nous organiser en groupe de sept, ce qui n'est pas particulièrement évident. Mais au final cette expérience de travaille de groupe avec un projet bien plus grand que d'ordinaire nous à tous permis de prendre conscience non seulement de l'ampleur des bases de donnée et site de ce genre mais aussi qu'il est assez difficile de construire un projet comme ça sans une bonne équipe.
+
+## Conclusion
