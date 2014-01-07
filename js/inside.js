@@ -81,7 +81,6 @@ function addZero(nb) {
 }
 
 $(function(){
-	alert('bonjour');
 
 	$('#dep').autocomplete({
 		source : './ajax/getListeVille.php',
