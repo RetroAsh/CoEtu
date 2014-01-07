@@ -217,6 +217,7 @@ function getNewVoyageForm(){
             pop_set_y(470);
             pop_show();
             stop_loading();
+            sugvoyageform();
             document.getElementById("v_dep").focus();
         }
     }
@@ -237,6 +238,7 @@ function getModVoyageForm(id){
             pop_set_y(470);
             pop_show();
             stop_loading();
+            sugvoyageform();
             document.getElementById("v_dep").focus();
         }
     }

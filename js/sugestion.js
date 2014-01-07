@@ -1,7 +1,6 @@
 $(function(){
-
-    $('#dep').autocomplete({
-        source : './ajax/getListeVille.php',
+    $('#ville').autocomplete({
+        source : '../ajax/getListeVille.php',
         minLength: 1,
         messages: {
             noResults: '',
@@ -9,16 +8,8 @@ $(function(){
         }
     });
 
-    $('#arr').autocomplete({
-        source : './ajax/getListeVille.php',
-        minLength: 1,
-        messages: {
-            noResults: '',
-            results: function() {}
-        }
-    });
-    $('#v_dep').autocomplete({
-        source : './ajax/getListeVille.php',
+    $('#univ').autocomplete({
+        source : '../ajax/getListeCampus.php',
         minLength: 1,
         messages: {
             noResults: '',
@@ -26,12 +17,28 @@ $(function(){
         }
     });
 
-    $('#v_arr').autocomplete({
-        source : './ajax/getListeVille.php',
-        minLength: 1,
-        messages: {
-            noResults: '',
-            results: function() {}
-        }
-    });
 });
+
+function sugvoyageform(){
+    $(function(){
+
+        $('#v_dep').autocomplete({
+            source : '../ajax/getListeVille.php',
+            minLength: 1,
+            messages: {
+                noResults: '',
+                results: function() {}
+            }
+        });
+
+        $('#v_arr').autocomplete({
+            source : '../ajax/getListeVille.php',
+            minLength: 1,
+            messages: {
+                noResults: '',
+                results: function() {}
+            }
+        });
+    });
+}
+

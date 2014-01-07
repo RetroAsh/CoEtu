@@ -1016,7 +1016,7 @@ body .ui-autocomplete {
     list-style: none;
     color: rgb(75, 75, 75);
     background-color: white;
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 1px 3px rgb(221, 221, 221) inset;
     border: 1px solid rgb(204, 204, 204);
     width: 230px;
@@ -1030,6 +1030,7 @@ body .ui-autocomplete .ui-menu-item .ui-corner-all {
     padding: 3px;
     padding-left: 10px;
     z-index: 9999;
+    transition: 0s color;
 }
 
 body .ui-autocomplete .ui-menu-item .ui-state-focus {
