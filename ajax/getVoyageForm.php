@@ -28,7 +28,7 @@
     }
 
 ?>
-
+	
 	<input type="hidden" id="mod_id" name="mod_id" value="<?php echo $_POST["mod_id"] ?>" />
 	<p id="err" class="err"></p>
 	<label for="v_dep">Ville de départ :</label>
