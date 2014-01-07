@@ -37,7 +37,7 @@ case $# in
                     exit 1
                 else
                     echo "disponible"
-                    prog="curl"
+                    prog="curl -L"
                     ifcurl="> master.zip"
                 fi
             else
