@@ -185,7 +185,7 @@
 					<h2>Créer un compte</h2>
 					<ol>
 						<li>Un réseau fait par des étudiants pour des étudiants</li>
-						<li>À l'autre bout de la région en moins de 2h</li>
+						<li>Créez, participez et organisez vos voyages à partir de votre réseau d'amis</li>
 						<li><?php echo $nb_user; ?> utilisateurs</li>
 						<li>Sécurisé, crypté... vous n'êtes pas espionné</li>
 						<li>Pas de pub</li>
@@ -195,49 +195,49 @@
 				<table>
 					<tr>
 						<td>
-							<label for="pre">Prénom: </label>
+							<label for="pre">Prénom : </label>
 							<input name="pre" id="pre" type="text" placeholder="Prénom" value=<?php echo("\"$pre\"");?> />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="nom">Nom: </label>
+							<label for="nom">Nom : </label>
 							<input name="nom" id="nom" type="text" placeholder="Nom" value=<?php echo("\"$nom\"");?> />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="email">Email: </label>
+							<label for="email">Email : </label>
 							<input name="email" id="email" type="text" placeholder="E-mail" value=<?php echo("\"$email\"");?> />
 						</td>
 					</tr>
 					<tr>
  						<td>
-							<label for="univ">Université: </label>
+							<label for="univ">Université : </label>
 							<input name="univ" id="univ" type="text" placeholder="Université" value=<?php echo("\"$univ\"");?> />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="vil">Ville: </label>
+							<label for="vil">Ville : </label>
 							<input name="vil" id="vil" type="text" placeholder="Ville" value= <?php echo("\"$ville\"");?> />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="pass">Mot de passe: </label>
+							<label for="pass">Mot de passe : </label>
 							<input name="pass" id="pass" type="password" placeholder="Mot de passe"/>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="pass2">Confirmer: </label>
+							<label for="pass2">Confirmer : </label>
 							<input name="pass2" id="pass2" type="password" placeholder="Confirmation" />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="ine">Date de naissance: </label>
+							<label for="ine">Date de naissance : </label>
 							<select name="mois" >
 								<?php
 								for ($i=1; $i<=12; $i++) {
