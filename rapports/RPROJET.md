@@ -61,7 +61,7 @@ Il nous a donc semblé évident de réaliser un réseau social avec un système 
 
 Le cahier des charge a été remplie dans son intégralité, nous avons même réalisé des options qui n'était pas demandé comme l'adaptation de la couleur principale en fonction de l'utilisateur ainsi qu'un système de messagerie privée.
 
-### Pages
+### Résultat
 
 Nous avons donc les pages suivante:
 
@@ -160,5 +160,8 @@ Afin situer les villes nous avons utilisé l'API de Google Map pour mieux visual
 [http://jscolor.com/](http://jscolor.com/)
 
 JSColor est un JavaScript licencié GNU qui permet au développer web d'intégrer un "color picker" dans leur site. Ce service est important pour notre application car nous proposons aux utilisateurs de personnaliser leur compte en modifiant la couleur principale du site à leur plein grès.
+
+## Bilan
+
 
  
