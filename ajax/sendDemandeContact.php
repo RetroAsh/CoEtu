@@ -11,34 +11,34 @@
     switch ($statut) {
         case -1:
         {
-            # se connaisse pas
+            # se connaissent pas
             insertCarnet($_SESSION["user_id"], $_POST["id_contact"]);
             break;
         }
 
         case 0:
         {
-            # il y a deja une demande, on devrai pas arriver ici
+            # il y a déjà une demande, on ne devrait pas arriver ici
             die("you cheater !!! (0)");
             break;
         }
 
         case 1:
         {
-            # se connaisse, on devrai pas arriver ici a moins que triche
+            # se connaissent, on devrait pas arriver ici à moins que triche
             die("you cheater !!! (1)");
             break;
         }
 
         case 2:
         {
-            # Je met quoi la ?
+            # Je mets quoi là ?
             break;
         }
         
         default:
         {
-            # on devrai jamais arriver la
+            # on devrait jamais arriver là
             die("you cheater !!! (def)");
             break;
         }
