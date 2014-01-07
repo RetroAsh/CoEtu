@@ -37,7 +37,7 @@ TRUNCATE TABLE `universite`;
 
 INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,4440 , 1, 'Université d''Aix-Marseille');
 INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,33838 , 1, 'Université d''Avignon et des pays du Vaucluse');
-INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,32933 , 2, ' Université de Picardie Jules Verne Amiens');
+INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,32933 , 2, 'Université de Picardie Jules Verne Amiens');
 INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,23431 , 2, 'Université de technologie de Compiègne');
 INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,9370 , 4, 'Université de Franche-Comté');
 INSERT INTO `universite` (`id_univ`, `id_ville`, `id_acad`, `libelle`) VALUES (NULL,35607 , 4, 'Université de technologie de Belfort-Montbéliard');
