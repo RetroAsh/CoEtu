@@ -17,7 +17,7 @@
     else {
     	printMinimalInfoContact($_POST["id"]);
         if(selectStatut($_POST["id"],$_SESSION["user_id"]) != 0){
-    	   echo "<p id=\"textAdd\" class='msg'>Cette personne ne fait parti de vos contacte. Ajouter la pour voir ses informations.</p>";
+    	   echo "<p id=\"textAdd\" class='msg'>Cette personne ne fait pas partie de vos contacts. Ajouter-là pour voir ses informations.</p>";
     	   echo "<input id=\"buttonAdd\" type='button' value='Ajouter' onclick=\"faireDemandeAmis(".$_POST["id"].")\" />";
         }else{
             echo "<p class='msg'>Demande de contact en cours</p>";

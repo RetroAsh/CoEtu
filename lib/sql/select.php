@@ -173,10 +173,10 @@ function selectInfoVoyage($id){
 function selectVerificationConnexion($email, $mdp){
     $connec = getPDO();
 
-    // On considere le mot de passe comme juste
+    // On considère le mot de passe comme juste
     $rep = true;
 
-    // On recupere l'etudiant correspondant a l'identifiant fourni
+    // On récupère l'étudiant correspondant à l'identifiant fourni
     $requete = "SELECT E.mot_de_passe
 				FROM etudiant E, coordonnee C
 				WHERE E.id_etu = C.id_etu
@@ -191,13 +191,13 @@ function selectVerificationConnexion($email, $mdp){
 
     $tab = $select->fetch();
 
-    // Si on trouve l'etudiant
+    // Si on trouve l'étudiant
     if (isset($tab['mot_de_passe'])) {
-        // On verifie si le hash du mdp fourni et le meme que celui stocker
+        // On vérifie si le hash du mdp fourni et le même que celui stocké
         if (hash("sha256", $mdp, null) != $tab['mot_de_passe']) {
             $rep = false;
         }
-        // Si on ne trouve pas l'etudiant
+        // Si on ne trouve pas l'étudiant
     }else{
         $rep = false;
     }
@@ -208,10 +208,10 @@ function selectVerificationConnexion($email, $mdp){
 function selectVerificationMdp($id,$mdp){
     $connec = getPDO();
 
-    // On considere le mot de passe comme juste
+    // On considère le mot de passe comme juste
     $rep = true;
 
-    // On recupere l'etudiant correspondant a l'identifiant fourni
+    // On récupère l'étudiant correspondant à l'identifiant fourni
     $requete = "SELECT E.mot_de_passe
 				FROM etudiant E
 				WHERE E.id_etu=$id";
@@ -224,13 +224,13 @@ function selectVerificationMdp($id,$mdp){
 
     $tab = $select->fetch();
 
-    // Si on trouve l'etudiant
+    // Si on trouve l'étudiant
     if (isset($tab['mot_de_passe'])) {
-        // On verifie si le hash du mdp fourni et le meme que celui stocker
+        // On v&rifie si le hash du mdp fourni et le même que celui stock&
         if (hash("sha256", $mdp, null) != $tab['mot_de_passe']) {
             $rep = false;
         }
-        // Si on ne trouve pas l'etudiant
+        // Si on ne trouve pas l'étudiant
     }else{
         $rep = false;
     }
@@ -349,7 +349,7 @@ function selectIdPerso($nom){
     return $id;
 }
 
-// renvoie le prenom et nom de l'id en parametre
+// renvoie le prénom et nom de l'id en paramètre
 function selectNomPerso($id){
     $connec = getPDO();
 
@@ -364,7 +364,7 @@ function selectNomPerso($id){
     return ucfirst($tab[0]) . " " . ucfirst($tab[1]);
 }
 
-// Fonction permettant de récuperer l'ID correspondant a l'email
+// Fonction permettant de récupérer l'ID correspondant à l'email
 function selectIdEtudiant($email){
 
     $connec = getPDO();
@@ -382,7 +382,7 @@ function selectIdEtudiant($email){
     return $tab[0];
 }
 
-// retourne l'ID du campus si le libelle fourni existe ou false si il n'existe pas
+// retourne l'ID du campus si le libellé fourni existe ou false si il n'existe pas
 function selectIdUniversite($nomUniv){
 
     $connec = getPDO();
@@ -671,8 +671,8 @@ function selectVoyageDepasseRecurssif(){
 }
 
 /*
- * On récupere tout les contact de chaque etudiant et on
- * regarde les contact en commun.
+ * On récupère touq les contacts de chaque étudiant et on
+ * regarde les contacts en commun.
  */
 function selectNbContactCommun($id1, $id2){
     $connec = getPDO();

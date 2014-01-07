@@ -103,7 +103,7 @@
                 <br />
                 <?php
                     if(selectNbContacts($_SESSION["user_id"])>0){
-                        echo("<span class='welcome'>Selectionner un contact pour l'afficher.</span>");
+                        echo("<span class='welcome'>Sélectionner un contact pour l'afficher.</span>");
                     }
                     else {
                         echo("<span class='welcome'>Pour ajouter une personne à vos contacts, entrez le nom de cette personne dans la <a href='../rechercher'>barre de recherche</a>.</span>");

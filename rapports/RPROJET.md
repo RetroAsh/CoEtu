@@ -61,6 +61,8 @@ Il nous a donc semblé évident de réaliser un réseau social avec un système 
 
 Le cahier des charge a été remplie dans son intégralité, nous avons même réalisé des options qui n'était pas demandé comme l'adaptation de la couleur principale en fonction de l'utilisateur ainsi qu'un système de messagerie privée.
 
+### Pages
+
 Nous avons donc les pages suivante:
 
 1. Page de connextion
@@ -71,6 +73,69 @@ Nous avons donc les pages suivante:
 5. Recherche
 6. Profile
 
-### Page de connection
+#### Page de connection
 
-La page de connexion comme son nom l'indique permet de se connecter à son compte ou de créer un compte. 
+La page de connexion comme son nom l'indique permet de se connecter à son compte ou de créer un compte.
+
+En plus des fonctionnalités de cette page, nous avons affiché le nombre d'utilisateur à coté du formulaire d'inscription.
+
+#### Home
+
+Une fois connecté, l'utilisateur arrive sur la page home et se voit proposer quatre lien qui corresponde aux quatre pages principales du site à savoir Voyages, Contacts,  Messages, et Recherche.
+
+L'utilisateur peut aussi voir la bar de navigation et une boite resumument ses information personnelles. Ces deux dernier éléments seront présent dans tout le reste du site.
+
+#### Voyages
+
+La page voyage contient l'intégralité des voyage proposé par l'utilisateur en plus des voyages des contacts de l'utilisateur.
+
+![voyages](captures/voyages.png)
+
+Pour afficher une voyage, il suffit de cliquer dessus et une popup s'affiche avec une carte Google Map, et les différente information du voyage comme le temps approximatif, les différentes dates des trajet ainsi que la récurrence si les trajets se répètent.
+
+![un voyages](captures/unvoyage.png)
+
+#### Contacts
+
+Cette page est probablement la plus classique dans sa presentation. On trouve en effet une liste de contact sur la gauche et en sélectionnant un nom on affiche les information de cette personne. On peut également retrouver les voyages de cette personne si elle en propose.
+
+![contacts](captures/contacts.png)
+
+#### Messages
+
+Le système de messagerie a était en parti copiée de Facebook concernant le style. Sinon on retrouve l'interface utilisé pour la page contact.
+
+![messages](captures/messages.png)
+
+### Base de donnée
+
+Ce MCD nous fait un total de 10 tables.
+
+![MCD](../dev/mcd_covoiturage.jpg)
+
+#### Sources
+
+Afin d'avoir une base de donnée la plus complete possible, nous avons téléchargé un script sql avec toute les villes de France et nous avons également récupéré la liste de toute les université publique que l'on a trouvé sur le site de l'éducation national.
+
+Avec les données du script des villes de France nous obtenue la longitude et la latitude de chaque commune. A partir de ces donné nous avons pu intégrer Google Map.
+
+#### Spécificité
+
+Afin de pouvoir gérer l'identification par mail de l'utilisateur. Tout étudiant doit avoir au moins une adresse mail et donc avoir une occurrence de l'entité coordonné lié à l'occurrence étudiant.
+
+`statut_car` dans l'association carnet représente le statut de la relation entre les deux étudiant. Cet entier est nulle quand la demande de contact a été envoyé mais le deuxième étudiant n'a pas encore refusé ou accepté. Dans le cas d'un refus, l'occurrence de carnet est supprimé, dans le cas contraire le status est mit à un.
+
+### Moyen utilisé
+
+Le site dans sont intégralité a été implémenté avec les languages suivant:
+
+- PHP (55.5%)
+- SQL
+- JavaScript/JQuery (30.1%)
+- HTML/CSS (13.0%)
+- ShellScript (1.4%)
+
+La répartition du code nous est donné grace à GitHug sur le quelle nous avons hébergé le projet:
+
+[https://github.com/Ricain/CoEtu](https://github.com/Ricain/CoEtu)
+

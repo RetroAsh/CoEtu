@@ -18,15 +18,15 @@
     
     if(!$v_dep){
 		$verif = false;
-		$err = $err."Ville de départ inconnu.<br/>";
+		$err = $err."Ville de départ inconnue.<br/>";
     }
     if(!$v_arr){
 		$verif = false;
-		$err = $err."Ville d'arrivé inconnu.<br/>";
+		$err = $err."Ville d'arrivée inconnue.<br/>";
     }
     if ($v_dep==$v_arr) {
         $verif = false;
-        $err = $err."Les villes de départ et d'arrivé sont les même.<br/>";
+        $err = $err."Les villes de départ et d'arrivée sont les mêmes.<br/>";
     }
     if(!verifDate($_POST["d_dep"])){
 		$verif = false;
@@ -37,7 +37,7 @@
 	if ($_POST["d_arr"]!="00/00/00") {
 		if(!verifDate($_POST["d_arr"])){
 			$verif = false;
-			$err = $err."Date d'arrivé invalide.<br/>";
+			$err = $err."Date d'arrivée invalide.<br/>";
 		}else{
 			$d2 = new DateTime(dateNormalToCrade($_POST["d_arr"]));
 		}
@@ -46,15 +46,15 @@
 	}
     if ($d1<$now) {
         $verif = false;
-        $err = $err."La date de départ est passé.<br />";
+        $err = $err."La date de départ est passée.<br />";
     }
 	if($_POST["d_arr"]!="00/00/00" && $d1>$d2){
 		$verif = false;
-		$err = $err."La date de départ ne peut etre supérieur à la date d'arrivé.<br />";
+		$err = $err."La date de départ ne peut être supérieure à la date d'arrivée.<br />";
 	}
     if(!ctype_digit($_POST["rec"]) && $_POST["rec"] < 1){
 		$verif = false;
-		$err = $err."récurence doit être un nombre entier suppérieur à 0.<br/>";
+		$err = $err."Récurrence doit être un nombre entier supérieur à 0.<br/>";
     }
     
     if($verif)
