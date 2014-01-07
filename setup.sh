@@ -81,9 +81,9 @@ else
     cd /tmp
     bash -c "${prog} $url 1>/dev/null"
     unzip master.zip 1>/dev/null
-    rm -f master.zip
     cd $where
     mv /tmp/CoEtu-master ${path}/$file
+    rm -f /tmp/master.zip
 fi
 
 stringsql=$stringsql" < ${path}/${file}/dev/projetbdd.sql"
@@ -99,6 +99,6 @@ echo "<?php
           define(\"PASSWORD\",\"${mdp}\");
           define(\"BASE\",\"coetu\");
           define(\"SERVER\",\"${server}\");
-      ?>" > $path/$file/login.inc
+?>" > $path/$file/login.inc
 
 echo "Installation terminé"
