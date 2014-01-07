@@ -20,11 +20,6 @@ function getXhr()
     return xhr;
 }
 
-function test()
-{
-    alert("patate de test");
-}
-
 function notif(){
     var xhr = getXhr();
     xhr.onreadystatechange = function(){

@@ -48,7 +48,7 @@
                 };
 
                 document.getElementById("buffer").onkeydown=function(e){
-                    if(e.which == 13) {
+                    if(e.which == 13 && e.shiftKey != true) {
                         isEnter=true;
                     }
                     if(e.which == 13 && isEnter == true && document.getElementById("buffer") && document.getElementById("enter_tchat").checked) {
