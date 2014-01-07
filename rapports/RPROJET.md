@@ -163,5 +163,36 @@ JSColor est un JavaScript licencié GNU qui permet au développer web d'intégre
 
 ## Bilan
 
+### Planning
 
- 
+#### Initial
+
+Nous avions initialement divisé notre projet en quatre étapes.
+
+1. Création du MCD (1 semaine)
+2. Création de la base de donnée avec un fichier SQL (2 semaines)
+3. Début de l’implémentation des fonctions basiques comme créer un compte, interface de connexion, consulter ses infos… (3 semaines)
+4. Implémentation des fonctions complexes comme l’interface de voyage, le carnet d’adresse, le formulaire de recherche… (reste du temps)
+
+Afin de respecter ces étape, nous avons commencé le projet sur plusieurs front, c'est à dire que l'on a divisé le groupe en deux, le premier sous groupe s'occupait de créer la base de donné pendant que le deuxième s'occuper de faire la maquette du site. Un fois ces deux éléments fait il ne reste plus qu'a faire le lien en atomisant le HTML des maquettes avec le PHP. 
+
+#### Final
+
+Nous avons donc respecté le processus précédant mais nous mit en place toute les fonctionnalité demandé dans le cahier des charges bien plus rapidement que prévu. Dans ce contexte nous avons donc décidé de rajouter une grande quantité de fonction tel que:
+
+- la couleur ajustable en fonction de l'utilisateur
+- le remplacement de l'ajax par des websockets
+- les photo de profile
+- un système de messagerie interne
+
+Comme on peut le voir certaine de ces fonctionnalité ont pu être amendé sur l'application.
+
+L'objectif était de finir le projet cinq jour avant la soutenance afin de pourvoir écrire les rapports. Il est difficile de dire si cette objectif a été atteint car même si nous sommes arrivé un à un site tout à fait convenable niveau fonctionnalité, nous avons été confronté à de nombreuse correction de bug qui nous a forcé à modifier le code source jusqu'a la fin.
+
+### Technique
+
+Même si nous n'avons utilisé que des langages appris en cous, nous avons énormément appris dans l'organisation d'un avec une base un peu plus grand que d'habitude. Nous avons mit en place une base de donné assez conséquente ainsi que diffèrent scripts... 
+
+### Humain
+
+Pour finir le projet nous avons du nous organiser 
