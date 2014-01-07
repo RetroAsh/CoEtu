@@ -53,6 +53,23 @@ function updateCouleur($id,$couleur){
 	return false;
 }
 
+function updateMdp($id,$mdp){
+    $mdp = hash("sha256", $mdp, null);
+    try{
+        $connec = getPDO();
+        $update = $connec->prepare("UPDATE etudiant
+					SET mot_de_passe = :mdp
+					WHERE id_etu = :id");
+        $update->bindParam('mdp', $mdp, PDO::PARAM_STR);
+        $update->bindParam('id', $id, PDO::PARAM_INT);
+        return $update->execute();
+    }
+    catch(Exception $e){
+        echo("Une erreur est survenue lors de la mise à jour du mot de passe : ".$e->getMessage());
+    }
+    return false;
+}
+
 function updateMsgRead($de,$a){
 	try{
 		$connec = getPDO();

@@ -76,19 +76,26 @@
 	
 	
 	if(isset($_POST['actuel']) && isset($_POST['new1']) && isset($_POST['new2'])){
+        $mdperr = "";
 		if(empty($_POST['actuel'])){
-			$err.="Veuillez renseigner le mot de passe actuel<br />\n";
+            $mdperr.="Veuillez renseigner le mot de passe actuel.<br />\n";
 		}
 		if(empty($_POST['new1'])){
-			$err.="Veuillez renseigner le nouveau mot de passe<br />\n";
+            $mdperr.="Veuillez renseigner le nouveau mot de passe.<br />\n";
 		}
 		if(empty($_POST['new2']) && !empty($_POST['new1'])){
-			$err.="Veuillez renseigner la confirmation du nouveau mot de passe<br />\n";
+            $mdperr.="Veuillez renseigner la confirmation du nouveau mot de passe<br />\n";
 		}
-		
-		
-		
-		
+	    if($_POST['new1']==$_POST['new2']){
+            $mdperr.="Les deux mot des passes ne sont égaux.<br />\n";
+        }
+		if(empty($mdperr) && selectVerificationMdp($_SESSION["user_id"],$_POST['actuel'])){
+            updateMdp($_SESSION["user_id"],$_POST['new1']);
+        }
+        else {
+            $mdperr .= "Mot de passe courrant incorrecte.<br />\n";
+        }
+        $err .= $mdperr;
 	}
 ?>
 
