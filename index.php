@@ -150,7 +150,7 @@
 				<table>
 					<tr>
 						<td>
-							<input value="" placeholder="Email" class="em" id="em" name="em" type="text" />
+							<input value="" placeholder="Email" class="em" id="em" name="em" type="mail" />
 						</td>
 					</tr>
 					<tr>
