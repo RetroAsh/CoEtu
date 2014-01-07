@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "Installation de CoEtu"
 
 file="CoEtu"
 
@@ -27,15 +26,38 @@ case $# in
             else
                 echo "disponible"
             fi
+            echo -n "wget  : "
+            if [ ".$(command -v wget)" = "." ]
+            then
+                echo "non disponible"
+                echo -n "curl  : "
+                if [ ".$(command -v curl)" = "." ]
+                then
+                    echo "non disponible"
+                    exit 1
+                else
+                    echo "disponible"
+                    prog="curl"
+                fi
+            else
+                echo "disponible"
+                prog="wget"
+            fi
         else
-            echo "USAGE : setup.sh [-a]"
-            exit 1
+            if [ $1 = "-h" ]
+            then
+                echo "USAGE : setup.sh [-a]"
+                echo "-a : utilisation de wget/curl"
+                exit 0
+            else
+                echo "USAGE : setup.sh [-a]"
+                exit 1
+            fi
         fi;;
     *) echo "USAGE : setup.sh [-a]";;
 esac
-
+echo "Installation de CoEtu"
 echo -n "Choisisser le dossier de destination : " ; read path
-mkdir -p $path
 
 echo -n "Entrée votre identifiant mysql       : " ; read id
 
@@ -50,15 +72,16 @@ fi
 echo -n "Entrée votre serveur mysql           : " ; read server
 
 echo "Téléchargement du projet"
-
+mkdir -p $path
 if [ $a -eq 0 ]
 then
     git clone $url ${path}/$file 
 else
     where=$(pwd)
     cd /tmp
-    wget $url 1>/dev/null
+    bash -c "${prog} $url 1>/dev/null"
     unzip master.zip 1>/dev/null
+    rm -f master.zip
     cd $where
     mv /tmp/CoEtu-master ${path}/$file
 fi
