@@ -138,7 +138,7 @@
 	<?php
 		if (isset($_POST["mod_id"]) && $_POST["mod_id"]!=0) {
 			echo "<input type='submit' value='Modifier' />";
-			echo "<input type='button' value='Supprimer' onclick=\"if(confirm('Etes-vous sûr de vouloir supprimer le voyage " . $voy['depart'] . " - " . $voy['arrive'] . "?')){pop_close();supprVoyage(" . $_POST['mod_id'] . ");}\" title='Supprimer ce voyage.' />";
+			echo "<input type='button' value='Supprimer' onclick=\"if(confirm('Etes-vous sûr de vouloir supprimer le voyage " . $voy['depart'] . " - " . $voy['arrive'] . " ?')){pop_close();supprVoyage(" . $_POST['mod_id'] . ");}\" title='Supprimer ce voyage.' />";
 			echo "<input type='reset' value='Annuler' onclick='voyage(" . $_POST["mod_id"] . ",\"" . $voy['depart'] . " &rarr; " . $voy['arrive'] . "\")' />";
 		}
 		else {
