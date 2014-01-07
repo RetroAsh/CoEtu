@@ -130,7 +130,7 @@ div#pop {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 9998;
     background-image: url('../img/blanc.png');
 }
 
@@ -1022,12 +1022,14 @@ body .ui-autocomplete {
     width: 230px;
     padding: 0;
     overflow: hidden;
+    z-index: 9999;
 }
 
 body .ui-autocomplete .ui-menu-item .ui-corner-all {
     display: inline-block;
     padding: 3px;
     padding-left: 10px;
+    z-index: 9999;
 }
 
 body .ui-autocomplete .ui-menu-item .ui-state-focus {
@@ -1037,5 +1039,6 @@ body .ui-autocomplete .ui-menu-item .ui-state-focus {
     width: 100%;
     color: white;
     background-color: rgb(75, 75, 75);
+    z-index: 9999;
 }
 
