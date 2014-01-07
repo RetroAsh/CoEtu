@@ -61,7 +61,7 @@ Il nous a donc semblé évident de réaliser un réseau social avec un système 
 
 Le cahier des charge a été remplie dans son intégralité, nous avons même réalisé des options qui n'était pas demandé comme l'adaptation de la couleur principale en fonction de l'utilisateur ainsi qu'un système de messagerie privée.
 
-### Pages
+### Résultat
 
 Nous avons donc les pages suivante:
 
@@ -115,15 +115,27 @@ Ce MCD nous fait un total de 10 tables.
 
 #### Sources
 
-Afin d'avoir une base de donnée la plus complete possible, nous avons téléchargé un script sql avec toute les villes de France et nous avons également récupéré la liste de toute les université publique que l'on a trouvé sur le site de l'éducation national.
+Afin d'avoir une base de donnée la plus complete possible, nous avons téléchargé un script sql avec toute les villes de France et nous avons également récupéré la liste de toute les université publique que l'on a trouvé sur le site de l'éducation national. Ces données sont nécessaire à la verification des information fourni par les utilisateur mais permettent aussi d'émettre des suggestions lorsqu'un utilisateur tapes les premiere lettre du nom d'une ville ou d'une universités.
 
 Avec les données du script des villes de France nous obtenue la longitude et la latitude de chaque commune. A partir de ces donné nous avons pu intégrer Google Map.
 
 #### Spécificité
 
+##### Identification des utilisateurs
+
 Afin de pouvoir gérer l'identification par mail de l'utilisateur. Tout étudiant doit avoir au moins une adresse mail et donc avoir une occurrence de l'entité coordonné lié à l'occurrence étudiant.
 
+##### Attribut de l'association carnet
+
 `statut_car` dans l'association carnet représente le statut de la relation entre les deux étudiant. Cet entier est nulle quand la demande de contact a été envoyé mais le deuxième étudiant n'a pas encore refusé ou accepté. Dans le cas d'un refus, l'occurrence de carnet est supprimé, dans le cas contraire le status est mit à un.
+
+##### Notion de récursivité
+
+La récursivité d'un voyage est représenté par le l'attribut `recursivite` dans la table `voyage`. Cet entier correspond à l'interval de temps en jours entre chaque repetition du voyage. Il est donc forcement positif cependant il prend une valeur de zero quand le voyage en question n'est pas récursif.
+
+##### Retour
+
+La date de retour dans l'entité voyage est le seul attribut propre au retour du voyage. Si un voyage ne présente pas de retour, la date est mise à zero soit `0000-00-00`.
 
 ### Moyen utilisé
 
@@ -139,3 +151,17 @@ La répartition du code nous est donné grace à GitHug sur le quelle nous avons
 
 [https://github.com/Ricain/CoEtu](https://github.com/Ricain/CoEtu)
 
+#### Google Map
+
+Afin situer les villes nous avons utilisé l'API de Google Map pour mieux visualiser les voyage. Cela nous permet aussi de calculer approximativement le temps nécessaire à aller du point de départ au point d'arrivé.
+
+#### JSColor
+
+[http://jscolor.com/](http://jscolor.com/)
+
+JSColor est un JavaScript licencié GNU qui permet au développer web d'intégrer un "color picker" dans leur site. Ce service est important pour notre application car nous proposons aux utilisateurs de personnaliser leur compte en modifiant la couleur principale du site à leur plein grès.
+
+## Bilan
+
+
+ 

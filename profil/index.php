@@ -44,11 +44,11 @@
             $ok = true;
             if($_POST["new_label"]=="email" && (selectVerifDispoEmail($_POST["new_info"]) || !email_valid($_POST["new_info"]))){
                 $ok = false;
-                $err .= "Email invalide ou déja utilisé.<br />\n";
+                $err .= "Email invalide ou déjà utilisé.<br />\n";
             }
             if($_POST["new_label"]=="tel" && !tel_valid($value)){
                 $ok = false;
-                $err .= "Numéro de téléphone invalide.<br />\n";
+                $err .= "Numero de téléphone invalide.<br />\n";
             }
             if(($_POST["new_label"]=="site" || $_POST["new_label"]=="facebook") && !url_valid($value)){
                 $ok = false;
@@ -87,7 +87,7 @@
             $mdperr.="Veuillez renseigner la confirmation du nouveau mot de passe<br />\n";
 		}
 	    if($_POST['new1']==$_POST['new2']){
-            $mdperr.="Les deux mot des passes ne sont pas égaux.<br />\n";
+            $mdperr.="Les deux mots des passes ne sont pas égaux.<br />\n";
         }
 		if(empty($mdperr) && selectVerificationMdp($_SESSION["user_id"],$_POST['actuel'])){
             updateMdp($_SESSION["user_id"],$_POST['new1']);
@@ -118,12 +118,12 @@
             <div class="err"><?php echo $err; ?></div>
             <?php formModInfo($_SESSION["user_id"]); ?>
 			<form id="mdp" method="post" style="display:none" >
-				<label for="actuel" type="text">Mot de passe actuel :</label>
-				<input id="actuel" name="actuel" type="password" /></br>
-				<label for="actuel" type="text">Nouveau mot de passe :</label>
-				<input id="new1" name="new1" type="password" /></br>
-				<label for="actuel" type="text">Confirmer :</label>
-				<input id="new2" name="new2" type="password" /></br>
+				<label for="actuel" >Mot de passe actuel :</label>
+				<input id="actuel" name="actuel" type="password" /><br>
+				<label for="new1" >Nouveau mot de passe :</label>
+				<input id="new1" name="new1" type="password" /><br>
+				<label for="new2" >Confirmer :</label>
+				<input id="new2" name="new2" type="password" /><br>
 				<input type="submit" value="Valider"/>
 				<input type="reset" value="Annuler" onclick="document.getElementById('mdp').style.display='none'"/>
 			</form>
