@@ -40,7 +40,7 @@ Ce site est destiné au étudiant et donc à un publique jeune qui a une experie
 
 L'application doit être réalisée en PHP/javascript/SQL. Elle doit fonctionner sur un serveur Apache et sur un environnement Linux. La base de donnée doit être créer à partir d'un script sql.
 
-Ce site, qui est également un réseau social, doit remplir les different points:
+Ce site doit remplir les different points:
 
 1. Intuitif : l'application doit pourvoir s'utiliser sans avoir besoin de lire la documentation. Pour cela il faudra une interface propre.
 2. Pour les étudiants: la base de donnée doit intégrer la liste des université afin de pouvoir regrouper les étudiants.
@@ -55,6 +55,22 @@ Ce site, qui est également un réseau social, doit remplir les different points
 10. Mot de passe: le mot de passe doit être crypté et doit pouvoir être changé.
 11. Compte: il es possible de créer et de supprimer son compte. 
 
+Il nous a donc semblé évident de réaliser un réseau social avec un système de notification.
+
 ## Réalisation
 
-Le cahier des charge a été remplie dans son intégralité,
+Le cahier des charge a été remplie dans son intégralité, nous avons même réalisé des options qui n'était pas demandé comme l'adaptation de la couleur principale en fonction de l'utilisateur ainsi qu'un système de messagerie privée.
+
+Nous avons donc les pages suivante:
+
+1. Page de connextion
+1. Home
+2. Voyages
+3. Contacts
+4. Messages
+5. Recherche
+6. Profile
+
+### Page de connection
+
+La page de connexion comme son nom l'indique permet de se connecter à son compte ou de créer un compte. 
