@@ -3,6 +3,7 @@
 Projet de base de donnée 2013-2014.
 
 S3 [IUT-BM](http://www.iut-bm.univ-fcomte.fr/) GI
+<<<<<<< HEAD
 
 | L’équipe             |
 |----------------------|
@@ -13,6 +14,8 @@ S3 [IUT-BM](http://www.iut-bm.univ-fcomte.fr/) GI
 |Bastien Doublet       |
 |Jeremy Rigault        |
 |Alexis Plumet         |
+=======
+>>>>>>> bf6b5ef5ea9581f56d956ba560339fb0d321f993
 
 ## Fonctionnalité
 
