@@ -22,6 +22,9 @@
 	<head>
 		<title><?php echo $real ?></title>
 		<?php head() ?>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type='text/javascript' src='../js/villeVoyage.js' ></script>
         <script type="text/javascript">
             var title = "<?php echo $title ?>";
             window.onload=function() {
