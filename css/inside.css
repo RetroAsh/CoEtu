@@ -246,6 +246,7 @@ div#titre {
     margin:55px 20%;
     position:absolute;
     padding-left:20px;
+    top: 0;
 }
 
 div#titre h1 {
