@@ -1,0 +1,248 @@
+\documentclass[a4paper,10pt]{report}
+
+\usepackage[francais]{babel}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{dirtree}
+
+\usepackage{listings}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{-}{rgb}{0,0.5,1}
+\definecolor{colString}{rgb}{0.6,0.1,0.1}
+\definecolor{colBack}{rgb}{0.9,0.9,0.9}
+\definecolor{colComments}{rgb}{0.5,0.5,0.5}
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.4}
+
+\lstset{literate=
+   {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+   {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+   {à}{{\`a}}1 {è}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ò}{{\`u}}1
+   {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ò}{{\`U}}1
+   {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+   {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+   {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+   {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+   {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+   {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+   {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+\lstset{
+    language        = php,
+    basicstyle      = \small\ttfamily,
+    keywordstyle    = \color{dkblue},
+    stringstyle     = \color{red},
+    identifierstyle = \color{dkgreen},
+    commentstyle    = \color{colComments},
+    emph            = [1]{php},
+    emphstyle       = [1]\color{black},
+    emph            = [2]{if,and,or,else},
+    emphstyle       = [2]\color{dkyellow},
+    backgroundcolor = \color{colBack}, %
+    linewidth       = \linewidth, %
+    xleftmargin     = 1.6cm, %
+    xrightmargin    = 2cm, %
+    breaklines      = true, %
+    frame           = single, %
+    numbers         = left, %
+    basicstyle      = \footnotesize 
+}
+
+\begin{document}
+\begin{titlepage}
+
+\vbox to 80pt{\hfill\includegraphics[height=3cm]{logo-iut.eps}}\
+\begin{center}
+
+\textsc{\LARGE IUT Belfort Montbéliard}\\\Large D\'epartement informatique\\[1.5cm]
+
+\textsc{\Large Projet de base de donn\'ees}\\[0.5cm]
+\textsc{\Large Semestre 3}\\[5cm]
+
+
+% Title
+{ \huge \bfseries Fre\'etu}\\\Large Rapport technique\\[5cm]
+
+% Author and supervisor
+\begin{large}
+Jean \textsc{Mercadier}\\[0.3em]
+Sofiane \textsc{Bellaabouss}\\[0.3em]
+Nicolas \textsc{Fleurot}\\[0.3em]
+Gaëtan \textsc{Duvaux}\\[0.3em]
+Bastien \textsc{Doublet}\\[0.3em]
+Jeremy \textsc{Rigault}\\[0.3em]
+Alexis \textsc{Plumet}\\[0.3em]
+\end{large}
+
+\vfill
+
+% Bottom of the page
+{\large 7 Janvier 2014}
+
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Introduction}
+
+Dans ce rapport, nous allons expliquer la partie technique du projet, en commen\c{c}ant
+par les logiciels n\'ecessaire \`a l'application puis en d\'etaillant la proc\'edure
+d'instalation. Ensuite, nous \'etudierons le mod\`ele conceptuel de donn\'es du projet
+puis son arborescence et nous terminerons en examinant l'utilit\'e de chaque fichiers.
+
+\chapter{Installation}
+
+\section{Pr\'e-requis}
+Voici la liste des logiciels n\'ecessaire au fonctionnement de l'application
+
+\begin{itemize}
+    \item PHP 5.3.x minimum
+    \item mysql 5.1.x minimum
+\end{itemize}
+
+\null
+
+de plus, l'application utilise les outils suivant :
+
+\begin{itemize}
+    \item jquery 1.9.1
+    \item API google MAP 3
+\end{itemize}
+
+\null
+
+en cons\'equence, une connexion internet et n\'ecessaire pour utilis\'e
+l'application.
+
+
+\section{Installation}
+
+\subsection{Installation automatique}
+
+\textbf{Attention :} 
+\begin{itemize}
+    \item L'instalation automatique n'est disponible que sous les syst\`emes UNIX.
+    \item Le port 443(https) doit \^etre ouvert et disponnible pour b\'en\'efici\'e
+    de l'installation automatique, ce qui n'est pas le cas sur les ordinateurs de l'IUT
+\end{itemize}
+
+\null
+
+L'installation automatique se d\'eroule de la mani\`ere suivante :
+
+\begin{enumerate}
+    \item Ouvrir un terminal
+    \item \'execut\'e la commande : \\
+          ``\textit{curl https://raw.github.com/Ricain/CoEtu/master/setup.sh > setup.sh}''
+    \item \'execut\'e la commande : \\
+          ``\textit{bash ./setup.sh}'' \\
+          Dans le cas ou les ports ssh ne serai pas disponible, \'execut\'e : \\
+          ``\textit{bash ./setup.sh -a}''
+    \item Suivez les instruction qui s'affiche a l'\'ecran    
+\end{enumerate}
+
+L'application et d\'esormais install\'e.
+\newpage
+\subsection{Installation manuelle}
+
+\begin{enumerate}
+    \item R\'ecuperer le projet sur le site ``\textit{https://github.com/Ricain/CoEtu/}``\\
+          ou avec la commande ``\textit{git clone https://github.com/Ricain/CoEtu.git}''
+    \item Placer le projet \`a la l'emplacement souhait\'e
+    \item cr\'ee un fichier login.inc \`a la racine du projet contenant le code suivant :
+    \begin{lstlisting}
+<?php
+    define("LOGIN",/*"identifiant"*/);
+    define("PASSWORD",/*"mot_de_passe"*/);
+    define("BASE","coetu");
+    define("SERVER",/*"serveur"*/);
+?>
+    \end{lstlisting}
+    \item \'Executer la commande ``\textit{cd dev}''
+    \item \'Executer la commande ``\textit{mysql -u <identifiant> -h <serveur> -p <mot\_de\_passe>}''
+    \item \'Executer la commande ``\textit{source projetbdd.sql}''
+\end{enumerate}
+
+L'application et d\'esormais install\'e.
+
+\chapter{Mod\'elisation des donn\'ees}
+
+\section{Model conceptuel de donn\'ees}
+
+\begin{center}
+    \includegraphics[scale=0.8]{../dev/mcd_covoiturage.jpg}
+\end{center}
+
+Ce MCD repr\'esente la base de donn\'ee de notre application, il est impl\'ementer
+sous forme d'un fichier SQL dans dev/projetbdd.sql, qui contient entre autre toutes
+les communes de fran\c{c}e, permettant ainsi un fonctionnement optimal de l'application
+tout en permettant une comptabilit\'e avec l'API google MAP.
+
+Le MCD et fait de telle sorte que chaque \'etudiant puisse fournir autant d'information
+qu'il le souhaite, dans le cas ou il aurai plusieur adresse email ou m\^eme skype.
+
+La relation r\'eflexive \textbf{Carnet} repr\'esente la relation que chaque \'etudiant
+a avec les autres, cette relation et identifier par \textit{statut\_car} qui d\'efinit 
+si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en cours.
+
+\section{Arborescence}
+
+
+
+\section{\'Etude des fichiers}
+
+\section{Probl\`eme algorithmiques et techniques}
+
+% moteur de recherche
+% il recherche tout les mot en tant que personne puis en tant que voyage
+% si tu tape belfort, retourne jean , si tu tape jean belfort, retourne 2 jean,
+% compte le nombre d'occurence, plus il y a d'occurence, plus le r\'esultat et coherent
+
+\begin{itemize}
+    \item Le moteur de recherche a pos\'e et pose encore de nombreux probl\`eme.
+    Dans sont fonctionnement, il recherche tout les mot entr\'ee en tant que
+    personne puis en tant que voyage. Ainsi, si on \'ecris ``Belfort'', il renvera 1 r\'esultat,
+    si on \'ecris ``Jean Belfort'', sachant que Jean habite \`a Belfort, il renvera 2 r\'esultat.
+    Une fois la liste des r\'esultat obtenue, le moteur de recherche compte et supprime
+    les doublon. Plus le nombre de doublon est important, plus le r\'esultat et pertinant.
+    Le probl\`eme est que malgr\'e tout, il arrive que certain r\'esultat pertinant se
+    retrouve dans des position peu \'el\'ever par rapport \`a d'autre r\'esulat moins pertinant
+    et vice versa.
+    
+    \null
+    
+    \item La liste des universiter nous a poser un serieux probl\`eme au niveau de la
+    base de donn\'ee. Nous pension \`a l'origine utiliser des universiter et des campus.
+    H\'elas, cela n\'ecessitait \'enormement de travail au niveau de la r\'ecuperation
+    des donn\'ee sur les different campus de chaque universit\'e, nous avons donc du
+    modifier notre base de donner pour n'utiliser que les academie et leur universiter
+    associ\'ee. Or, m\^eme ainsi, avec 33 acad\'emie et entre 1 et 4 universiter par
+    acad\'emie, cela representait un serieux investissement en temps. Nous avons donc
+    \'ecris un script en python se chargant de r\'ecuperer toutes les acad\'emie et
+    leur universit\'e et de cr\'ee les requete SQL associ\'e.
+    
+\end{itemize}
+
+
+
+% ajax
+% shell script
+
+\addcontentsline{toc}{chapter}{Conclusion}
+\chapter*{Conclusion}
+
+
+
+\end{document}
+% penser a parler de l'Admin
+% php pour generer du css

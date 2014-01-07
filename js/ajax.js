@@ -433,7 +433,7 @@ function faireDemandeAmis(i)
         // On ne fait quelque chose que si on a tout reçu et que le serveur est ok
         if(xhr.readyState == 4 && xhr.status == 200){
             document.getElementById("buttonAdd").remove();
-            document.getElementById("textAdd").innerHTML="Demande de contact envoyé.";
+            document.getElementById("textAdd").innerHTML="Demande de contact envoyée.";
             stop_loading();
         }
     }
