@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `universite` (
   `id_univ` int(11) NOT NULL AUTO_INCREMENT,
   `id_ville` int(11) DEFAULT NULL,
   `id_acad` int(11) DEFAULT NULL,
-  `libelle` varchar(32) DEFAULT NULL,
+  `libelle` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id_univ`),
   KEY `id_ville` (`id_ville`),
   KEY `id_acad` (`id_acad`)
