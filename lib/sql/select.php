@@ -205,6 +205,39 @@ function selectVerificationConnexion($email, $mdp){
     return $rep;
 }
 
+function selectVerificationMdp($id,$mdp){
+    $connec = getPDO();
+
+    // On considere le mot de passe comme juste
+    $rep = true;
+
+    // On recupere l'etudiant correspondant a l'identifiant fourni
+    $requete = "SELECT E.mot_de_passe
+				FROM etudiant E
+				WHERE E.id_etu=$id";
+
+    try{
+        $select = $connec->query($requete);
+    }catch(Exception $e) {
+        die($e->getMessage());
+    }
+
+    $tab = $select->fetch();
+
+    // Si on trouve l'etudiant
+    if (isset($tab['mot_de_passe'])) {
+        // On verifie si le hash du mdp fourni et le meme que celui stocker
+        if (hash("sha256", $mdp, null) != $tab['mot_de_passe']) {
+            $rep = false;
+        }
+        // Si on ne trouve pas l'etudiant
+    }else{
+        $rep = false;
+    }
+
+    return $rep;
+}
+
 function selectAllVoyages($id){
     $connec = getPDO();
     $requete = "SELECT V.id_voy,V.date_aller,V.date_retour,VD.nom_ville,VA.nom_ville

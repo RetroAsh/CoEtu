@@ -11,7 +11,10 @@
     if(isset($_POST['couleur'])){
         updateCouleur($_SESSION['user_id'],$_POST['couleur']);
     }
-
+	
+	
+	
+	
 	if(isset($_POST['ville']) && isset($_POST['univ'])){
 		if(selectIdVille($_POST['ville'])!=false && selectIdUniversite($_POST['univ'])!=false){
 			updatePerso($_SESSION['user_id'],selectIdVille($_POST['ville']),selectIdUniversite($_POST['univ']),$_POST['mois'],$_POST['annee']);
@@ -70,7 +73,30 @@
     else {
         $real = $title;
     }
-
+	
+	
+	if(isset($_POST['actuel']) && isset($_POST['new1']) && isset($_POST['new2'])){
+        $mdperr = "";
+		if(empty($_POST['actuel'])){
+            $mdperr.="Veuillez renseigner le mot de passe actuel.<br />\n";
+		}
+		if(empty($_POST['new1'])){
+            $mdperr.="Veuillez renseigner le nouveau mot de passe.<br />\n";
+		}
+		if(empty($_POST['new2']) && !empty($_POST['new1'])){
+            $mdperr.="Veuillez renseigner la confirmation du nouveau mot de passe<br />\n";
+		}
+	    if($_POST['new1']==$_POST['new2']){
+            $mdperr.="Les deux mot des passes ne sont égaux.<br />\n";
+        }
+		if(empty($mdperr) && selectVerificationMdp($_SESSION["user_id"],$_POST['actuel'])){
+            updateMdp($_SESSION["user_id"],$_POST['new1']);
+        }
+        else {
+            $mdperr .= "Mot de passe courrant incorrecte.<br />\n";
+        }
+        $err .= $mdperr;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +105,6 @@
 		<title><?php echo $real ?></title>
 		<?php head() ?>
         <script type="text/javascript" src="../js/jscolor/jscolor.js"></script>
-		<script type="text/javascript" src="../js/profil.js"></script>
         <script type="text/javascript">
             var title = "<?php echo $title ?>";
         </script>
@@ -92,6 +117,16 @@
         <div id="param">
             <div class="err"><?php echo $err; ?></div>
             <?php formModInfo($_SESSION["user_id"]); ?>
+			<form id="mdp" method="post" style="display:none" >
+				<label for="actuel" type="text">Mot de passe actuel :</label>
+				<input id="actuel" name="actuel" type="password" /></br>
+				<label for="actuel" type="text">Nouveau mot de passe :</label>
+				<input id="new1" name="new1" type="password" /></br>
+				<label for="actuel" type="text">Confirmer :</label>
+				<input id="new2" name="new2" type="password" /></br>
+				<input type="submit" value="Valider"/>
+				<input type="reset" value="Annuler" onclick="document.getElementById('mdp').style.display='none'"/>
+			</form>
         </div>
         <?php nav(); ?>
         <form id="colorpick" method="post">
@@ -101,6 +136,9 @@
             <input type='hidden' value="Supprimer ce compte" name='supprimer_compte'  />
             <a onclick="document.getElementById('new').style.display='inline'" >Ajouter une info</a>
             <br />
+            <br />
+			<a onclick="document.getElementById('mdp').style.display='inline'" >Modifier le mot de passe</a>
+			<br />
             <br />
             <a onclick="if(confirm('Etes-vous sur de vouloir supprimer définitevement votre compte?\nIl sera impossible de le récuperer.')){document.getElementById('form_del_compte').submit()};" >Supprimer ce compte</a>
         </form>
