@@ -6,11 +6,27 @@ file="CoEtu"
 
 case $# in
      0) a=0
-        url="https://github.com/Ricain/CoEtu.git";;
+        url="https://github.com/Ricain/CoEtu.git"
+        echo -n "git : "
+        if [ ".$(command -v git)" = "." ]
+        then
+            echo "non disponible"
+            exit 1
+        else
+            echo "disponible"
+        fi;;
      1) if [ $1 = "-a" ]
         then
             a=1
             url="https://github.com/Ricain/CoEtu/archive/master.zip"
+            echo -n "unzip : "
+            if [ ".$(command -v unzip)" = "." ]
+            then
+                echo "non disponible"
+                exit 1
+            else
+                echo "disponible"
+            fi
         else
             echo "USAGE : setup.sh [-a]"
             exit 1
