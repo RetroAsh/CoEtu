@@ -38,6 +38,7 @@ case $# in
                 else
                     echo "disponible"
                     prog="curl"
+                    ifcurl="> master.zip"
                 fi
             else
                 echo "disponible"
@@ -79,7 +80,7 @@ then
 else
     where=$(pwd)
     cd /tmp
-    bash -c "${prog} $url 1>/dev/null"
+    bash -c "${prog} $url ${ifcurl}"
     unzip master.zip 1>/dev/null
     cd $where
     mv /tmp/CoEtu-master ${path}/$file
