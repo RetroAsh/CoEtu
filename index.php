@@ -185,7 +185,7 @@
 					<h2>Créer un compte</h2>
 					<ol>
 						<li>Un réseau fait par des étudiants pour des étudiants</li>
-						<li>Créez, participez et organisez vos voyages à partir de votre réseau d'amis</li>
+						<li>Participez et créez vos voyages à partir de votre réseau d'amis</li>
 						<li><?php echo $nb_user; ?> utilisateurs</li>
 						<li>Sécurisé, crypté... vous n'êtes pas espionné</li>
 						<li>Pas de pub</li>
