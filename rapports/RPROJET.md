@@ -61,6 +61,8 @@ Il nous a donc semblé évident de réaliser un réseau social avec un système 
 
 Le cahier des charge a été remplie dans son intégralité, nous avons même réalisé des options qui n'était pas demandé comme l'adaptation de la couleur principale en fonction de l'utilisateur ainsi qu'un système de messagerie privée.
 
+### Pages
+
 Nous avons donc les pages suivante:
 
 1. Page de connextion
@@ -71,6 +73,38 @@ Nous avons donc les pages suivante:
 5. Recherche
 6. Profile
 
-### Page de connection
+#### Page de connection
 
-La page de connexion comme son nom l'indique permet de se connecter à son compte ou de créer un compte. 
+La page de connexion comme son nom l'indique permet de se connecter à son compte ou de créer un compte.
+
+En plus des fonctionnalités de cette page, nous avons affiché le nombre d'utilisateur à coté du formulaire d'inscription.
+
+#### Home
+
+Une fois connecté, l'utilisateur arrive sur la page home et se voit proposer quatre lien qui corresponde aux quatre pages principales du site à savoir Voyages, Contacts,  Messages, et Recherche.
+
+L'utilisateur peut aussi voir la bar de navigation et une boite resumument ses information personnelles. Ces deux dernier éléments seront présent dans tout le reste du site.
+
+#### Voyages
+
+La page voyage contient l'intégralité des voyage proposé par l'utilisateur en plus des voyages des contacts de l'utilisateur.
+
+![un oyages](captures/voyages.png)
+
+Pour afficher une voyage, il suffit de cliquer dessus et une popup s'affiche avec une carte Google Map, et les différente information du voyage comme le temps approximatif, les différentes dates des trajet ainsi que la récurrence si les trajets se répètent.
+
+![un oyages](captures/unvoyage.png)
+
+#### Contacts
+
+Cette page est probablement la plus classique 
+
+![un oyages](captures/contacts.png)
+
+#### Messages
+
+![un oyages](captures/messages.png)
+
+### Base de donnée
+
+### Moyen utilisé
