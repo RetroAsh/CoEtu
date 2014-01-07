@@ -140,7 +140,7 @@
 			<a onclick="document.getElementById('mdp').style.display='inline'" >Modifier le mot de passe</a>
 			<br />
             <br />
-            <a onclick="if(confirm('Etes-vous sur de vouloir supprimer définitevement votre compte?\nIl sera impossible de le récuperer.')){document.getElementById('form_del_compte').submit()};" >Supprimer ce compte</a>
+            <a onclick="if(confirm('Etes-vous sur de vouloir supprimer définitivement votre compte?\nIl sera impossible de le récuperer.')){document.getElementById('form_del_compte').submit()};" >Supprimer ce compte</a>
         </form>
     </body>
 </html>

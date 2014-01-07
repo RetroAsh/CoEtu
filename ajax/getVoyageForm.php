@@ -36,7 +36,7 @@
 	<input id="v_dep" type="text" name="dep" value="<?php echo $voy['depart']; ?>" />
 	<br />
 	<br />
-	<label for="v_arr">Ville d'arrivé :</label>
+	<label for="v_arr">Ville d'arrivée :</label>
 	<br />
 	<input id="v_arr" type="text" name="arr" value="<?php echo $voy['arrive']; ?>" />
 	<br />
@@ -126,13 +126,13 @@
 	<span class="note">Note: laissez la date de retour vide si vous ne souhaitez pas proposer de retour.</span>
 	<br />
 	<br />
-	<label for="rec">Récurence :</label>
+	<label for="rec">Récurrence :</label>
 	<br />
 	Tous les
 	<input id="rec" type="text" name="rec" type="number" min="1" value="<?php echo $voy['recursivite']; ?>" />
 	jours.
 	<br />
-	<span class="note">Note: laissez la récurence à zéro si vous ne proposez pas ce voyage de manière récurente.</span>
+	<span class="note">Note: laissez la récurrence à zéro si vous ne proposez pas ce voyage de manière récurrente.</span>
 	<br />
 	<br />
 	<?php
