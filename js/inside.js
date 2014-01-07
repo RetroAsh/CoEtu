@@ -78,8 +78,4 @@ function addZero(nb) {
 		return "0" + nb;
 	}
 	return nb;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d33fa7c01de02228584eb2aecc7125fe96a9f2a3
