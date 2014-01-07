@@ -2,7 +2,17 @@
 
 Projet de base de donnée 2013-2014.
 
-S3 [IUT-BM](http://www.iut-bm.univ-fcomte.fr/)
+S3 [IUT-BM](http://www.iut-bm.univ-fcomte.fr/) GI
+
+| L’équipe             |
+|----------------------|
+|Jean Mercadier        |
+|Sofiane Bellaabouss   |
+|Nicolas Fleurot       |
+|Gaëtan Duvaux         |
+|Bastien Doublet       |
+|Jeremy Rigault        |
+|Alexis Plumet         |
 
 ## Fonctionnalité
 
