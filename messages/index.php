@@ -29,7 +29,8 @@
             var current = window.location.hash.substring(1);
             if (current=="") {
                 current = -1;
-            };
+            }
+            var buffer = document.getElementById("buffer");
             window.onload=function() {
                 getConversation(current);
                 openConversation(current);
@@ -44,7 +45,7 @@
                     if(e.which == 13) {
                         isEnter=false; 
                     }
-                }
+                };
 
                 document.getElementById("buffer").onkeydown=function(e){
                     if(e.which == 13) {
@@ -54,7 +55,7 @@
                         sendMsg(current);
                     }
                 }
-            }
+            };
             document.onkeyup = function(e){
                 var liste = document.getElementById("liste");
                 var listenom = liste.children;
@@ -65,19 +66,21 @@
                     }
                 }
                 e = e || event;
-                if(e.keyCode >= 65 && e.keyCode <= 90){
-                    var lettre = String.fromCharCode(e.keyCode || e.charCode);
-                    for(i = 0;i<listenom.length;i++){
-                        if(listenom[i].innerHTML[0]==lettre){
-                            if(select != null){
-                                listenom[select].removeAttribute("class");
+                if($("*:focus").attr("id") != "buffer"){
+                    if(e.keyCode >= 65 && e.keyCode <= 90){
+                        var lettre = String.fromCharCode(e.keyCode || e.charCode);
+                        for(i = 0;i<listenom.length;i++){
+                            if(listenom[i].innerHTML[0]==lettre){
+                                if(select != null){
+                                    listenom[select].removeAttribute("class");
+                                }
+                                listenom[i].setAttribute("class","selected");
+                                current = parseInt(listenom[i].id[1]);
+                                document.location.href = document.getElementById('c'+current).href;
+                                getConversation(current);
+                                openConversation(current);
+                                break;
                             }
-                            listenom[i].setAttribute("class","selected");
-                            current = parseInt(listenom[i].id[1]);
-                            document.location.href = document.getElementById('c'+current).href;
-                            getConversation(current);
-                            openConversation(current);
-                            break;
                         }
                     }
                 }
