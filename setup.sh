@@ -74,6 +74,8 @@ then
 fi
 echo -n "Entrée votre serveur mysql           : " ; read server
 
+stringsql="${stringsql} -h ${server}"
+
 echo "Téléchargement du projet"
 mkdir -p $path
 if [ $a -eq 0 ]
