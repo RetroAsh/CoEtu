@@ -1,0 +1,4 @@
+<Files "login.inc">
+        Order Allow,Deny
+        Deny from all
+</Files>
