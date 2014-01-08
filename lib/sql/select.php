@@ -277,8 +277,8 @@ function selectAllVoyagesAdmin(){
     $requete = "SELECT V.id_voy,V.date_aller,V.date_retour,VD.nom_ville,VA.nom_ville,E.prenom_etu,E.nom_etu
 				FROM voyage V, ville VD, ville VA, etudiant E
 				WHERE V.ville_depart=VD.id_ville
-				AND V.id_etu=E.id_etu;
 				AND V.ville_arrive=VA.id_ville
+				AND V.id_etu=E.id_etu
 				ORDER BY V.date_aller;";
     $rep = $connec->query($requete);
     $voy = array();
