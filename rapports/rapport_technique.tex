@@ -24,8 +24,8 @@
 \lstset{literate=
    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-   {à}{{\`a}}1 {è}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ò}{{\`u}}1
-   {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ò}{{\`U}}1
+   {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ò}{{\`u}}1
+   {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ò}{{\`U}}1
    {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
    {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
    {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
@@ -62,7 +62,7 @@
 \vbox to 80pt{\hfill\includegraphics[height=3cm]{logo-iut.eps}}\
 \begin{center}
 
-\textsc{\LARGE IUT Belfort Montbéliard}\\\Large D\'epartement informatique\\[1.5cm]
+\textsc{\LARGE IUT Belfort Montb\'eliard}\\\Large D\'epartement informatique\\[1.5cm]
 
 \textsc{\Large Projet de base de donn\'ees}\\[0.5cm]
 \textsc{\Large Semestre 3}\\[5cm]
@@ -96,8 +96,8 @@ Alexis \textsc{Plumet}\\[0.3em]
 \chapter*{Introduction}
 
 Dans ce rapport, nous allons expliquer la partie technique du projet, en commen\c{c}ant
-par les logiciels n\'ecessaire \`a l'application puis en d\'etaillant la proc\'edure
-d'instalation. Ensuite, nous \'etudierons le mod\`ele conceptuel de donn\'es du projet
+par les logiciels n\'ecessaires \`a l'application puis en d\'etaillant la proc\'edure
+d'installation. Ensuite, nous \'etudierons le mod\`ele conceptuel de donn\'es du projet
 puis son arborescence et nous terminerons en examinant l'utilit\'e de chaque fichiers.
 
 \chapter{Installation}
@@ -112,7 +112,7 @@ Voici la liste des logiciels n\'ecessaire au fonctionnement de l'application
 
 \null
 
-de plus, l'application utilise les outils suivant :
+de plus, l'application utilise les outils suivants :
 
 \begin{itemize}
     \item jquery 1.9.1
@@ -131,8 +131,8 @@ l'application.
 
 \textbf{Attention :} 
 \begin{itemize}
-    \item L'instalation automatique n'est disponible que sous les syst\`emes UNIX.
-    \item Le port 443(https) doit \^etre ouvert et disponnible pour b\'en\'efici\'e
+    \item L'installation automatique n'est disponible que sous les syst\`emes UNIX.
+    \item Le port 443(https) doit \^etre ouvert et disponible pour b\'en\'eficier
     de l'installation automatique, ce qui n'est pas le cas sur les ordinateurs de l'IUT
 \end{itemize}
 
@@ -142,16 +142,16 @@ L'installation automatique se d\'eroule de la mani\`ere suivante :
 
 \begin{enumerate}
     \item Ouvrir un terminal
-    \item \'execut\'e la commande : \\
+    \item ex\'ecut\'e la commande : \\
           ``\textit{curl https://raw.github.com/Ricain/CoEtu/master/setup.sh > setup.sh}''
-    \item \'execut\'e la commande : \\
+    \item ex\'ecut\'e la commande : \\
           ``\textit{bash ./setup.sh}'' \\
-          Dans le cas ou les ports ssh ne serai pas disponible, \'execut\'e : \\
+          Dans le cas ou les ports ssh ne serai pas disponible, ex\'ecut\'e : \\
           ``\textit{bash ./setup.sh -a}''
-    \item Suivez les instruction qui s'affiche a l'\'ecran    
+    \item Suivez les instructions qui s'affichent \`a l'\'ecran    
 \end{enumerate}
 
-L'application et d\'esormais install\'e.
+L'application et d\'esormais install\'ee.
 \newpage
 \subsection{Installation manuelle}
 
@@ -168,12 +168,12 @@ L'application et d\'esormais install\'e.
     define("SERVER",/*"serveur"*/);
 ?>
     \end{lstlisting}
-    \item \'Executer la commande ``\textit{cd dev}''
-    \item \'Executer la commande ``\textit{mysql -u <identifiant> -h <serveur> -p <mot\_de\_passe>}''
+    \item Ex\'ecuter la commande ``\textit{cd dev}''
+    \item Ex\'ecuter la commande ``\textit{mysql -u <identifiant> -h <serveur> -p <mot\_de\_passe>}''
     \item \'Executer la commande ``\textit{source projetbdd.sql}''
 \end{enumerate}
 
-L'application et d\'esormais install\'e.
+L'application et d\'esormais install\'ee.
 
 \chapter{Mod\'elisation des donn\'ees}
 
@@ -183,13 +183,13 @@ L'application et d\'esormais install\'e.
     \includegraphics[scale=0.7]{../dev/mcd_covoiturage.jpg}
 \end{center}
 
-Ce MCD repr\'esente la base de donn\'ee de notre application, il est impl\'ementer
-sous forme d'un fichier SQL dans dev/projetbdd.sql, qui contient entre autre toutes
-les communes de fran\c{c}e, permettant ainsi un fonctionnement optimal de l'application
+Ce MCD repr\'esente la base de donn\'ees de notre application, il est impl\'ementer
+sous forme d'un fichier SQL dans dev/projetbdd.sql, qui contient entre autres toutes
+les communes de France, permettant ainsi un fonctionnement optimal de l'application
 tout en permettant une comptabilit\'e avec l'API google MAP.
 
 Le MCD et fait de telle sorte que chaque \'etudiant puisse fournir autant d'information
-qu'il le souhaite, dans le cas ou il aurai plusieur adresse email ou m\^eme skype.
+qu'il le souhaite, dans le cas ou il aurait plusieurs adresses email ou m\^eme skype.
 
 La relation r\'eflexive \textbf{Carnet} repr\'esente la relation que chaque \'etudiant
 a avec les autres, cette relation et identifier par \textit{statut\_car} qui d\'efinit 
@@ -204,117 +204,117 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
 \section{\'Etude des fichiers}
 
 \begin{itemize}
-    \item Ajax : Ce dossier contient toutes les page php servant au requete ajax.
+    \item Ajax : Ce dossier contient toutes les page php servant au requ\^ete ajax.
     \begin{itemize}
-         \item getAllContact.php : Ce fichier permet de récuperer tous les contacts avec lequelles l'utilisateur courant est ami(e)s.
-         \item getConversationCourante.php : Ce fichier permet de récuperer si il y a lieu, la conversation actuel avec un contact.
-         \item getCoordItineraire.php : Ce fichier permet de récuperer les latitude et longitude des point de départ et d'arrivé.
-         \item getCoordVille.php : Ce fichier permet de récuperer les latitude et longitude d'une ville en fonction de son identifiant.
+         \item getAllContact.php : Ce fichier permet de r\'ecup\'erer tous les contacts avec lesquelles l'utilisateur courant est ami(e)s.
+         \item getConversationCourante.php : Ce fichier permet de r\'ecup\'erer si il y a lieu, la conversation actuel avec un contact.
+         \item getCoordItineraire.php : Ce fichier permet de r\'ecup\'erer les latitude et longitude des point de d\'epart et d'arriv\'e.
+         \item getCoordVille.php : Ce fichier permet de r\'ecup\'erer les latitude et longitude d'une ville en fonction de son identifiant.
          \item getInfoContact.php : Ce fichier permet d'afficher les information sur un contact ou propose d'ajouter la personne a ses contact
          si elle n'en fait pas partie.
-         \item getListeCampus.php : Ce fichier permet de récuper la liste des universités pour l'autocompletion.
-         \item getListeVille.php : Ce fichier permet de récuper la liste des villes pour l'autocompletion.
-         \item getNbNotification.php : Ce fichier permet de récuperer le nombre de notification non lu d'un utilisateur.
+         \item getListeCampus.php : Ce fichier permet de r\'ecup\'erer la liste des universit\'es pour l'auto-compl\'etion.
+         \item getListeVille.php : Ce fichier permet de r\'ecup\'erer la liste des villes pour l'auto-compl\'etion.
+         \item getNbNotification.php : Ce fichier permet de r\'ecuperer le nombre de notification non lu d'un utilisateur.
          \item getNotification.php : Ce fichier permet d'afficher toutes les notification non lu ou d'afficher un message disant qu'il n'y a
          aucune nouvelle notification.
-         \item getNouveauMsg.php : Ce fichier permet de de récuperer et de mettre en forme les message entrant d'une conversation.
-         \item getOpenConversations.php : Ce fichier permet de récuperer la liste des conversation en cours et affiche un style particulier au
-         conversation possaidant des message non lus.
-         \item getPersonneInfo.php : Ce fichier permet de récuperer les information d'un contact pour les mettre dans un popup.
-         \item getRecherche.php : Ce fichier gere le moteur de recherche, comme expliquer en 2.4 premier tiret.
-         \item getVille.php : Ce fichier créer la balise div permettant d'insérer correctement la carte google map.
-         \item getVoyageForm.php : Ce fichier permet d'affichier le formulaire de création de voyage.
-         \item getVoyage.php : Ce fichier permet d'affichier les information sur un voyage.
-         \item getVoyages.php : Ce fichier permet de récuperer une liste de tout les voyage de l'étudiant courant.
-         \item sendAccepteContact.php : Ce fichier permet de mettre à jour le statut d'une relation entre deux étudiant.
+         \item getNouveauMsg.php : Ce fichier permet de de r\'ecup\'erer et de mettre en forme les message entrant d'une conversation.
+         \item getOpenConversations.php : Ce fichier permet de r\'ecup\'erer la liste des conversation en cours et affiche un style particulier au
+         conversation poss\'edant des message non lus.
+         \item getPersonneInfo.php : Ce fichier permet de r\'ecup\'erer les information d'un contact pour les mettre dans un popup.
+         \item getRecherche.php : Ce fichier g\`ere le moteur de recherche, comme expliquer en 2.4 premier tiret.
+         \item getVille.php : Ce fichier cr\'eer la balise div permettant d'ins\'erer correctement la carte google map.
+         \item getVoyageForm.php : Ce fichier permet d'afficher le formulaire de cr\'eation de voyage.
+         \item getVoyage.php : Ce fichier permet d'afficher les information sur un voyage.
+         \item getVoyages.php : Ce fichier permet de r\'ecup\'erer une liste de tout les voyage de l'\'etudiant courant.
+         \item sendAccepteContact.php : Ce fichier permet de mettre à jour le statut d'une relation entre deux \'etudiant.
          \item sendDemandeContact.php : Ce fichier permet de valider une demande de contact.
-         \item sendFormVoyage.php : Ce fichier permet de faire la vérification des entrée dans le formulaire de création de voyage.
-         \item sendNouveauMsg.php : Ce fichier permet d'ajouter les nouveau message à la base de donnée.
+         \item sendFormVoyage.php : Ce fichier permet de faire la v\'erification des entr\'ee dans le formulaire de cr\'eation de voyage.
+         \item sendNouveauMsg.php : Ce fichier permet d'ajouter les nouveau message à la base de donn\'ee.
          \item sendRefuseContact.php : Ce fichier permet de refuser une demande de contact.
          \item sendSupprContact.php : Ce fichier permet de supprimer un contact.
-         \item sendSupprVoyage.php : Ce fichier permet de supprimer un voyage en vérifiant si l'on supprime bien on voyage nous appartenent.
+         \item sendSupprVoyage.php : Ce fichier permet de supprimer un voyage en v\'erifiant si l'on supprime bien on voyage nous appartenant.
     \end{itemize}
     \item carnet : Ce dossier contient la page de contact.
     \begin{itemize}
-        \item index.php : Ce fichier permet d'afficher la liste des contact avec leur information. Ils permet aussi de naviger entre les contact avec le pavée directionnel ou avec les
-        touches du clavier, en appuiant sur la première lettre du nom du contact rechercher.
+        \item index.php : Ce fichier permet d'afficher la liste des contact avec leur information. Ils permet aussi de naviguer entre les contact avec le pav\'ee directionnel ou avec les
+        touches du clavier, en appuyant sur la premi\`ere lettre du nom du contact rechercher.
     \end{itemize}
-    \item cont : Ce dossier contient le fichier d'entete du site.
+    \item cont : Ce dossier contient le fichier d'ent\^ete du site.
     \begin{itemize}
-        \item head.html : Ce fichier represente l'interieur de la balise <head> du site. 
+        \item head.html : Ce fichier repr\'esente l'int\'erieur de la balise <head> du site. 
     \end{itemize}
     \item css : Ce dossier contient les fichier de style du site.
     \begin{itemize}
-        \item color.php : Ce fichier permet de généré du css a partir de php, permetant ainsi au utilisateur de choisir eu même le theme de leur comptes.
-        \item connec.css : Ce fichier représente la feuille de style de la page de connexion du site.
-        \item inside.css : Ce fichier représente la feuille de style du site après la connexion.
+        \item color.php : Ce fichier permet de g\'en\'er\'e du css a partir de php, permettant ainsi au utilisateur de choisir eu m\^eme le th\`eme de leur comptes.
+        \item connec.css : Ce fichier repr\'esente la feuille de style de la page de connexion du site.
+        \item inside.css : Ce fichier repr\'esente la feuille de style du site apr\`es la connexion.
     \end{itemize}
-    \item dev : ce dossier contient divers fichier utils au développement de l'application.
+    \item dev : ce dossier contient divers fichier utile au d\'eveloppement de l'application.
     \begin{itemize}
         \item 1.mcd : Le mcd du projet
-        \item importBDD.php : Ce fichier permet d'importé la base de donnée depuis une page internet.
+        \item importBDD.php : Ce fichier permet d'importer la base de donn\'ee depuis une page internet.
         \item login.inc.sample : Un exemple de fichier de connexion.
-        \item mdpgen.php : Ce fichier permet de récuperer le sha256 d'une chaine de caractère.
-        \item page\_template.php : fichier que nous utilisions en début de projet pous crée de nouvelle page.
-        \item projetbdd.sql : Le fichier SQL representant notre base de donnée.
-        \item recupUNIV.py : Un script python permetant de récuperer chaque academie et chacune de leur universités.
+        \item mdpgen.php : Ce fichier permet de r\'ecup\'erer le sha256 d'une chaine de caract\`ere.
+        \item page\_template.php : fichier que nous utilisions en d\'ebut de projet pous cr\'ee de nouvelle page.
+        \item projetbdd.sql : Le fichier SQL repr\'esentant notre base de donn\'ee.
+        \item recupUNIV.py : Un script python permettant de r\'ecup\'erer chaque acad\'emie et chacune de leur universit\'es.
     \end{itemize}
-    \item home : Ce dossier contient la page d'acceuil du site une fois connecter.
+    \item home : Ce dossier contient la page d'accueil du site une fois connecter.
     \begin{itemize}
-        \item index.php : Ce fichier represente la page d'acceuil du site une fois connecter, il permet de visualiser rapidement ses information personnel
-        ainsi qu'un acces plus naturel au differentes autre partie du site.
+        \item index.php : Ce fichier repr\'esente la page d'accueil du site une fois connecter, il permet de visualiser rapidement ses information personnel
+        ainsi qu'un acc\`es plus naturel au diff\'erentes autre partie du site.
     \end{itemize}
     \item img : Ce dossier contient toutes les image du site.
     \item js : Ce dossier contient tout les script javascript du site.
     \begin{itemize}
-        \item jscolor : ce dossier contient tous les élément permetant au selectionneur de couleur de fonctionné
+        \item jscolor : ce dossier contient tous les \'el\'ement permettant au s\'electionneur de couleur de fonctionn\'e
         \begin{itemize}
-            \item jscolor.js : Ce fichier contient toute les fonction javascript nécessaire au bon fonctionnement du selectionneur de couleur.
+            \item jscolor.js : Ce fichier contient toute les fonction javascript n\'ecessaire au bon fonctionnement du s\'electionneur de couleur.
         \end{itemize}
         \item ajax.js : Ce fichier contient toutes fonction utilisant ou traitant de l'ajax
-        \item connec.js : Ce fichier contient les fonction jquery nécessaire a l'autocompletion des ville et des universités dans la page d'acceuil.
-        \item html.js : Ce fichier contient des fonction dont le seul but et de générer ou modifier de l'html.
-        \item inside.js : Ce fichier contient les fonction utile au fonctionnement de l'application après la connexion.
-        \item map.js : Ce fichier contient differentes fonction nécessaire a l'utilisation de l'API google map.
-        \item popup.js : Ce fichier contient les fonction nécessaire a la création et l'utilisation des differente popup du site.
-        \item suggestion.js : Ce fichier contient les fonction jquery d'autocompletion lors de la création de voyage.
+        \item connec.js : Ce fichier contient les fonction jquery n\'ecessaire à l'auto-compl\'etion des ville et des universit\'es dans la page d'accueil.
+        \item html.js : Ce fichier contient des fonction dont le seul but et de g\'en\'erer ou modifier de l'html.
+        \item inside.js : Ce fichier contient les fonction utile au fonctionnement de l'application apr\`es la connexion.
+        \item map.js : Ce fichier contient diff\'erentes fonction n\'ecessaire a l'utilisation de l'API google map.
+        \item popup.js : Ce fichier contient les fonction n\'ecessaire a la cr\'eation et l'utilisation des diff\'erente popup du site.
+        \item suggestion.js : Ce fichier contient les fonction jquery l'auto-compl\'etion lors de la cr\'eation de voyage.
     \end{itemize}
     \item lib : Ce dossier contient toutes les librairie php utiliser dans le projet.
     \begin{itemize}
         \item sql : Ce dossier contient toutes les librairie utilisant du sql.
         \begin{itemize}
-            \item delete.php : Ce fichier contient toutes les fonction permetant de supprimer des elements de la base de donnée.
-            \item insert.php : Ce fichier contient toutes les fonction permetant d'ajouter des elements de la base de donnée.
-            \item select.php : Ce fichier contient toutes les fonction permetant de récuperer des elements de la base de donnée.
-            \item update.php : Ce fichier contient toutes les fonction permetant de modifier des elements de la base de donnée.
+            \item delete.php : Ce fichier contient toutes les fonction permetant de supprimer des \'el\'ements de la base de donn\'ee.
+            \item insert.php : Ce fichier contient toutes les fonction permetant d'ajouter des \'el\'ements de la base de donn\'ee.
+            \item select.php : Ce fichier contient toutes les fonction permetant de r\'ecuperer des \'el\'ements de la base de donn\'ee.
+            \item update.php : Ce fichier contient toutes les fonction permetant de modifier des \'el\'ements de la base de donn\'ee.
         \end{itemize}
         \item bibli.php : Ce fichier contient toutes les fonction un peu à part du programme.
-        \item deco.php : Ce fichier permet de renvoyer à la page de connexion tout utilisateur n'étant pas connecter.
-        \item html.php : Ce fichier contient toutes les fonction aillant pour but de générer de l'html.
-        \item securiter.php : Ce fichier contient des sécurité vis à vis des attaque par injection SQL.
-        \item sql.php : Ce fichier permet d'inclure en une fois toutes les bibliothèque SQL et fournit une fonction permetant de
-        récuperer un objet PDO de manière propre.
+        \item deco.php : Ce fichier permet de renvoyer à la page de connexion tout utilisateur n'\'etant pas connecter.
+        \item html.php : Ce fichier contient toutes les fonction aillant pour but de g\'en\'erer de l'html.
+        \item securiter.php : Ce fichier contient des s\'ecurit\'e vis à vis des attaque par injection SQL.
+        \item sql.php : Ce fichier permet d'inclure en une fois toutes les biblioth\`eque SQL et fournit une fonction permettant de
+        r\'ecup\'erer un objet PDO de mani\`ere propre.
     \end{itemize}
     \item message : Ce dossier contient la page de tchat du site.
     \begin{itemize}
-        \item index.php : Ce fichier reprensente le tchat du site, permetant ainsi de discuter entre les étudiant. il contient aussi les fonction permetant de naviguer entre les étudiants avec
-        qui une conversation a été démaré.
+        \item index.php : Ce fichier repr\'esente le tchat du site, permettant ainsi de discuter entre les \'etudiant. il contient aussi les fonction permettant de naviguer entre les \'etudiants avec
+        qui une conversation a \'et\'e d\'emarr\'e.
     \end{itemize}
     \item profil : Ce dossier contient la page de profil utilisateur du site.
     \begin{itemize}
-         \item index.php : Ce fichier reprensente la page de profil utilisateur, permetant de modifier le theme du site ainsi que ses information personnel.
+         \item index.php : Ce fichier repr\'esente la page de profil utilisateur, permettant de modifier le th\`eme du site ainsi que ses information personnel.
     \end{itemize}
     \item rechercher : Ce dossier contient la page de recherche.
     \begin{itemize}
-        \item index.php : Ce fichier reprensente la page de recherche du site, permetant de rechercher voyages et étudiants.
+        \item index.php : Ce fichier repr\'esente la page de recherche du site, permettant de rechercher voyages et \'etudiants.
     \end{itemize}
     \item voyage : Ce dossier contient la page des voyages de l'utilisateur.
     \begin{itemize}
-        \item index.php : Ce fichier reprensente la page des voyage de l'utilisateur courant. Elle permet de crée et de supprimer des voyages.
+        \item index.php : Ce fichier repr\'esente la page des voyage de l'utilisateur courant. Elle permet de cr\'ee et de supprimer des voyages.
     \end{itemize}
-    \item README.md : Rapide résumer du site en markdown.
-    \item index.php : Page d'acceuil du site, elle permet de s'inscrire et de se connecter.
-    \item login.inc : Fichier contenant les informations de connexion à la base de donnée.
+    \item README.md : Rapide r\'esumer du site en markdown.
+    \item index.php : Page d'accueil du site, elle permet de s'inscrire et de se connecter.
+    \item login.inc : Fichier contenant les informations de connexion à la base de donn\'ee.
     \item setup.sh : Script d'installation automatique de l'application.
 \end{itemize}
 
@@ -322,32 +322,32 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
 \section{Probl\`eme algorithmiques et techniques}
 
 \begin{itemize}
-    \item Le premier problème auquelle nous avons été confronté fus la connexion des utilisateur.
-    Nous voulions quelle soit sécurisé tout en étant relativement simple.
-    Nous avons finalement opté pour la solution suivante : 
+    \item Le premier probl\`eme auquel nous avons \'et\'e confront\'e fus la connexion des utilisateur.
+    Nous voulions quelle soit s\'ecuris\'e tout en \'etant relativement simple.
+    Nous avons finalement opt\'e pour la solution suivante : 
     \begin{enumerate}
         \item l'utilisateur rentre sont mot de passe.
-        \item le mot de passe et hashé en sha256.
-        \item le hash et comparé avec celui contenu dans la base de donnée.
-        \item si les hash corresponde, l'utilisateur et identifié.
+        \item le mot de passe et hash\'e en sha256.
+        \item le hash et compar\'e avec celui contenu dans la base de donn\'ee.
+        \item si les hash corresponde, l'utilisateur et identifi\'e.
     \end{enumerate}
     
     \null
     
     \item Le moteur de recherche a pos\'e et pose encore de nombreux probl\`eme.
     Dans sont fonctionnement, il recherche tout les mot entr\'ee en tant que
-    personne puis en tant que voyage. Ainsi, si on \'ecris ``Belfort'', il renvera 1 r\'esultat,
-    si on \'ecris ``Jean Belfort'', sachant que Jean habite \`a Belfort, il renvera 2 r\'esultat.
+    personne puis en tant que voyage. Ainsi, si on \'ecris ``Belfort'', il renverra 1 r\'esultat,
+    si on \'ecris ``Jean Belfort'', sachant que Jean habite \`a Belfort, il renverra 2 r\'esultat.
     Une fois la liste des r\'esultat obtenue, le moteur de recherche compte et supprime
-    les doublon. Plus le nombre de doublon est important, plus le r\'esultat et pertinant.
-    Le probl\`eme est que malgr\'e tout, il arrive que certain r\'esultat pertinant se
-    retrouve dans des position peu \'el\'ever par rapport \`a d'autre r\'esulat moins pertinant
+    les doublon. Plus le nombre de doublon est important, plus le r\'esultat et pertinent.
+    Le probl\`eme est que malgr\'e tout, il arrive que certain r\'esultat pertinent se
+    retrouve dans des position peu \'el\'ever par rapport \`a d'autre r\'esulat moins pertinent
     et vice versa.
     
     \null
     
-    \item La liste des universiter nous a poser un serieux probl\`eme au niveau de la
-    base de donn\'ee. Nous pension \`a l'origine utiliser des universiter et des campus.
+    \item La liste des Universit\'e nous a poser un s\'erieux probl\`eme au niveau de la
+    base de donn\'ees. Nous pension \`a l'origine utiliser des universiter et des campus.
     H\'elas, cela n\'ecessitait \'enormement de travail au niveau de la r\'ecuperation
     des donn\'ee sur les different campus de chaque universit\'e, nous avons donc du
     modifier notre base de donner pour n'utiliser que les academie et leur universiter
@@ -369,7 +369,7 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
     \item La cr\'eation du script d'installation automatique nous a pos\'e de nombreux
     probl\`eme, en premier lieu car il n\'ecessite certain outils (wget, curl, git, unzip)
     qui ne sont pas forcement disponible sur toutes les machines, mais au niveau de la
-    s\'ecurit\'e des dites machines, qui, dans certain cas, bloque l'accès a certain port, en
+    s\'ecurit\'e des dites machines, qui, dans certain cas, bloque l'acc\`es a certain port, en
     particulier le port 443(https) rendant ainsi le script inutile et forcant une instalation
     manuelle
 \end{itemize}
