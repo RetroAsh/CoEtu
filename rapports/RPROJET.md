@@ -6,7 +6,7 @@ Lors de mes différentes sortie sur Belfort j'ai eu l'occasion de discuter avec 
 
 Le projet consiste à réaliser un site de covoiturage pour les étudiants de l'Est de la France afin qu'ils puissent se déplacer dans la région. Cependant le principale besoin reste de pouvoir rentrer chez sois les week-end.
 
-L'état actuelle des chose fait qu'un étudiant qui a besoin d'un tel service va se tourner vers les contacts du lycée qui sont dans la même universités que lui si il y en a. Sinon il cherchera parmi ses amis. Cependant un nouveau arrivant ne possède pas tout de suite un bon groupe d'amis. On remarque donc qu'au fil des premiers mois de l'année universitaire un véritable réseau se crée afin que chaque personne ai un carnet d'adresse le plus complet possible pour rentrer chez sois dans les meilleure conditions possible.
+L'état actuelle des chose fait qu'un étudiant qui a besoin d'un tel service va se tourner vers les contacts du lycée qui sont dans la même universités que lui si il y en a. Sinon il cherchera parmi ses amis. Cependant un nouveau arrivant ne possède pas tout de suite un bon groupe d'amis. On remarque donc qu'au fil des premiers mois de l'année universitaire un véritable réseau se crée afin que chaque personne ai un carnet d'adresse le plus complet possible pour rentrer chez sois dans les meilleure conditions.
 
 Cependant il est assez fréquent que les étudiants concerné par ce probléme se tournent vers des sites déjà existant comme [blablacar.fr](blablacar.fr). C'est d'ailler le seul moyen de trouver d'autre étudiant dans la même ville mais dans des université différente. En effet il n'existe pas de servies interuniversités permettant aux étudiant de toute la ville et de la région de rentrer en contact.
 
