@@ -180,7 +180,7 @@ L'application et d\'esormais install\'e.
 \section{Model conceptuel de donn\'ees}
 
 \begin{center}
-    \includegraphics[scale=0.8]{../dev/mcd_covoiturage.jpg}
+    \includegraphics[scale=0.7]{../dev/mcd_covoiturage.jpg}
 \end{center}
 
 Ce MCD repr\'esente la base de donn\'ee de notre application, il est impl\'ementer
@@ -197,16 +197,75 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
 
 \section{Arborescence}
 
-
+\begin{center}
+    \includegraphics[scale=0.7]{Arborescence2.png}
+\end{center}
 
 \section{\'Etude des fichiers}
 
-\section{Probl\`eme algorithmiques et techniques}
+\begin{itemize}
+    \item Ajax : Ce dossier contient toutes les page php servant au requete ajax.
+    \begin{itemize}
+         \item getAllContact.php : Ce fichier permet de récuperer tous les contacts avec lequelles l'utilisateur courant est ami(e)s.
+         \item getConversationCourante.php : Ce fichier permet de récuperer si il y a lieu, la conversation actuel avec un contact.
+         \item getCoordItineraire.php : Ce fichier permet de récuperer les latitude et longitude des point de départ et d'arrivé.
+         \item getCoordVille.php : Ce fichier permet de récuperer les latitude et longitude d'une ville en fonction de son identifiant.
+         \item getInfoContact.php : Ce fichier permet d'afficher les information sur un contact ou propose d'ajouter la personne a ses contact
+         si elle n'en fait pas partie.
+         \item getListeCampus.php : Ce fichier permet de récuper la liste des universités pour l'autocompletion.
+         \item getListeVille.php : Ce fichier permet de récuper la liste des villes pour l'autocompletion.
+         \item getNbNotification.php : Ce fichier permet de récuperer le nombre de notification non lu d'un utilisateur.
+         \item getNotification.php : Ce fichier permet d'afficher toutes les notification non lu ou d'afficher un message disant qu'il n'y a
+         aucune nouvelle notification.
+         \item getNouveauMsg.php : Ce fichier permet de de récuperer et de mettre en forme les message entrant d'une conversation.
+         \item getOpenConversations.php : Ce fichier permet de récuperer la liste des conversation en cours et affiche un style particulier au
+         conversation possaidant des message non lus.
+         \item getPersonneInfo.php : Ce fichier permet de récuperer les information d'un contact pour les mettre dans un popup.
+         \item getRecherche.php : Ce fichier gere le moteur de recherche, comme expliquer en 2.4 premier tiret.
+         \item getVille.php : Ce fichier créer la balise div permettant d'insérer correctement la carte google map.
+         \item getVoyageForm.php : Ce fichier permet d'affichier le formulaire de création de voyage.
+         \item getVoyage.php : Ce fichier permet d'affichier les information sur un voyage.
+         \item getVoyages.php : Ce fichier permet de récuperer une liste de tout les voyage de l'étudiant courant.
+         \item sendAccepteContact.php : Ce fichier permet de mettre à jour le statut d'une relation entre deux étudiant.
+         \item sendDemandeContact.php : Ce fichier permet de valider une demande de contact.
+         \item sendFormVoyage.php : Ce fichier permet de faire la vérification des entrée dans le formulaire de création de voyage.
+         \item sendNouveauMsg.php : Ce fichier permet d'ajouter les nouveau message à la base de donnée.
+         \item sendRefuseContact.php : Ce fichier permet de refuser une demande de contact.
+         \item sendSupprContact.php : Ce fichier permet de supprimer un contact.
+         \item sendSupprVoyage.php : Ce fichier permet de supprimer un voyage en vérifiant si l'on supprime bien on voyage nous appartenent.
+    \end{itemize}
+    \item carnet : Ce dossier contient la page de contact.
+    \begin{itemize}
+        \item index.php : Ce fichier permet d'afficher la liste des contact avec leur information. Ils permet aussi de naviger entre les contact avec le pavée directionnel ou avec les
+        touches du clavier, en appuiant sur la première lettre du nom du contact rechercher.
+    \end{itemize}
+    \item cont : Ce dossier contient le fichier d'entete du site.
+    \begin{itemize}
+        \item head.html : Ce fichier represente l'interieur de la balise <head> du site. 
+    \end{itemize}
+    \item css : Ce dossier contient les fichier de style du site.
+    \begin{itemize}
+        \item color.php : Ce fichier permet de généré du css a partir de php, permetant ainsi au utilisateur de choisir eu même le theme de leur comptes.
+        \item connec.css : Ce fichier représente la feuille de style de la page de connexion du site.
+        \item inside.css : Ce fichier représente la feuille de style du site après la connexion.
+    \end{itemize}
+    \item dev : ce dossier contient divers fichier utils au développement de l'application.
+    \begin{itemize}
+        \item 1.mcd : Le mcd du projet
+        \item importBDD.php : Ce fichier permet d'importé la base de donnée depuis une page internet.
+        \item login.inc.sample : Un exemple de fichier de connexion.
+        \item mdpgen.php : Ce fichier permet de récuperer le sha256 d'une chaine de caractère.
+        \item page\_template.php : fichier que nous utilisions en début de projet pous crée de nouvelle page.
+        \item projetbdd.sql : Le fichier SQL representant notre base de donnée.
+        \item recupUNIV.py : Un script python permetant de récuperer chaque academie et chacune de leur universités.
+    \end{itemize}
 
-% moteur de recherche
-% il recherche tout les mot en tant que personne puis en tant que voyage
-% si tu tape belfort, retourne jean , si tu tape jean belfort, retourne 2 jean,
-% compte le nombre d'occurence, plus il y a d'occurence, plus le r\'esultat et coherent
+
+
+\end{itemize}
+
+
+\section{Probl\`eme algorithmiques et techniques}
 
 \begin{itemize}
     \item Le moteur de recherche a pos\'e et pose encore de nombreux probl\`eme.
@@ -244,10 +303,10 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
     \item La cr\'eation du script d'installation automatique nous a pos\'e de nombreux
     probl\`eme, en premier lieu car il n\'ecessite certain outils (wget, curl, git, unzip)
     qui ne sont pas forcement disponible sur toutes les machines, mais au niveau de la
-    s\'ecurit\'e des dites machines, qui 
+    s\'ecurit\'e des dites machines, qui, dans certain cas, bloque l'accès a certain port, en
+    particulier le port 443(https) rendant ainsi le script inutile et forcant une instalation
+    manuelle
 \end{itemize}
-
-% shell script
 
 \addcontentsline{toc}{chapter}{Conclusion}
 \chapter*{Conclusion}
