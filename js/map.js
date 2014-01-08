@@ -48,3 +48,12 @@ function calcRoute(start,end) {
         }
     });
 }
+
+function ville(id,nom){
+    pop_title(nom);
+    pop_set_x(473);
+    pop_set_y(473);
+    pop_content("<div id='map'></div>");
+    infoVille(id);
+    pop_show();
+}
