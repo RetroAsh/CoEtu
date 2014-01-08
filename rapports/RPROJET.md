@@ -161,7 +161,58 @@ Afin situer les villes nous avons utilisé l'API de Google Map pour mieux visual
 
 JSColor est un JavaScript licencié GNU qui permet au développer web d'intégrer un "color picker" dans leur site. Ce service est important pour notre application car nous proposons aux utilisateurs de personnaliser leur compte en modifiant la couleur principale du site à leur plein grès.
 
+### Costante évolution
+
+Nous avons certes largement remplie le cahier des charges initiale. Cependant il est encore possible de greffer sur l'application tout un tas de fonctionnalité comme un mur, des suggestions de contacts, des points de passages dans les voyages... Il est donc possible de faire évoluer le site de plein de manière différente. On se rapproche donc des application web Facebook ou Google qui sont constamment en développement.
+
 ## Bilan
 
+### Planning
 
- 
+#### Initial
+
+Nous avions initialement divisé notre projet en quatre étapes.
+
+1. Création du MCD (1 semaine)
+2. Création de la base de donnée avec un fichier SQL (2 semaines)
+3. Début de l’implémentation des fonctions basiques comme créer un compte, interface de connexion, consulter ses infos… (3 semaines)
+4. Implémentation des fonctions complexes comme l’interface de voyage, le carnet d’adresse, le formulaire de recherche… (reste du temps)
+
+Afin de respecter ces étape, nous avons commencé le projet sur plusieurs front, c'est à dire que l'on a divisé le groupe en deux, le premier sous groupe s'occupait de créer la base de donné pendant que le deuxième s'occuper de faire la maquette du site. Un fois ces deux éléments fait il ne reste plus qu'a faire le lien en atomisant le HTML des maquettes avec le PHP. 
+
+#### Final
+
+Nous avons donc respecté le processus précédant mais nous mit en place toute les fonctionnalité demandé dans le cahier des charges bien plus rapidement que prévu. Dans ce contexte nous avons donc décidé de rajouter une grande quantité de fonction tel que:
+
+- la couleur ajustable en fonction de l'utilisateur
+- le remplacement de l'ajax par des websockets
+- les photo de profile
+- un système de messagerie interne
+
+Comme on peut le voir certaine de ces fonctionnalité ont pu être amendé sur l'application.
+
+L'objectif était de finir le projet cinq jour avant la soutenance afin de pourvoir écrire les rapports. Il est difficile de dire si cette objectif a été atteint car même si nous sommes arrivé un à un site tout à fait convenable niveau fonctionnalité, nous avons été confronté à de nombreuse correction de bug qui nous a forcé à modifier le code source jusqu'a la fin.
+
+### Technique
+
+Même si nous n'avons utilisé que des langages appris en cous, nous avons énormément appris dans l'organisation d'un avec une base un peu plus grand que d'habitude. Nous avons mit en place une base de donné assez conséquente ainsi que diffèrent scripts... 
+
+### Humain
+
+Apres avoir divisé le groupe en deux pour faire la premier partie du planning initial, l'organisation c'est fait de la manière la plus simple. Le chef de projet faisait une liste de tache et les personne membre du groupe effectuer le travail demandé. Les TP nous servaient de réunion pour mettre au point le travail effectué et prendre les décision concernant les grandes ligne du projet.
+
+Encore une fois, cette organisation a pu fonctionner uniquement grâce à GitHub qui nous a permis de bien gérer les taches et donc de bien travailler pendant les vacances.
+
+### Pédagogique 
+
+Même si nous avons beaucoup appris en cours, ce projet nous a permis de bien nous mettre à l'aise avec le SQL. En effet nous avons essayer d'appliquer aux maximum ce qui nous a été dit en cous à savoir privilégier le traitement en SQL plutôt qu'en PHP.
+
+De plus nous avons appris à nous organiser en groupe de sept, ce qui n'est pas particulièrement évident. Mais au final cette expérience de travaille de groupe avec un projet bien plus grand que d'ordinaire nous à tous permis de prendre conscience non seulement de l'ampleur des bases de donnée et site de ce genre mais aussi qu'il est assez difficile de construire un projet comme ça sans une bonne équipe.
+
+## Conclusion
+
+
+
+Nous avons réalisé une application simple et opérationnelle de covoiturage sous forme d'un réseau social qui intègre toute les villes et universités de France. Ce projet n'aurai pas pu être réalisé sans la contribution de chacun et nous a à tous beaucoup apporté que ce soit dans la compréhension du web que dans le développement.
+Le site est à la disposition de toute association étudiante qui aimerai proposer un tel service, et à tout développer qui aimerai poursuivre ce travail afin d'y apporter encore plus de fonctionnalité.
+Facbook, Google... n'étaient-ils pas des projets étudiant?

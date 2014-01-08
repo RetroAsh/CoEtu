@@ -95,25 +95,6 @@ function supprVoyage(id){
     xhr.send("id="+id);
 }
 
-function ville(id,nom){
-    pop_title(nom);
-    var xhr = getXhr();
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState == 4 && xhr.status == 200){
-            pop_set_x(473);
-            pop_set_y(473);
-            pop_content(xhr.responseText);
-            infoVille(id);
-            pop_show();
-            stop_loading();
-        }
-    }
-    loading();
-    xhr.open("POST","../ajax/getVille.php",true);
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    xhr.send();
-}
-
 function infoVille(id){
     var xhr = getXhr();
     xhr.onreadystatechange = function () {
