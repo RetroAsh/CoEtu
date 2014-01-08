@@ -288,6 +288,8 @@ function selectAllVoyagesAdmin(){
         $voy[$tab["id_voy"]]["retour"] = $tab["date_retour"];
         $voy[$tab["id_voy"]]["depart"] = $tab[3];
         $voy[$tab["id_voy"]]["arrive"] = $tab[4];
+        $voy[$tab["id_voy"]]["pre"] = $tab["prenom_etu"];
+        $voy[$tab["id_voy"]]["nom"] = $tab["nom_etu"];
     }
     return $voy;
 }
