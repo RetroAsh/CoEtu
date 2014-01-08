@@ -26,7 +26,15 @@
     	$ajax .= "";
     }
 
-    foreach (selectAllContactVoyages($_SESSION["user_id"]) as $voy) {
+    $all = null;
+    if($_SESSION["user_id"]==3){
+        $all = selectAllVoyagesAdmin();
+    }
+    else {
+        $all = selectAllContactVoyages($_SESSION["user_id"]);
+    }
+
+    foreach ($all as $voy) {
     	if ($ajax!="") {
     		$ajax .= "#\n";
     	}

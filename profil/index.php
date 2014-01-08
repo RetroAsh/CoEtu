@@ -25,6 +25,14 @@
         $coordonnee = selectCoordonee($_SESSION['user_id']);
         foreach ($_POST as $key => $value) {
             if ($key[0]=="i" && isset($coordonnee[substr($key,1)]) && $coordonnee[substr($key,1)]["info"]!=$value) {
+                if (empty($value)) {
+                    if($coordonnee[substr($key,1)]["libel"]=="email" && selectNbEmailUser($_SESSION['user_id'])<=1) {
+                        $err .= "Vous devez au moins avoir un email de connection. <br />\n";
+                        continue 1;
+                    }
+                    deleteCoordonee(substr($key,1));
+                    continue 1;
+                }
                 if($coordonnee[substr($key,1)]["libel"]=="tel" && !tel_valid($value)){
                     $err .= "Numéro de téléphone invalide. <br />\n";
                     continue 1;
@@ -117,13 +125,15 @@
         <div id="param">
             <div class="err"><?php echo $err; ?></div>
             <?php formModInfo($_SESSION["user_id"]); ?>
-			<form id="mdp" method="post" style="display:none" >
-				<label for="actuel" >Mot de passe actuel :</label>
-				<input id="actuel" name="actuel" type="password" /><br>
+			<form class="modmdp" id="mdp" method="post" style="display:none" >
+                <br />
+                <br />
+				<label for="actuel" >Mot de passe courrant :</label>
+				<input id="actuel" name="actuel" type="password" /><br />
 				<label for="new1" >Nouveau mot de passe :</label>
-				<input id="new1" name="new1" type="password" /><br>
-				<label for="new2" >Confirmer :</label>
-				<input id="new2" name="new2" type="password" /><br>
+				<input id="new1" name="new1" type="password" /><br />
+				<label for="new2" >Confirmer mot de passe:</label>
+				<input id="new2" name="new2" type="password" /><br />
 				<input type="submit" value="Valider"/>
 				<input type="reset" value="Annuler" onclick="document.getElementById('mdp').style.display='none'"/>
 			</form>

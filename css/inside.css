@@ -941,6 +941,7 @@ div#param form.modinfo label {
 }
 
 div#param form.modinfo input[type=text],
+div#param form.modmdp input[type=password],
 div#param form.modinfo select {
     padding: 4px;
     color: rgb(75, 75, 75);
@@ -962,6 +963,11 @@ div#param form.modinfo .select_contener {
     width: 75%;
 }
 
+
+div#param form.modmdp input[type=password] {
+    width: 50%;
+}
+
 div#param form.modinfo .select_contener {
     display: inline-block;
     text-align: left;
@@ -975,14 +981,16 @@ div#param form.modinfo select {
     -webkit-appearance:none ;
 }
 
-div#param form.modinfo .new {
+div#param form.modinfo .new,
+div#param form.modmdp input[type=password] {
     background-color: rgb(220,220,220);
 }
 
 div#param form.modinfo input:focus {}
 
 div#param form.modinfo input[type=submit]:hover,
-div#param form.modinfo input[type=reset]:hover {}
+div#param form.modinfo input[type=reset]:hover,
+div#param form.modmdp input[type=password] {}
 
 form#colorpick input#couleur {
     height: 80px;

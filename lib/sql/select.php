@@ -27,6 +27,20 @@ function selectVerifDispoEmail($email){
     return $q[0];
 }
 
+function selectNbEmailUser($id){
+    $connec = getPDO();
+    $requete = "SELECT COUNT( * ) AS nb
+                FROM  coordonnee
+                WHERE  libelle_coordonnee =  'email'
+                AND  id_etu = :id";
+
+    $q = $connec->prepare($requete);
+    $q->bindParam('id', $id, PDO::PARAM_INT);
+    $q->execute();
+    $q = $q->fetch();
+    return $q[0];
+}
+
 function selectOpenConversations($id){
     $connec = getPDO();
     $requete = "SELECT DISTINCT EG.id_etu, EG.prenom_etu, EG.nom_etu
@@ -244,6 +258,25 @@ function selectAllVoyages($id){
 				FROM voyage V, ville VD, ville VA
 				WHERE V.id_etu=$id
 				AND V.ville_depart=VD.id_ville
+				AND V.ville_arrive=VA.id_ville
+				ORDER BY V.date_aller;";
+    $rep = $connec->query($requete);
+    $voy = array();
+    while ($tab = $rep->fetch()) {
+        $voy[$tab["id_voy"]]["id"] = $tab["id_voy"];
+        $voy[$tab["id_voy"]]["aller"] = $tab["date_aller"];
+        $voy[$tab["id_voy"]]["retour"] = $tab["date_retour"];
+        $voy[$tab["id_voy"]]["depart"] = $tab[3];
+        $voy[$tab["id_voy"]]["arrive"] = $tab[4];
+    }
+    return $voy;
+}
+
+function selectAllVoyagesAdmin(){
+    $connec = getPDO();
+    $requete = "SELECT V.id_voy,V.date_aller,V.date_retour,VD.nom_ville,VA.nom_ville
+				FROM voyage V, ville VD, ville VA
+				WHERE V.ville_depart=VD.id_ville
 				AND V.ville_arrive=VA.id_ville
 				ORDER BY V.date_aller;";
     $rep = $connec->query($requete);

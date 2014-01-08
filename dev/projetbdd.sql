@@ -129,22 +129,6 @@ CREATE TABLE IF NOT EXISTS `carnet` (
   KEY `id_etu_etudiant` (`id_etu_etudiant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `carnet`
---
-
-TRUNCATE TABLE `carnet`;
---
--- Contenu de la table `carnet`
---
-
-INSERT INTO `carnet` (`statut_car`, `id_etu`, `id_etu_etudiant`) VALUES
-(1, 1, 2),
-(1, 2, 3),
-(1, 3, 5),
-(1, 4, 2),
-(1, 4, 3),
-(1, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -172,13 +156,8 @@ TRUNCATE TABLE `coordonnee`;
 --
 
 INSERT INTO `coordonnee` (`id_coordonnee`, `libelle_coordonnee`, `information`, `id_etu`) VALUES
-(1, 'email', 'pommedeterre@papillon.fr', 1),
-(2, 'email', 'pommedeterre@papillon.com', 2),
 (3, 'email', 'admin', 3),
-(4, 'email', 'admin@admin.com', 3),
-(5, 'email', 'duvaux.gaetan@gmail.com', 4),
-(6, 'email', 'jeanmercadier@gmail.com', 5),
-(7, 'site', 'http://jmercadier.fr', 5);
+(4, 'email', 'admin@admin.com', 3);
 
 -- --------------------------------------------------------
 
@@ -340,11 +319,7 @@ TRUNCATE TABLE `etudiant`;
 --
 
 INSERT INTO `etudiant` (`id_etu`, `mot_de_passe`, `nom_etu`, `prenom_etu`, `mois_ne_etu`, `annee_ne_etu`, `id_ville`, `id_univ`, `couleur`) VALUES
-(1, 'mdp', 'Georges', 'Kevin', 5, 1994, 35607, 1, '0078E7'),
-(2, 'mdp', 'Dupont', 'Germaine', 12, 1993, 35607, 1, '0078E7'),
-(3, '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', 'admin', 11, 2013, 35607, 1, '0078E7'),
-(4, 'f2d81a260dea8a100dd517984e53c56a7523d96942a834b9cdc249bd4e8c7aa9', 'Gaëtan', 'Duvaux', 8, 1993, 28724, 1, 'BD721C'),
-(5, 'a8b07119513db339737981436de1cd1c2c8bed8717e6ef668464d779b9f89c16', 'Mercadier', 'Jean', 7, 1993, 22745, 1, '003399');
+(3, '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', 'admin', 11, 2013, 35607, 1, '0078E7');
 
 
 -- --------------------------------------------------------
@@ -417,33 +392,6 @@ INSERT INTO `region` (`id_region`, `nom_region`) VALUES
 (26, 'La Réunion'),
 (27, 'Mayotte');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `suit`
---
-
-DROP TABLE IF EXISTS `suit`;
-CREATE TABLE IF NOT EXISTS `suit` (
-  `id_etu` int(11) NOT NULL,
-  `id_voy` int(11) NOT NULL,
-  PRIMARY KEY (`id_etu`,`id_voy`),
-  KEY `id_etu` (`id_etu`),
-  KEY `id_voy` (`id_voy`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Vider la table avant d'insérer `suit`
---
-
-TRUNCATE TABLE `suit`;
---
--- Contenu de la table `suit`
---
-
-INSERT INTO `suit` (`id_etu`, `id_voy`) VALUES
-(3, 1),
-(4, 1);
 
 -- --------------------------------------------------------
 
@@ -37160,18 +37108,6 @@ CREATE TABLE IF NOT EXISTS `voyage` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Vider la table avant d'insérer `voyage`
---
-
-TRUNCATE TABLE `voyage`;
---
--- Contenu de la table `voyage`
---
-
-INSERT INTO `voyage` (`id_voy`, `date_aller`, `date_retour`, `ville_depart`, `ville_arrive`, `statut`, `id_etu`, `recursivite`) VALUES
-(1, '2013-12-10', '2013-12-19', 1, 2, NULL, 4, 0);
-
---
 -- Contraintes pour la table `campus`
 --
 ALTER TABLE `universite`
@@ -37210,13 +37146,6 @@ ALTER TABLE `etudiant`
 ALTER TABLE `message`
   ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`etu_get`) REFERENCES `etudiant` (`id_etu`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `message_ibfk_2` FOREIGN KEY (`etu_send`) REFERENCES `etudiant` (`id_etu`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `suit`
---
-ALTER TABLE `suit`
-  ADD CONSTRAINT `suit_ibfk_2` FOREIGN KEY (`id_voy`) REFERENCES `voyage` (`id_voy`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `suit_ibfk_1` FOREIGN KEY (`id_etu`) REFERENCES `etudiant` (`id_etu`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `ville`

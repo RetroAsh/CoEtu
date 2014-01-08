@@ -90,3 +90,16 @@ function deleteCompte($idetu){
 	}
 	return false;	
 }
+
+function deleteCoordonee($id){
+    try{
+        $connec = getPDO();
+        $delete = $connec->prepare("DELETE FROM coordonnee
+				WHERE id_coordonnee=$id");
+        return $delete->execute();
+    }
+    catch( Exception $e ){
+        echo("Une erreur est survenue lors de la coordonée : ".$e->getMessage());
+    }
+    return false;
+}
