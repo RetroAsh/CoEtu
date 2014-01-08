@@ -259,15 +259,81 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
         \item projetbdd.sql : Le fichier SQL representant notre base de donnée.
         \item recupUNIV.py : Un script python permetant de récuperer chaque academie et chacune de leur universités.
     \end{itemize}
-
-
-
+    \item home : Ce dossier contient la page d'acceuil du site une fois connecter.
+    \begin{itemize}
+        \item index.php : Ce fichier represente la page d'acceuil du site une fois connecter, il permet de visualiser rapidement ses information personnel
+        ainsi qu'un acces plus naturel au differentes autre partie du site.
+    \end{itemize}
+    \item img : Ce dossier contient toutes les image du site.
+    \item js : Ce dossier contient tout les script javascript du site.
+    \begin{itemize}
+        \item jscolor : ce dossier contient tous les élément permetant au selectionneur de couleur de fonctionné
+        \begin{itemize}
+            \item jscolor.js : Ce fichier contient toute les fonction javascript nécessaire au bon fonctionnement du selectionneur de couleur.
+        \end{itemize}
+        \item ajax.js : Ce fichier contient toutes fonction utilisant ou traitant de l'ajax
+        \item connec.js : Ce fichier contient les fonction jquery nécessaire a l'autocompletion des ville et des universités dans la page d'acceuil.
+        \item html.js : Ce fichier contient des fonction dont le seul but et de générer ou modifier de l'html.
+        \item inside.js : Ce fichier contient les fonction utile au fonctionnement de l'application après la connexion.
+        \item map.js : Ce fichier contient differentes fonction nécessaire a l'utilisation de l'API google map.
+        \item popup.js : Ce fichier contient les fonction nécessaire a la création et l'utilisation des differente popup du site.
+        \item suggestion.js : Ce fichier contient les fonction jquery d'autocompletion lors de la création de voyage.
+    \end{itemize}
+    \item lib : Ce dossier contient toutes les librairie php utiliser dans le projet.
+    \begin{itemize}
+        \item sql : Ce dossier contient toutes les librairie utilisant du sql.
+        \begin{itemize}
+            \item delete.php : Ce fichier contient toutes les fonction permetant de supprimer des elements de la base de donnée.
+            \item insert.php : Ce fichier contient toutes les fonction permetant d'ajouter des elements de la base de donnée.
+            \item select.php : Ce fichier contient toutes les fonction permetant de récuperer des elements de la base de donnée.
+            \item update.php : Ce fichier contient toutes les fonction permetant de modifier des elements de la base de donnée.
+        \end{itemize}
+        \item bibli.php : Ce fichier contient toutes les fonction un peu à part du programme.
+        \item deco.php : Ce fichier permet de renvoyer à la page de connexion tout utilisateur n'étant pas connecter.
+        \item html.php : Ce fichier contient toutes les fonction aillant pour but de générer de l'html.
+        \item securiter.php : Ce fichier contient des sécurité vis à vis des attaque par injection SQL.
+        \item sql.php : Ce fichier permet d'inclure en une fois toutes les bibliothèque SQL et fournit une fonction permetant de
+        récuperer un objet PDO de manière propre.
+    \end{itemize}
+    \item message : Ce dossier contient la page de tchat du site.
+    \begin{itemize}
+        \item index.php : Ce fichier reprensente le tchat du site, permetant ainsi de discuter entre les étudiant. il contient aussi les fonction permetant de naviguer entre les étudiants avec
+        qui une conversation a été démaré.
+    \end{itemize}
+    \item profil : Ce dossier contient la page de profil utilisateur du site.
+    \begin{itemize}
+         \item index.php : Ce fichier reprensente la page de profil utilisateur, permetant de modifier le theme du site ainsi que ses information personnel.
+    \end{itemize}
+    \item rechercher : Ce dossier contient la page de recherche.
+    \begin{itemize}
+        \item index.php : Ce fichier reprensente la page de recherche du site, permetant de rechercher voyages et étudiants.
+    \end{itemize}
+    \item voyage : Ce dossier contient la page des voyages de l'utilisateur.
+    \begin{itemize}
+        \item index.php : Ce fichier reprensente la page des voyage de l'utilisateur courant. Elle permet de crée et de supprimer des voyages.
+    \end{itemize}
+    \item README.md : Rapide résumer du site en markdown.
+    \item index.php : Page d'acceuil du site, elle permet de s'inscrire et de se connecter.
+    \item login.inc : Fichier contenant les informations de connexion à la base de donnée.
+    \item setup.sh : Script d'installation automatique de l'application.
 \end{itemize}
 
 
 \section{Probl\`eme algorithmiques et techniques}
 
 \begin{itemize}
+    \item Le premier problème auquelle nous avons été confronté fus la connexion des utilisateur.
+    Nous voulions quelle soit sécurisé tout en étant relativement simple.
+    Nous avons finalement opté pour la solution suivante : 
+    \begin{enumerate}
+        \item l'utilisateur rentre sont mot de passe.
+        \item le mot de passe et hashé en sha256.
+        \item le hash et comparé avec celui contenu dans la base de donnée.
+        \item si les hash corresponde, l'utilisateur et identifié.
+    \end{enumerate}
+    
+    \null
+    
     \item Le moteur de recherche a pos\'e et pose encore de nombreux probl\`eme.
     Dans sont fonctionnement, il recherche tout les mot entr\'ee en tant que
     personne puis en tant que voyage. Ainsi, si on \'ecris ``Belfort'', il renvera 1 r\'esultat,
@@ -308,11 +374,4 @@ si deux \'etudiant se connaisse ou non ou si il y a une demande de contact en co
     manuelle
 \end{itemize}
 
-\addcontentsline{toc}{chapter}{Conclusion}
-\chapter*{Conclusion}
-
-
-
 \end{document}
-% penser a parler de l'Admin
-% php pour generer du css
