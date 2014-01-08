@@ -161,6 +161,10 @@ Afin situer les villes nous avons utilisé l'API de Google Map pour mieux visual
 
 JSColor est un JavaScript licencié GNU qui permet au développer web d'intégrer un "color picker" dans leur site. Ce service est important pour notre application car nous proposons aux utilisateurs de personnaliser leur compte en modifiant la couleur principale du site à leur plein grès.
 
+### Costante évolution
+
+Nous avons certes largement remplie le cahier des charges initiale. Cependant il est encore possible de greffer sur l'application tout un tas de fonctionnalité comme un mur, des suggestions de contacts, des points de passages dans les voyages... Il est donc possible de faire évoluer le site de plein de manière différente. On se rapproche donc des application web Facebook ou Google qui sont constamment en développement.
+
 ## Bilan
 
 ### Planning
@@ -206,3 +210,9 @@ Même si nous avons beaucoup appris en cours, ce projet nous a permis de bien no
 De plus nous avons appris à nous organiser en groupe de sept, ce qui n'est pas particulièrement évident. Mais au final cette expérience de travaille de groupe avec un projet bien plus grand que d'ordinaire nous à tous permis de prendre conscience non seulement de l'ampleur des bases de donnée et site de ce genre mais aussi qu'il est assez difficile de construire un projet comme ça sans une bonne équipe.
 
 ## Conclusion
+
+
+
+Nous avons réalisé une application simple et opérationnelle de covoiturage sous forme d'un réseau social qui intègre toute les villes et universités de France. Ce projet n'aurai pas pu être réalisé sans la contribution de chacun et nous a à tous beaucoup apporté que ce soit dans la compréhension du web que dans le développement.
+Le site est à la disposition de toute association étudiante qui aimerai proposer un tel service, et à tout développer qui aimerai poursuivre ce travail afin d'y apporter encore plus de fonctionnalité.
+Facbook, Google... n'étaient-ils pas des projets étudiant?
