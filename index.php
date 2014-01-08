@@ -138,8 +138,8 @@
 		<title>Freetu</title>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 		<link rel='stylesheet' type='text/css' href='css/connec.css' />
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script type='text/javascript' src='./js/connec.js' ></script>
 
 	</head>

@@ -136,8 +136,8 @@ function dateNormalToCrade($date) {
 
 function insertSmiley($content)
 {
-    $smiliesName = array(':\\(', ':\\)', ':D', ';\\)', ':p', ':o', 'o_O', '\\^\\^', '<3', '&lt;3');
-    $smiliesUrl  = array('triste.png', 'smile.png', 'heureux.png', 'clin.png', 'langue.png','huh.png', 'blink.gif', 'hihi.png', 'heart.png', 'heart.png');
+    $smiliesName = array(':\\(',':\\)',':D','xD',':d','\\^\\^',';\\)',':p',':P',':o',':O',':B',':b','<3','&lt;3');
+    $smiliesUrl  = array('triste.png','smile.png','heureux.png','heureux.png','heureux.png','hihi.png','clin.png','langue.png','langue.png','huh.png','huh.png','bg.png','bg.png','heart.png','heart.png');
     $smiliesPath = "../img/smiley/";
 
     for ($i = 0, $c = count($smiliesName); $i < $c; $i++) {
