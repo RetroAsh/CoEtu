@@ -147,6 +147,7 @@ function formModInfo($id){
 	echo "</select></div><br /><br />";
     echo "<span style='display: none;' id='new'><select class='new' id='new_label' name='new_label' ><option>email</option><option>tel</option><option>site</option><option>facebook</option></select>: ";
     echo "<input class='new' id='new_info' name='new_info' type='text' onchange='document.getElementById(\"modinfo\").submit()' /></span>";
+    echo "<input type='submit' />";
 	echo "</form>\n";
 }
 
